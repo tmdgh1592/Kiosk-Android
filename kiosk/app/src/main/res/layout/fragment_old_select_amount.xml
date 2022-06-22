@@ -94,31 +94,31 @@
         app:layout_constraintTop_toBottomOf="@+id/menu_image_view" />
 
 
-    <TextView
-        android:id="@+id/my_detail_select_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="60dp"
-        android:text="내가 선택한 세부 메뉴"
-        android:textColor="#4E4E4E"
-        android:textSize="48sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/my_detail_select_text_view"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="62dp"-->
+    <!--        android:layout_marginTop="60dp"-->
+    <!--        android:text="내가 선택한 세부 메뉴"-->
+    <!--        android:textColor="#4E4E4E"-->
+    <!--        android:textSize="48sp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/divider" />-->
 
     <TextView
         android:id="@+id/cold_hot_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="62dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/round_24_border_4_box"
         android:paddingHorizontal="26.5dp"
         android:paddingVertical="23.5dp"
         android:textColor="#767676"
         android:textSize="44sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_detail_select_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
         tools:text="차갑게" />
 
     <TextView
@@ -126,14 +126,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="19dp"
         android:background="@drawable/round_24_border_4_box"
         android:paddingHorizontal="26.5dp"
         android:paddingVertical="23.5dp"
         android:textColor="#767676"
         android:textSize="44sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cold_hot_text_view"
         app:layout_constraintLeft_toRightOf="@+id/cold_hot_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/my_detail_select_text_view"
+        app:layout_constraintTop_toTopOf="@+id/cold_hot_text_view"
         tools:text="연하게" />
 
 
