@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/okay_image_view"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/img_border_circle_ok"
+        app:layout_constraintBottom_toTopOf="@+id/input_card_title_text_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <TextView
+        android:id="@+id/input_card_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:gravity="center"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:text="결제가 완료 되었습니다!"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_card_desc_text_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/okay_image_view" />
+
+
+    <TextView
+        android:id="@+id/input_card_desc_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:lineHeight="60dp"
+        android:text="신용카드를 제거해주세요"
+        android:textColor="#767676"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/credit_card_image_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_card_title_text_view" />
+
+    <ImageView
+        android:id="@+id/credit_card_image_view"
+        android:layout_width="448dp"
+        android:layout_height="473dp"
+        android:layout_marginTop="87dp"
+        android:src="@drawable/img_card_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_card_desc_text_view" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
