@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.swuniv.agefree.BuildConfig;
 import com.swuniv.agefree.R;
 import com.swuniv.agefree.presentation.detection.data.model.FaceDetectResponse;
 import com.swuniv.agefree.presentation.detection.data.network.RetrofitBuilder;
@@ -338,12 +339,16 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
                     int age = faceDetectResponse.getAge();
                     String gender = faceDetectResponse.getGender();
 
+                    if (BuildConfig.DEBUG) {
+                        Log.d(TAG, "onResponse: " + faceDetectResponse.getSuccess());
+                    }
+
                     if (faceDetectResponse.getSuccess()) {
                         //((LottieAnimationView) findViewById(R.id.scan_container).setVisibility(View.VISIBLE));
                         findViewById(R.id.scan_container).setVisibility(View.GONE);
                         findViewById(R.id.complete_container).setVisibility(View.VISIBLE);
 
-                        new Handler().postDelayed(() ->{
+                        new Handler().postDelayed(() -> {
                             // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
                             Intent intent = new Intent(FdActivity.this, MainActivity.class)
                                     .putExtra("age", age)
@@ -390,7 +395,7 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
 
 //Convert bitmap to byte array
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 0 /*ignored for PNG*/, bos);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 90 /*ignored for PNG*/, bos);
         byte[] bitmapdata = bos.toByteArray();
 
 //write the bytes in file
