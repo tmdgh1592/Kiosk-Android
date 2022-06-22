@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.FaceDetect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.FaceDetect" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
 
@@ -39,5 +39,10 @@
         <item name="android:padding">20dp</item>
         <item name="android:textColor">@color/color_menu_category_text</item>
         <item name="android:textSize">44sp</item>
+    </style>
+
+    <style name="tabTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">44sp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 </resources>
