@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="259dp"
+        android:gravity="center"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:text="주문내역을 확인해주세요!\n음료가 준비되면 불러드리겠습니다."
+        android:textSize="60sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/order_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="109dp"
+        android:letterSpacing="0.08"
+        android:lineHeight="120dp"
+        android:textSize="80sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="주문번호 67" />
+
+    <TextView
+        android:id="@+id/order_contents"
+        android:layout_width="match_parent"
+        android:layout_height="377dp"
+        android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="79dp"
+        android:background="@drawable/round_24_border_4_box"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_number" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image"
+        android:layout_width="190dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="70dp"
+        android:layout_marginLeft="73dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@id/order_contents"
+        app:layout_constraintLeft_toLeftOf="@id/order_contents"
+        app:layout_constraintTop_toTopOf="@id/order_contents"
+        app:riv_corner_radius="30dp"
+        app:riv_mutate_background="true"
+        app:riv_oval="false"
+        tools:src="@drawable/img_sample" />
+
+    <TextView
+        android:id="@+id/menu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="63dp"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toRightOf="@id/image"
+        app:layout_constraintTop_toTopOf="@id/order_contents"
+        tools:text="아메리카노" />
+
+    <TextView
+        android:id="@+id/bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:text="|"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toRightOf="@id/menu_name"
+        app:layout_constraintTop_toTopOf="@id/menu_name" />
+
+    <TextView
+        android:id="@+id/menu_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="63dp"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:text="1개"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toRightOf="@id/bar"
+        app:layout_constraintTop_toTopOf="@id/order_contents" />
+
+    <TextView
+        android:id="@+id/menu_option_box"
+        android:layout_width="596dp"
+        android:layout_height="131dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/round_24_border_4_box"
+        app:layout_constraintLeft_toRightOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/menu_name" />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="31dp"
+        android:letterSpacing="0.072"
+        android:lineHeight="72dp"
+        android:text="@string/cold_text"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toLeftOf="@id/menu_option_box"
+        app:layout_constraintTop_toTopOf="@id/menu_option_box" />
+
+    <TextView
+        android:id="@+id/bar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="31dp"
+        android:letterSpacing="0.072"
+        android:lineHeight="72dp"
+        android:text="|"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toRightOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="@id/menu_option_box" />
+
+    <TextView
+        android:id="@+id/density"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="31dp"
+        android:letterSpacing="0.072"
+        android:lineHeight="72dp"
+        android:text="연하게"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toRightOf="@id/bar1"
+        app:layout_constraintTop_toTopOf="@id/menu_option_box" />
+
+    <TextView
+        android:id="@+id/bar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="31dp"
+        android:letterSpacing="0.072"
+        android:lineHeight="72dp"
+        android:text="|"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toRightOf="@id/density"
+        app:layout_constraintTop_toTopOf="@id/menu_option_box" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="31dp"
+        android:letterSpacing="0.0765"
+        android:lineHeight="76.5dp"
+        android:text="많이"
+        android:textSize="51sp"
+        app:layout_constraintLeft_toRightOf="@id/bar2"
+        app:layout_constraintTop_toTopOf="@id/menu_option_box" />
+
+    <TextView
+        android:id="@+id/order_detail_contents"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round_24_border_4_box"
+        app:layout_constraintTop_toBottomOf="@id/order_contents" />
+
+    <TextView
+        android:id="@+id/detail_menu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="@id/order_detail_contents"
+        app:layout_constraintTop_toTopOf="@id/order_detail_contents"
+        tools:text="아메리카노" />
+
+    <TextView
+        android:id="@+id/detail_menu_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:layout_marginRight="60dp"
+        android:letterSpacing="0.066"
+        android:lineHeight="66dp"
+        android:textSize="44sp"
+        app:layout_constraintRight_toRightOf="@id/order_detail_contents"
+        app:layout_constraintTop_toTopOf="@id/order_detail_contents"
+        tools:text="5,000원" />
+
+    <TextView
+        android:id="@+id/second_menu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="23dp"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:text="ㄴ 양 많이"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="@id/order_detail_contents"
+        app:layout_constraintTop_toBottomOf="@id/detail_menu_name" />
+
+    <TextView
+        android:id="@+id/second_menu_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="60dp"
+        android:letterSpacing="0.066"
+        android:lineHeight="66dp"
+        android:textSize="44sp"
+        app:layout_constraintRight_toRightOf="@id/order_detail_contents"
+        app:layout_constraintTop_toBottomOf="@id/detail_menu_price"
+        tools:text="500원" />
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="39dp"
+        android:background="#EDEDED"
+        app:layout_constraintLeft_toLeftOf="@id/order_detail_contents"
+        app:layout_constraintRight_toRightOf="@id/order_detail_contents"
+        app:layout_constraintTop_toBottomOf="@id/second_menu_name" />
+
+    <TextView
+        android:id="@+id/total_menu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="65dp"
+        android:letterSpacing="0.066"
+        android:lineHeight="66dp"
+        android:text="총 결제 금액"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toLeftOf="@id/order_detail_contents"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <TextView
+        android:id="@+id/total_menu_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="60dp"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:textSize="60sp"
+        app:layout_constraintRight_toRightOf="@id/order_detail_contents"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        tools:text="11,000원" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
