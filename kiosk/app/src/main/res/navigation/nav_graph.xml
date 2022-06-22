@@ -10,4 +10,11 @@
         android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultSelectMenuFragment"
         android:label="fragment_default_menu"
         tools:layout="@layout/fragment_default_menu" />
+
+    <fragment
+        android:id="@+id/oldSelectMenuFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectMenuFragment"
+        android:label="fragment_old_select_menu"
+        tools:layout="@layout/fragment_old_select_menu" />
+
 </navigation>

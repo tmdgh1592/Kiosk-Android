@@ -24,7 +24,6 @@ class MenuAdapter(private val context: Context) : RecyclerView.Adapter<MenuAdapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(menuList[position])
-        Log.e("--onBindViewHolder", menuList[position].toString())
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
