@@ -79,7 +79,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/cancel_btn"
+        android:background="@drawable/round_border_4dp_btn"
         android:fontFamily="@font/pretendard_bold"
         android:gravity="center"
         android:letterSpacing="0.072"

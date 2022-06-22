@@ -18,5 +18,6 @@
 
         <!-- Changing default font -->
         <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>
