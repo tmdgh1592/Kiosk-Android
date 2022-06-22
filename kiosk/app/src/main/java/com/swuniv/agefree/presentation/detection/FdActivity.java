@@ -10,12 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.swuniv.agefree.R;
-import com.swuniv.agefree.presentation.detection.DetectionBasedTracker;
-import com.swuniv.agefree.presentation.detection.MainActivity;
+import com.swuniv.agefree.presentation.detection.data.model.FaceDetectResponse;
+import com.swuniv.agefree.presentation.detection.data.network.RetrofitBuilder;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraActivity;
@@ -33,12 +31,21 @@ import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class FdActivity extends CameraActivity implements CvCameraViewListener2 {
@@ -232,7 +239,7 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
 
                     if (isLocked) {
                         // 스캔 화면 보여주기
-                        ((LottieAnimationView) findViewById(R.id.scan_animation_view)).setVisibility(View.VISIBLE);
+                        //((LottieAnimationView) findViewById(R.id.scan_animation_view)).setVisibility(View.VISIBLE);
                         ((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.GONE);
                     }
 
@@ -252,9 +259,8 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
                      * (ProgressBar로 대기)
                      * */
                     postBitmap(detectedBitmap);
-                    Intent intent = new Intent(this, MainActivity.class);
-                    startActivity(intent);
-                    Toast.makeText(this, "얼굴인식 1개 이상 인식", Toast.LENGTH_SHORT).show();                });
+//                  Toast.makeText(this, "얼굴인식 1개 이상 인식", Toast.LENGTH_SHORT).show();
+                });
             }
         }
 
@@ -313,18 +319,96 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
     // 서버 전송 로직 구현
     private void postBitmap(Bitmap detectedBitmap) {
         // 이 부분에 Retrofit으로 RestAPI통신 구현 예정
+        //ExtensionsKt.toFile(detectedBitmap, detectedBitmap, "detectedFace");
+        File faceFile = convertBitmapToFile(detectedBitmap);
+        String multiPartQuery = "image";
+        RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), faceFile);
+        MultipartBody.Part fileBody = MultipartBody.Part.createFormData(multiPartQuery, faceFile.getName(), requestFile);
 
-        // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
-        /* if else */
 
-        // 나이 추정 완료시 완료 화면 VISIBLE!
-        // findViewById(R.id.scan_container).setVisibility(View.VISIBLE);
-        // findViewById(R.id.complete_container).setVisibility(View.VISIBLE);
+        new Thread(() -> {
+            Call<FaceDetectResponse> faceRequestCall = RetrofitBuilder.INSTANCE.getFaceDetectApi().validateFaceAge(fileBody);
+            faceRequestCall.enqueue(new Callback<FaceDetectResponse>() {
+                @Override
+                public void onResponse(Call<FaceDetectResponse> call, Response<FaceDetectResponse> response) {
+                    Log.d(TAG, "onResponse: " + response);
+                    if (response.isSuccessful()) {
+                        // 나이 추정 완료시 완료 화면 VISIBLE!
+                        FaceDetectResponse faceDetectResponse = response.body();
+                        int age = faceDetectResponse.getAge();
+                        String gender = faceDetectResponse.getGender();
 
-        // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
-        // isLocked = false;
-        // ProgressBar hide!
-        //findViewById(R.id.scan_animation_view).setVisibility(View.GONE);
-        //((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.VISIBLE);
+                        if (faceDetectResponse.getSuccess()) {
+                            //((LottieAnimationView) findViewById(R.id.scan_container).setVisibility(View.VISIBLE));
+                            findViewById(R.id.complete_container).setVisibility(View.VISIBLE);
+
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+                            // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
+                            Intent intent = new Intent(FdActivity.this, MainActivity.class)
+                                    .putExtra("age", age)
+                                    .putExtra("gender", gender);
+                            startActivity(intent);
+                        }
+                    } else {
+                        // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
+                        isLocked = false;
+                        // ProgressBar hide!
+                        //findViewById(R.id.scan_animation_view).setVisibility(View.GONE);
+                        ((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.VISIBLE);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<FaceDetectResponse> call, Throwable t) {
+                    Log.d(TAG, "onFailure: " + t.getMessage());
+
+                    // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
+                    isLocked = false;
+                    // ProgressBar hide!
+                    //((LottieAnimationView) findViewById(R.id.scan_animation_view).setVisibility(View.GONE));
+                    ((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.VISIBLE);
+                }
+            });
+        });
+
+    }
+
+
+    private File convertBitmapToFile(Bitmap bitmap) {
+        //create a file to write bitmap data
+        File file = new File(getBaseContext().getCacheDir(), "face");
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//Convert bitmap to byte array
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 0 /*ignored for PNG*/, bos);
+        byte[] bitmapdata = bos.toByteArray();
+
+//write the bytes in file
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fos.write(bitmapdata);
+            fos.flush();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return file;
     }
 }

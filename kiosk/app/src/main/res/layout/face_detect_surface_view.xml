@@ -8,8 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/scan_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:visibility="gone">
+        android:layout_height="match_parent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,7 +94,7 @@
                     android:id="@+id/scan_animation_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
                     app:lottie_rawRes="@raw/anim_scan" />
@@ -108,7 +107,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/complete_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/scan_complete_image_view"
