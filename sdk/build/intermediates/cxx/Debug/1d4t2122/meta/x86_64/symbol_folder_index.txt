@@ -1,0 +1,1 @@
+D:\android_project\OpenCV-android-sdk\sdk\build\intermediates\cxx\Debug\1d4t2122\obj\x86_64
