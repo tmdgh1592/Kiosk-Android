@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentMenuRecyclerBinding
 import com.swuniv.agefree.presentation.detection.utils.HorizontalItemDecorator

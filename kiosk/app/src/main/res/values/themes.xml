@@ -18,7 +18,7 @@
 
         <!-- Changing default font -->
         <item name="android:fontFamily">@font/pretendard_bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">#111111</item>
 
     </style>
 

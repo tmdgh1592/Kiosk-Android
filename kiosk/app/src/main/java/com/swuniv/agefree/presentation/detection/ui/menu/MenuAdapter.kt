@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.swuniv.agefree.R
 
 class MenuAdapter(private val context: Context) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
@@ -30,12 +31,11 @@ class MenuAdapter(private val context: Context) : RecyclerView.Adapter<MenuAdapt
         private val name: TextView = itemView.findViewById(R.id.menu_name)
         private val price: TextView = itemView.findViewById(R.id.menu_price)
         private val image: ImageView = itemView.findViewById(R.id.menu_img)
-//        private val imgProfile: ImageView = itemView.findViewById(R.id.img_rv_photo)
 
         fun bind(item: Menu) {
             name.text = item.name
             price.text = item.price.toString() + "원"
-            image.setImageResource(item.image)
+            Glide.with(itemView).load(item.image).into(image)
         }
     }
 
