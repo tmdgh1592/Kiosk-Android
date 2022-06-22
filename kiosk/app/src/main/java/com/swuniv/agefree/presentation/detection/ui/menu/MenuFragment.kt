@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentMenuRecyclerBinding
 import com.swuniv.agefree.presentation.detection.utils.HorizontalItemDecorator
 import com.swuniv.agefree.presentation.detection.utils.VerticalItemDecorator
@@ -38,10 +39,10 @@ class MenuFragment : Fragment() {
             addItemDecoration(HorizontalItemDecorator(8))
             addItemDecoration(VerticalItemDecorator(40))
         }
-        binding.recycler.layoutManager = GridLayoutManager(context,4)
+        binding.recycler.layoutManager = GridLayoutManager(context, 4)
 
         for (i in 0 until 20) {
-            data.add(Menu("아메리카노$i", 5000 + i))
+            data.add(Menu("아메리카노$i", 5000 + i, R.drawable.coffeetest))
         }
         menuAdapter.menuList = data
 
