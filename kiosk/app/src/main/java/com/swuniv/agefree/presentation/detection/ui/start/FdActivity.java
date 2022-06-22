@@ -1,6 +1,7 @@
-package com.swuniv.agefree.presentation.detection;
+package com.swuniv.agefree.presentation.detection.ui.start;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.swuniv.agefree.R;
+import com.swuniv.agefree.presentation.detection.MainActivity;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraActivity;
@@ -248,7 +251,9 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
                      * (ProgressBar로 대기)
                      * */
                     postBitmap(detectedBitmap);
-
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(this, "얼굴인식 1개 이상 인식", Toast.LENGTH_SHORT).show();
                 });
             }
         }
