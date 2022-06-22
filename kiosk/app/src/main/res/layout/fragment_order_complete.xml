@@ -25,7 +25,7 @@
         android:gravity="center"
         android:lineHeight="72dp"
         android:text="주문이 완료되었습니다.\n준비되면 불러드리겠습니다!"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/top_container"
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/order_list_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="74dp"
+        android:text="선택 제품"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_container" />
+
+    <LinearLayout
+        android:id="@+id/order_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="39dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/order_list_text_view">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/order_list_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_default_order"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            android:id="@+id/add_order_btn"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/round_36_border_4_box"
+            android:clickable="true"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/order_list_recycler_view">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_plus"
+                app:tint="#707070" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="제품 추가하기"
+                android:textColor="#707070"
+                android:textSize="44sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginBottom="54dp"
+        android:background="@drawable/rectangle_divider"
+        app:layout_constraintBottom_toTopOf="@+id/total_count_title_text_view" />
+
+    <TextView
+        android:id="@+id/total_count_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="62dp"
+        android:text="총 수량"
+        android:textColor="#707070"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/total_count_text_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/total_count_text_view" />
+
+    <TextView
+        android:id="@+id/total_count_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="79dp"
+        android:textColor="#111111"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/order_button"
+        app:layout_constraintLeft_toRightOf="@+id/total_count_title_text_view"
+        tools:text="2개" />
+
+
+    <TextView
+        android:id="@+id/total_pay_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:text="총 수량"
+        android:textColor="#707070"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/total_count_text_view"
+        app:layout_constraintRight_toLeftOf="@+id/total_pay_text_view"
+        app:layout_constraintTop_toTopOf="@+id/total_count_text_view" />
+
+    <TextView
+        android:id="@+id/total_pay_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="79dp"
+        android:textColor="#111111"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/order_button"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="11,000원" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/order_button"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/color_button_background"
+        android:enabled="false"
+        android:text="담기"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
