@@ -8,9 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.airbnb.lottie.LottieAnimationView;
 import com.swuniv.agefree.R;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -185,49 +185,51 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
     @Override
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
         // 현재 서버로 이미지 전송중이 아닌 경우
+
+        mRgba = inputFrame.rgba();
+        mGray = inputFrame.gray();
+
+        if (mAbsoluteFaceSize == 0) {
+            int height = mGray.rows();
+            if (Math.round(height * mRelativeFaceSize) > 0) {
+                mAbsoluteFaceSize = Math.round(height * mRelativeFaceSize);
+            }
+            mNativeDetector.setMinFaceSize(mAbsoluteFaceSize);
+        }
+
+        MatOfRect faces = new MatOfRect();
+
+        if (mDetectorType == JAVA_DETECTOR) {
+            if (mJavaDetector != null)
+                // scaleFactor -> 이미지 크기를 1/(scaleFactor)^n 씩 축소함. (= scaleFactor 가 커질수록 이미지가 한눈에 들어옴)
+                // minNeighbors -> 여러 스케일 이미지에서 최소 몇번이나 검출되어야 실제로 유효한 결과라고 판단할지 정하는 값
+                mJavaDetector.detectMultiScale(mGray, faces, 1.2, 3, 2, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
+                        new Size(mAbsoluteFaceSize, mAbsoluteFaceSize), new Size());
+        } else if (mDetectorType == NATIVE_DETECTOR) {
+            if (mNativeDetector != null)
+                mNativeDetector.detect(mGray, faces);
+        } else {
+            Log.e(TAG, "Detection method is not selected!");
+        }
+
+        Rect[] facesArray = faces.toArray();
+        for (int i = 0; i < facesArray.length; i++) {
+            Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
+        }
+
+
         if (!isLocked) {
-            mRgba = inputFrame.rgba();
-            mGray = inputFrame.gray();
-
-            if (mAbsoluteFaceSize == 0) {
-                int height = mGray.rows();
-                if (Math.round(height * mRelativeFaceSize) > 0) {
-                    mAbsoluteFaceSize = Math.round(height * mRelativeFaceSize);
-                }
-                mNativeDetector.setMinFaceSize(mAbsoluteFaceSize);
-            }
-
-            MatOfRect faces = new MatOfRect();
-
-            if (mDetectorType == JAVA_DETECTOR) {
-                if (mJavaDetector != null)
-                    // scaleFactor -> 이미지 크기를 1/(scaleFactor)^n 씩 축소함. (= scaleFactor 가 커질수록 이미지가 한눈에 들어옴)
-                    // minNeighbors -> 여러 스케일 이미지에서 최소 몇번이나 검출되어야 실제로 유효한 결과라고 판단할지 정하는 값
-                    mJavaDetector.detectMultiScale(mGray, faces, 1.2, 3, 2, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
-                            new Size(mAbsoluteFaceSize, mAbsoluteFaceSize), new Size());
-            } else if (mDetectorType == NATIVE_DETECTOR) {
-                if (mNativeDetector != null)
-                    mNativeDetector.detect(mGray, faces);
-            } else {
-                Log.e(TAG, "Detection method is not selected!");
-            }
-
-            Rect[] facesArray = faces.toArray();
-            for (int i = 0; i < facesArray.length; i++) {
-                Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
-            }
-
-
             // 감지된 얼굴이 1개 이상이면
             if (facesArray.length > 0) {
                 // 더 이상 얼굴 감지 못하도록 Lock!
                 isLocked = true;
-                
+
                 runOnUiThread(() -> {
-                    // ProgressBar Show!
-                    if(isLocked) {
-                        // 임시 프로그레스바입니다.
-                        findViewById(R.id.progress_bar).setVisibility(View.VISIBLE);
+
+                    if (isLocked) {
+                        // 스캔 화면 보여주기
+                        ((LottieAnimationView) findViewById(R.id.scan_animation_view)).setVisibility(View.VISIBLE);
+                        ((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.GONE);
                     }
 
                     // 감지된 화면을 bitmap으로 변환
@@ -249,13 +251,9 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
 
                 });
             }
-            
-            return mRgba;
-        } else { // 현재 서버로 이미지 전송중인 경우
-            // null 반환
-            return null;
         }
 
+        return mRgba;
     }
 
     @Override
@@ -317,6 +315,7 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
         // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
         // isLocked = false;
         // ProgressBar hide!
-        //findViewById(R.id.progress_bar).setVisibility(View.GONE);
+        //findViewById(R.id.scan_animation_view).setVisibility(View.GONE);
+        //((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.VISIBLE);
     }
 }
