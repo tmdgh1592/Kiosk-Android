@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         var age: Int = intent.getIntExtra("age", 1)
         //TODO age 설정하여 원하는 Fragment 진입
-        age = 55
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -31,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             navController.navigate(R.id.defaultMenuFragment)
         }
-
 
     }
 }
