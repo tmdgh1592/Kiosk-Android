@@ -226,9 +226,11 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
         }
 
         Rect[] facesArray = faces.toArray();
-        for (int i = 0; i < facesArray.length; i++) {
-            Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
-        }
+
+        // Boundary Effect 임시 제거
+//        for (int i = 0; i < facesArray.length; i++) {
+//            Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
+//        }
 
 
         if (!isLocked) {
