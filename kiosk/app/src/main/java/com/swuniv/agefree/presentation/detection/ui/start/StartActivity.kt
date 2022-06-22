@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.swuniv.agefree.databinding.ActivityStartBinding
+import com.swuniv.agefree.presentation.detection.FdActivity
 import com.swuniv.agefree.presentation.detection.utils.showToast
 
 class StartActivity : AppCompatActivity() {

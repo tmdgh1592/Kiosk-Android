@@ -1,4 +1,4 @@
-package com.swuniv.agefree.presentation.detection.ui.start;
+package com.swuniv.agefree.presentation.detection;
 
 import android.content.Context;
 import android.content.Intent;
