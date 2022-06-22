@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/defaultMenuFragment"
-        android:name="com.swuniv.agefree.presentation.detection.ui.menu.DefaultSelectMenuFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultSelectMenuFragment"
         android:label="fragment_default_menu"
         tools:layout="@layout/fragment_default_menu" />
 </navigation>

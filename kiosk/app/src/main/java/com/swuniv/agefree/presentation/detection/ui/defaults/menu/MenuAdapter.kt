@@ -1,4 +1,4 @@
-package com.swuniv.agefree.presentation.detection.ui.menu
+package com.swuniv.agefree.presentation.detection.ui.defaults.menu
 
 import android.content.Context
 import android.util.Log
