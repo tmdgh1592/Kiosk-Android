@@ -3,8 +3,7 @@ package com.swuniv.agefree.presentation.detection;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
 
-public class DetectionBasedTracker
-{
+public class DetectionBasedTracker {
     public DetectionBasedTracker(String cascadeName, int minFaceSize) {
         mNativeObj = nativeCreateObject(cascadeName, minFaceSize);
     }
@@ -33,9 +32,14 @@ public class DetectionBasedTracker
     private long mNativeObj = 0;
 
     private static native long nativeCreateObject(String cascadeName, int minFaceSize);
+
     private static native void nativeDestroyObject(long thiz);
+
     private static native void nativeStart(long thiz);
+
     private static native void nativeStop(long thiz);
+
     private static native void nativeSetFaceSize(long thiz, int size);
+
     private static native void nativeDetect(long thiz, long inputImage, long faces);
 }

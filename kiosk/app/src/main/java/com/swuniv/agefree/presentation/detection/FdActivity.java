@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.swuniv.agefree.R;
-import com.swuniv.agefree.presentation.detection.DetectionBasedTracker;
 import com.swuniv.agefree.presentation.detection.MainActivity;
 
 import org.opencv.android.BaseLoaderCallback;
