@@ -51,7 +51,7 @@
     <ImageView
         android:id="@+id/credit_card_image_view"
         android:layout_width="448dp"
-        android:layout_height="473dp"
+        android:layout_height="493dp"
         android:layout_marginTop="87dp"
         android:src="@drawable/img_card_out"
         app:layout_constraintBottom_toBottomOf="parent"
