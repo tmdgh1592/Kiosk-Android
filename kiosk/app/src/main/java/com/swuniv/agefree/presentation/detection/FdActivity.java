@@ -312,6 +312,10 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
         // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
         /* if else */
 
+        // 나이 추정 완료시 완료 화면 VISIBLE!
+        // findViewById(R.id.scan_container).setVisibility(View.VISIBLE);
+        // findViewById(R.id.complete_container).setVisibility(View.VISIBLE);
+
         // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
         // isLocked = false;
         // ProgressBar hide!
