@@ -254,8 +254,7 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
                     postBitmap(detectedBitmap);
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
-                    Toast.makeText(this, "얼굴인식 1개 이상 인식", Toast.LENGTH_SHORT).show();
-                });
+                    Toast.makeText(this, "얼굴인식 1개 이상 인식", Toast.LENGTH_SHORT).show();                });
             }
         }
 
