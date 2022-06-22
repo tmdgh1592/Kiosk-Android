@@ -236,7 +236,7 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
 
                     // 테스트로 ImageView에 감지된 사진을 띄우도록 해놨습니다.
                     // 추후 테스트 완료시 JavaCameraView 크기를 match_parent로 해주세요.
-                    Glide.with(this).load(detectedBitmap).into((ImageView) findViewById(R.id.my_iv));
+                    // Glide.with(this).load(detectedBitmap).into((ImageView) findViewById(R.id.my_iv));
                     //Toast.makeText(this, detectedBitmap.toString(), Toast.LENGTH_SHORT).show();
 
 

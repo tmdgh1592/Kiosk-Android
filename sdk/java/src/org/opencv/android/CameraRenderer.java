@@ -41,6 +41,7 @@ public class CameraRenderer extends CameraGLRendererBase {
             Log.d(LOGTAG, "Trying to open camera with old open()");
             try {
                 mCamera = Camera.open();
+                mCamera.setDisplayOrientation(90);
             }
             catch (Exception e){
                 Log.e(LOGTAG, "Camera is not available (in use or does not exist): " + e.getLocalizedMessage());
