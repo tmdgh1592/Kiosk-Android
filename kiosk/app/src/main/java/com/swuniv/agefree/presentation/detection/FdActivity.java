@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -339,19 +340,19 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
 
                     if (faceDetectResponse.getSuccess()) {
                         //((LottieAnimationView) findViewById(R.id.scan_container).setVisibility(View.VISIBLE));
+                        findViewById(R.id.scan_container).setVisibility(View.GONE);
                         findViewById(R.id.complete_container).setVisibility(View.VISIBLE);
 
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-
-                        // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
-                        Intent intent = new Intent(FdActivity.this, MainActivity.class)
-                                .putExtra("age", age)
-                                .putExtra("gender", gender);
-                        startActivity(intent);
+                        new Handler().postDelayed(() ->{
+                            // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
+                            Intent intent = new Intent(FdActivity.this, MainActivity.class)
+                                    .putExtra("age", age)
+                                    .putExtra("gender", gender);
+                            startActivity(intent);
+                        }, 1500);
+//                        runOnUiThread(() -> {
+//
+//                        });
                     }
                 } else {
                     // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
