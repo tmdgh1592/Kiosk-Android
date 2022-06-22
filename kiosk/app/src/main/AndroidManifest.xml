@@ -34,22 +34,23 @@
         tools:targetApi="32"
         android:usesCleartextTraffic="true">
 
+        <!--            android:name=".presentation.detection.ui.start.StartActivity"-->
         <activity
-            android:name=".presentation.detection.ui.start.StartActivity"
+            android:name="com.swuniv.agefree.presentation.detection.MainActivity"
             android:configChanges="keyboardHidden|orientation"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="fullSensor">
-        </activity>
-        <activity android:name="com.swuniv.agefree.presentation.detection.FdActivity"
-            android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.swuniv.agefree.presentation.detection.MainActivity" />
+        <activity android:name="com.swuniv.agefree.presentation.detection.FdActivity"
+            android:exported="true">
+
+        </activity>
+<!--        <activity android:name="com.swuniv.agefree.presentation.detection.MainActivity" />-->
     </application>
 
     <supports-screens
