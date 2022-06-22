@@ -12,7 +12,7 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="169dp"
         android:text="세부 메뉴를 선택해주세요!"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/price_text_view"
@@ -50,7 +50,7 @@
         android:id="@+id/price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/menu_image_view"
@@ -117,7 +117,7 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="60dp"
         android:text="양은 어느 정도로 할까요?"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="48sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cold_hot_text_view" />
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="34dp"
                 android:text="기본"
-                android:textColor="@color/black"
+                android:textColor="#111111"
                 android:textSize="60sp" />
 
         </LinearLayout>
@@ -201,7 +201,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="34dp"
                 android:text="많이"
-                android:textColor="@color/black"
+                android:textColor="#111111"
                 android:textSize="60sp" />
 
             <TextView
@@ -251,7 +251,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="34dp"
                 android:text="아주 많이"
-                android:textColor="@color/black"
+                android:textColor="#111111"
                 android:textSize="60sp" />
 
             <TextView
@@ -279,7 +279,7 @@
         android:paddingVertical="60dp"
         android:stateListAnimator="@null"
         android:text="뒤로가기"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="60sp"
         app:backgroundTint="@color/white"
         app:cornerRadius="28dp"

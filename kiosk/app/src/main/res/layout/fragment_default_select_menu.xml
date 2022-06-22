@@ -89,7 +89,7 @@
             android:id="@+id/price_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="#111111"
             android:textSize="44sp"
             app:layout_constraintBottom_toBottomOf="@+id/menu_image_view"
             app:layout_constraintLeft_toLeftOf="@+id/menu_text_view"

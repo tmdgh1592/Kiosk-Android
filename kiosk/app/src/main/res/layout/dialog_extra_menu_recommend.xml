@@ -16,7 +16,7 @@
         android:letterSpacing="0.072"
         android:lineHeight="72dp"
         android:text="함께 하면 더 맛있는\n케이크 추천!"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="48sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -177,7 +177,7 @@
         android:gravity="center"
         android:letterSpacing="0.072"
         android:text="아니요"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"

@@ -12,7 +12,7 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="169dp"
         android:text="세부 메뉴를 선택해주세요!"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/price_text_view"
@@ -50,7 +50,7 @@
         android:id="@+id/price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/menu_image_view"
@@ -74,7 +74,7 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="60dp"
         android:text="차갑게 할까요 뜨겁게 할까요?"
-        android:textColor="@color/black"
+        android:textColor="#111111"
         android:textSize="48sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
                 android:text="차갑게"
-                android:textColor="@color/black"
+                android:textColor="#111111"
                 android:textSize="60sp" />
 
         </LinearLayout>
@@ -158,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
                 android:text="뜨겁게"
-                android:textColor="@color/black"
+                android:textColor="#111111"
                 android:textSize="60sp" />
 
         </LinearLayout>
