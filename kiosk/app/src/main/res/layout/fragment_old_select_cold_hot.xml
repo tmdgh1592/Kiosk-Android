@@ -18,6 +18,33 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/cafe_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="45dp"
+        android:text="Cafe"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="62dp"
+        android:background="@drawable/round_28_border_4_box"
+        android:clickable="true"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp"
+        android:text="처음으로"
+        android:textColor="#A0A0A0"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cafe_name_text_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cafe_name_text_view" />
+
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/menu_image_view"
         android:layout_width="280dp"
@@ -84,7 +111,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cold_container"
         android:layout_width="0dp"
-        android:layout_height="332dp"
+        android:layout_height="560dp"
         android:layout_marginStart="62dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="8dp"
@@ -114,7 +141,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="49dp"
                 android:text="차갑게"
                 android:textColor="#111111"
                 android:textSize="60sp" />
@@ -127,7 +154,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/hot_container"
         android:layout_width="0dp"
-        android:layout_height="332dp"
+        android:layout_height="560dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="62dp"
         app:cardBackgroundColor="#EDEDED"
@@ -156,13 +183,34 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="49dp"
                 android:text="뜨겁게"
                 android:textColor="#111111"
                 android:textSize="60sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginBottom="100dp"
+        android:elevation="0dp"
+        android:gravity="center"
+        android:paddingHorizontal="62dp"
+        android:paddingVertical="60dp"
+        android:stateListAnimator="@null"
+        android:text="뒤로가기"
+        android:textColor="#111111"
+        android:textSize="60sp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="28dp"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:strokeWidth="4dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

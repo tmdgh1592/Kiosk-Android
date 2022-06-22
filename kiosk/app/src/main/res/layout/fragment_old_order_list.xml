@@ -10,20 +10,51 @@
         android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="169dp"
+        android:layout_marginTop="33dp"
         android:lineHeight="90dp"
         android:text="선택하신 상품의 수량을\n정해주세요!"
         android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_button"
         tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_28_border_4_box"
+        android:clickable="true"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp"
+        android:text="뒤로가기"
+        android:textColor="#A0A0A0"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_28_border_4_box"
+        android:clickable="true"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp"
+        android:text="처음으로"
+        android:textColor="#A0A0A0"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/back_button" />
 
     <LinearLayout
         android:id="@+id/menu_detail_container"
         android:layout_width="match_parent"
         android:layout_height="852dp"
         android:layout_marginHorizontal="108dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="119dp"
         android:background="@drawable/round_30_border_8_box"
         android:gravity="center"
         android:orientation="vertical"
@@ -65,120 +96,126 @@
             app:layout_constraintBottom_toBottomOf="@+id/menu_image_view"
             app:layout_constraintLeft_toLeftOf="@+id/menu_text_view"
             app:layout_constraintTop_toBottomOf="@+id/menu_text_view"
-            tools:text="5,000원" />
+            tools:text="5,500원" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="59dp"
+            android:background="@drawable/round_24_border_4_box"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingHorizontal="42dp"
+            android:paddingVertical="31dp">
 
             <TextView
                 android:id="@+id/cold_hot_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_24_border_4_box"
-                android:paddingHorizontal="26.5dp"
-                android:paddingVertical="23.5dp"
-                android:textColor="#767676"
+                android:textColor="#4E4E4E"
                 android:textSize="44sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/my_detail_select_text_view"
                 tools:text="차갑게" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="21dp"
+                android:background="@drawable/rectangle_divider" />
 
             <TextView
                 android:id="@+id/soft_deep_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/round_24_border_4_box"
-                android:paddingHorizontal="26.5dp"
-                android:paddingVertical="23.5dp"
-                android:textColor="#767676"
+                android:textColor="#4E4E4E"
                 android:textSize="44sp"
                 app:layout_constraintLeft_toRightOf="@+id/cold_hot_text_view"
                 app:layout_constraintTop_toBottomOf="@+id/my_detail_select_text_view"
                 tools:text="연하게" />
 
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="21dp"
+                android:background="@drawable/rectangle_divider" />
+
             <TextView
                 android:id="@+id/amount_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/round_24_border_4_box"
                 android:gravity="center"
                 android:minWidth="132dp"
-                android:paddingHorizontal="26.5dp"
-                android:paddingVertical="23.5dp"
-                android:textColor="#767676"
+                android:textColor="#4E4E4E"
                 android:textSize="44sp"
                 app:layout_constraintLeft_toRightOf="@+id/cold_hot_text_view"
                 app:layout_constraintTop_toBottomOf="@+id/my_detail_select_text_view"
-                tools:text="기본" />
+                tools:text="많이" />
 
         </LinearLayout>
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <LinearLayout
         android:id="@+id/minus_button"
-        style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="116dp"
         android:layout_height="116dp"
-        android:layout_marginTop="100dp"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        app:icon="@drawable/ic_minus"
-        app:iconPadding="0dp"
-        app:iconSize="24dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/ic_circle"
+        android:backgroundTint="#EDEDED"
+        android:clickable="true"
+        android:gravity="center"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/count_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/menu_detail_container"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Rounded" />
+        app:layout_constraintRight_toLeftOf="@+id/count_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/menu_detail_container">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_minus" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/count_text_view"
-        android:layout_width="140dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="94dp"
         android:gravity="center"
         android:text="1"
-        android:textSize="100sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="@id/minus_button"
-        app:layout_constraintLeft_toRightOf="@id/minus_button"
+        app:layout_constraintLeft_toRightOf="@+id/minus_button"
         app:layout_constraintRight_toLeftOf="@+id/plus_button"
         app:layout_constraintTop_toTopOf="@id/minus_button" />
 
-    <com.google.android.material.button.MaterialButton
+    <LinearLayout
         android:id="@+id/plus_button"
-        style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="116dp"
         android:layout_height="116dp"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        app:icon="@drawable/ic_minus"
-        app:iconPadding="0dp"
-        app:iconSize="24dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/ic_circle"
+        android:backgroundTint="#4E4E4E"
+        android:clickable="true"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@id/minus_button"
-        app:layout_constraintLeft_toRightOf="@+id/count_text_view"
+        app:layout_constraintLeft_toRightOf="@id/count_text_view"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/minus_button"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.Button.Rounded" />
+        app:layout_constraintTop_toTopOf="@id/minus_button">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_plus" />
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="144dp"
         android:layout_marginBottom="100dp"
         android:text="확인"
         android:textSize="60sp"
         app:cornerRadius="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/count_text_view" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

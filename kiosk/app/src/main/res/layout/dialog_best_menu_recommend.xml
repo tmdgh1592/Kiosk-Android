@@ -104,7 +104,7 @@
         android:fontFamily="@font/pretendard_bold"
         android:gravity="center"
         android:letterSpacing="0.072"
-        android:text="주문하기"
+        android:text="네"
         android:textColor="@color/white"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
