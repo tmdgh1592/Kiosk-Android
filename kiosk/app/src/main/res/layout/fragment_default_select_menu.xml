@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#A0A0A0"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="62dp"
+            android:paddingVertical="55dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back_button"
+                android:layout_width="163dp"
+                android:layout_height="80dp"
+                android:text="이전으로"
+                android:textColor="#767676"
+                android:textSize="28dp"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/home_button"
+                android:layout_width="74dp"
+                android:layout_height="67dp"
+                android:layout_gravity="center|right"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/ic_home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/menu_image_view"
+            android:layout_width="148dp"
+            android:layout_height="224dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="28dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_container"
+            app:riv_corner_radius="30dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="false"
+            tools:src="@drawable/img_sample" />
+
+        <TextView
+            android:id="@+id/menu_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:textColor="#4E4E4E"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/price_text_view"
+            app:layout_constraintLeft_toRightOf="@+id/menu_image_view"
+            app:layout_constraintTop_toTopOf="@+id/menu_image_view"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="바닐라 라떼" />
+
+        <TextView
+            android:id="@+id/price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="44sp"
+            app:layout_constraintBottom_toBottomOf="@+id/menu_image_view"
+            app:layout_constraintLeft_toLeftOf="@+id/menu_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/menu_text_view"
+            tools:text="5,000원" />
+
+        <LinearLayout
+            android:id="@+id/minus_button"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="@drawable/ic_circle"
+            android:backgroundTint="#EDEDED"
+            android:clickable="true"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/menu_image_view"
+            app:layout_constraintRight_toLeftOf="@+id/count_text_view"
+            app:layout_constraintTop_toTopOf="@+id/menu_image_view">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_minus" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/count_text_view"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="@id/minus_button"
+            app:layout_constraintRight_toLeftOf="@+id/plus_button"
+            app:layout_constraintTop_toTopOf="@id/minus_button" />
+
+        <LinearLayout
+            android:id="@+id/plus_button"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginRight="62dp"
+            android:background="@drawable/ic_circle"
+            android:backgroundTint="#4E4E4E"
+            android:clickable="true"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/minus_button"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/minus_button">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_plus" />
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginHorizontal="62dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/rectangle_divider"
+            app:layout_constraintTop_toBottomOf="@+id/menu_image_view" />
+
+
+        <!-- Ice/Hot -->
+        <TextView
+            android:id="@+id/ice_hot_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="56dp"
+            android:text="Ice/Hot"
+            android:textColor="#4E4E4E"
+            android:textSize="36sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ice_button"
+            android:layout_width="263dp"
+            android:layout_height="326dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#EDEDED"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ice_hot_title_text_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ice_image_view"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    tools:src="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Ice"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="(+0)"
+                    android:textColor="#4E4E4E"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hot_button"
+            android:layout_width="263dp"
+            android:layout_height="326dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#EDEDED"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/ice_button"
+            app:layout_constraintTop_toBottomOf="@+id/ice_hot_title_text_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/hot_image_view"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    tools:src="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Hot"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="(+0)"
+                    android:textColor="#4E4E4E"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Shot -->
+        <TextView
+            android:id="@+id/shot_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="96dp"
+            android:text="Shot"
+            android:textColor="#4E4E4E"
+            android:textSize="36sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ice_button" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/soft_button"
+            android:layout_width="263dp"
+            android:layout_height="326dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#EDEDED"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shot_title_text_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/soft_image_view"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    tools:src="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="연하게"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="(+0)"
+                    android:textColor="#4E4E4E"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/normal_button"
+            android:layout_width="263dp"
+            android:layout_height="326dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#EDEDED"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/soft_button"
+            app:layout_constraintTop_toBottomOf="@+id/shot_title_text_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/normal_image_view"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    tools:src="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="기본"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="(+0)"
+                    android:textColor="#4E4E4E"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/deep_button"
+            android:layout_width="263dp"
+            android:layout_height="326dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#EDEDED"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/normal_button"
+            app:layout_constraintTop_toBottomOf="@+id/shot_title_text_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/deep_image_view"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    tools:src="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="샷추가"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="(+500)"
+                    android:textColor="#4E4E4E"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Size -->
+        <TextView
+            android:id="@+id/size_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="96dp"
+            android:text="Shot"
+            android:textColor="#4E4E4E"
+            android:textSize="36sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/soft_button" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/regular_button"
+            android:layout_width="263dp"
+            android:layout_height="326dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#EDEDED"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/size_title_text_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/regular_image_view"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    tools:src="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Regular"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="(+0)"
+                    android:textColor="#4E4E4E"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/medium_button"
+            android:layout_width="263dp"
+            android:layout_height="326dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#EDEDED"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/regular_button"
+            app:layout_constraintTop_toBottomOf="@+id/size_title_text_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/medium_image_view"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    tools:src="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Medium"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="(+500)"
+                    android:textColor="#4E4E4E"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/large_button"
+            android:layout_width="263dp"
+            android:layout_height="326dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#EDEDED"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/medium_button"
+            app:layout_constraintTop_toBottomOf="@+id/size_title_text_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/large_image_view"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    tools:src="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Large"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="(+700)"
+                    android:textColor="#4E4E4E"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirm_button"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="62dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="@color/color_button_background"
+            android:enabled="false"
+            android:text="담기"
+            android:textColor="@color/white"
+            android:textSize="60sp"
+            app:cornerRadius="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/large_button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
