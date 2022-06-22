@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/android_project/OpenCV-android-sdk/kiosk/app/src/main/res/layout/face_detect_surface_view.xml" value="0.16" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/drawable/round_36_box.xml" value="0.184" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/activity_start.xml" value="0.12170138888888889" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/face_detect_surface_view.xml" value="0.1" />
       </map>
     </option>
   </component>

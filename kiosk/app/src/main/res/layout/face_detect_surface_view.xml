@@ -1,21 +1,99 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingHorizontal="62dp">
 
-    <org.opencv.android.JavaCameraView
-        android:id="@+id/fd_activity_surface_view"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintLeft_toRightOf="@id/my_iv"
-        app:layout_constraintRight_toRightOf="parent" />
 
-    <ImageView
-        android:id="@+id/my_iv"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        app:layout_constraintLeft_toLeftOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="169dp"
+        android:lineHeight="90dp"
+        android:text="최적의 맞춤 서비스를 위해\n고객님의 얼굴 인식을 진행합니다"
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/face_detection_card_view"
+        android:layout_width="956dp"
+        android:layout_height="956dp"
+        app:cardCornerRadius="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <org.opencv.android.JavaCameraView
+                android:id="@+id/fd_activity_surface_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="68dp"
+                android:contentDescription="Left Top Angle"
+                android:src="@drawable/img_face_detection_left_top"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="68dp"
+                android:contentDescription="Right Top Angle"
+                android:src="@drawable/img_face_detection_right_top"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="68dp"
+                android:contentDescription="Left Bottom Angle"
+                android:src="@drawable/img_face_detection_left_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="68dp"
+                android:contentDescription="Right Bottom Angle"
+                android:src="@drawable/img_face_detection_right_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineHeight="66dp"
+                android:text="화면에 가까이 와주세요"
+                android:textColor="@color/black"
+                android:textSize="44sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/my_iv"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:scaleType="centerCrop"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent" />-->
 
     <ProgressBar
         android:id="@+id/progress_bar"
