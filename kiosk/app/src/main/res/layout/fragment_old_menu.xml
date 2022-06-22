@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="169dp"
+        android:letterSpacing="0.09"
+        android:text="메뉴를 선택해주세요!"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/coffee"
+        android:layout_width="308dp"
+        android:layout_height="166dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="99dp"
+        android:background="@drawable/round_border_4dp_btn"
+        android:gravity="center"
+        android:text="커피"
+        android:textSize="44sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/aid"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <TextView
+        android:id="@+id/aid"
+        android:layout_width="308dp"
+        android:layout_height="166dp"
+        android:background="@drawable/round_border_4dp_btn"
+        android:gravity="center"
+        android:text="탄산음료"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toRightOf="@id/coffee"
+        app:layout_constraintRight_toLeftOf="@id/tea"
+        app:layout_constraintTop_toTopOf="@id/coffee" />
+
+    <TextView
+        android:id="@+id/tea"
+        android:layout_width="308dp"
+        android:layout_height="166dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/round_border_4dp_btn"
+        android:gravity="center"
+        android:text="차"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toRightOf="@id/aid"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/coffee" />
+
+    <TextView
+        android:id="@+id/juice"
+        android:layout_width="308dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_border_4dp_btn"
+        android:gravity="center"
+        android:text="주스"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toLeftOf="@id/coffee"
+        app:layout_constraintRight_toRightOf="@id/coffee"
+        app:layout_constraintTop_toBottomOf="@id/coffee" />
+
+    <TextView
+        android:id="@+id/cake"
+        android:layout_width="308dp"
+        android:layout_height="166dp"
+        android:background="@drawable/round_border_4dp_btn"
+        android:gravity="center"
+        android:text="케이크"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toLeftOf="@id/aid"
+        app:layout_constraintRight_toRightOf="@id/aid"
+        app:layout_constraintTop_toTopOf="@id/juice" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_marginTop="44dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingVertical="60dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/juice"
+        app:spanCount="2"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
