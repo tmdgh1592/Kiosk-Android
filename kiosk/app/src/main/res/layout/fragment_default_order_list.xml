@@ -137,7 +137,7 @@
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/color_button_background"
         android:enabled="false"
-        android:text="담기"
+        android:text="주문하기"
         android:textColor="@color/white"
         android:textSize="60sp"
         app:cornerRadius="28dp"
