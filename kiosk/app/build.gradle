@@ -30,6 +30,9 @@ android {
             path 'jni/CMakeLists.txt'
         }
     }
+    viewBinding {
+        enabled = true
+    }
 
     buildTypes {
         release {
