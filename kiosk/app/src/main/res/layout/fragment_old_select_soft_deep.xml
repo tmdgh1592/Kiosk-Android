@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="62dp"
         android:layout_marginTop="19dp"
-        android:background="@drawable/round_24_border_box"
+        android:background="@drawable/round_24_border_4_box"
         android:paddingHorizontal="26.5dp"
         android:paddingVertical="23.5dp"
         android:textColor="#767676"
@@ -242,19 +242,25 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/back_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/round_24_border_box"
-        android:clickable="true"
-        android:gravity="center"
         android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginBottom="100dp"
+        android:elevation="0dp"
+        android:gravity="center"
         android:paddingHorizontal="62dp"
         android:paddingVertical="60dp"
+        android:stateListAnimator="@null"
         android:text="뒤로가기"
+        android:textColor="@color/black"
         android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:backgroundTint="@color/white"
+        app:cornerRadius="28dp"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:strokeWidth="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

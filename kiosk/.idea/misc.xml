@@ -4,12 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/android_project/OpenCV-android-sdk/kiosk/app/src/main/res/layout/face_detect_surface_view.xml" value="0.16" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/drawable/plus_minus_circle.xml" value="0.1795" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/drawable/rectangle_divider.xml" value="0.184" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/drawable/round_24_border_box.xml" value="0.1795" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/drawable/round_30_border_box.xml" value="0.1795" />
         <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/drawable/round_36_box.xml" value="0.184" />
         <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/activity_start.xml" value="0.12170138888888889" />
         <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/dialog_best_menu_recommend.xml" value="0.12170138888888889" />
         <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/face_detect_surface_view.xml" value="0.1" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_select_amount.xml" value="0.1" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_select_cold_hot.xml" value="0.1" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_select_count.xml" value="0.1" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_select_soft_deep.xml" value="0.1" />
         <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_select_menu_detail.xml" value="0.12135416666666667" />
-        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_select_menu_detail_before.xml" value="0.13" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_select_menu_detail_before.xml" value="0.11" />
       </map>
     </option>
   </component>
