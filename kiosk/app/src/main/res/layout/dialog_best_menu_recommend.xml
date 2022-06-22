@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginHorizontal="62dp"
-    android:layout_marginVertical="482dp"
+    android:layout_height="wrap_content"
     android:background="@drawable/dialog_best_menu_recommend">
 
     <TextView
@@ -22,10 +19,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="350dp"
         android:layout_marginHorizontal="60dp"
         android:layout_marginTop="93dp"
         android:layout_marginBottom="114dp"
@@ -33,46 +30,50 @@
         app:layout_constraintBottom_toTopOf="@id/cancel_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintTop_toBottomOf="@id/title">
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/menu_img"
-        android:layout_width="208dp"
-        android:layout_height="0dp"
-        android:layout_marginVertical="50dp"
-        android:layout_marginLeft="55dp"
-        android:src="@color/white"
-        android:scaleType="centerCrop"
-        app:riv_corner_radius="30dp"
-        app:layout_constraintBottom_toBottomOf="@id/menu_container"
-        app:layout_constraintLeft_toLeftOf="@+id/menu_container"
-        app:layout_constraintTop_toTopOf="@+id/menu_container" />
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/menu_img"
+            android:layout_width="208dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="50dp"
+            android:layout_marginLeft="55dp"
+            android:scaleType="centerCrop"
+            android:src="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/menu_container"
+            app:layout_constraintLeft_toLeftOf="@+id/menu_container"
+            app:layout_constraintTop_toTopOf="@+id/menu_container"
+            app:riv_corner_radius="30dp" />
 
-    <TextView
-        android:id="@+id/menu_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="101.5dp"
-        android:fontFamily="@font/pretendard_bold"
-        android:letterSpacing="0.06"
-        android:text="아메리카노"
-        android:textColor="#111111"
-        android:textSize="40sp"
-        app:layout_constraintLeft_toRightOf="@id/menu_img"
-        app:layout_constraintTop_toTopOf="@id/menu_container" />
+        <TextView
+            android:id="@+id/menu_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:letterSpacing="0.06"
+            android:text="아메리카노"
+            android:textColor="#4E4E4E"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/menu_price"
+            app:layout_constraintLeft_toRightOf="@id/menu_img"
+            app:layout_constraintTop_toTopOf="@id/menu_img"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <TextView
-        android:id="@+id/menu_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/pretendard_bold"
-        android:letterSpacing="0.009"
-        android:textColor="#111111"
-        android:textSize="60sp"
-        app:layout_constraintLeft_toLeftOf="@id/menu_name"
-        app:layout_constraintTop_toBottomOf="@id/menu_name"
-        tools:text="5,000원" />
+        <TextView
+            android:id="@+id/menu_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:letterSpacing="0.009"
+            android:text="5,000원"
+            android:textColor="#111111"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="@+id/menu_img"
+            app:layout_constraintLeft_toLeftOf="@id/menu_name"
+            app:layout_constraintTop_toBottomOf="@id/menu_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/cancel_btn"

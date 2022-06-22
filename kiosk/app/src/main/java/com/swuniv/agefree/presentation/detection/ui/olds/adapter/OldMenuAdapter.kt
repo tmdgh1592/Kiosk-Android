@@ -1,4 +1,4 @@
-package com.swuniv.agefree.presentation.detection.ui.defaults.menu
+package com.swuniv.agefree.presentation.detection.ui.olds.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,14 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.swuniv.agefree.R
+import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import java.text.DecimalFormat
 
-class MenuAdapter(private val context: Context) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
+class OldMenuAdapter(private val context: Context) : RecyclerView.Adapter<OldMenuAdapter.ViewHolder>() {
 
     var menuList = mutableListOf<Menu>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_default_menu, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_old_menu, parent, false)
         return ViewHolder(view)
     }
 
