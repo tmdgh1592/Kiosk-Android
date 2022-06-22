@@ -40,7 +40,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.swuniv.agefree.presentation.detection.ui.start.FdActivity" />
+        <activity android:name="com.swuniv.agefree.presentation.detection.FdActivity" />
 
     </application>
 

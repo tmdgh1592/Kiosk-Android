@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="169dp"
+        android:text="메뉴를 선택해주세요!"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.swuniv.agefree.presentation.detection.ui.views.GridRadioGroup
+        android:id="@+id/category_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="99dp"
+        app:columnCount="3"
+        app:layout_constraintTop_toBottomOf="@+id/title_text_view">
+
+        <RadioButton
+            android:id="@+id/radio_coffee_btn"
+            style="@style/GridRadioButton"
+            android:layout_height="166dp"
+            android:checked="true"
+            android:gravity="center"
+            android:text="커피"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_soda_btn"
+            style="@style/GridRadioButton"
+            android:layout_height="166dp"
+            android:gravity="center"
+            android:text="탄산음료"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_tea_btn"
+            style="@style/GridRadioButton"
+            android:layout_height="166dp"
+            android:gravity="center"
+            android:text="차"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_juice_btn"
+            style="@style/GridRadioButton"
+            android:layout_height="166dp"
+            android:gravity="center"
+            android:text="주스"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_cake_btn"
+            style="@style/GridRadioButton"
+            android:layout_height="166dp"
+            android:gravity="center"
+            android:text="케이크"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+    </com.swuniv.agefree.presentation.detection.ui.views.GridRadioGroup>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rectangle_divider"
+        app:layout_constraintTop_toBottomOf="@+id/category_radio_group" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menu_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="62dp"
+        android:layout_marginTop="60dp"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:spanCount="2"
+        tools:listitem="@layout/item_old_menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

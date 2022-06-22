@@ -81,4 +81,7 @@ dependencies {
 
     // Rounded ImageView
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // GirdLayout
+    implementation "androidx.gridlayout:gridlayout:1.0.0-beta01"
 }

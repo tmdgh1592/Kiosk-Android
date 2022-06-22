@@ -12,11 +12,12 @@
         android:layout_height="249dp"
         android:layout_marginHorizontal="131dp"
         android:layout_marginTop="60dp"
+        android:scaleType="centerCrop"
         android:src="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:riv_corner_radius="36dp" />
+        app:riv_corner_radius="30dip" />
 
     <TextView
         android:id="@+id/menu_name"
@@ -36,6 +37,7 @@
         android:id="@+id/menu_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:layout_marginBottom="59dp"
         android:fontFamily="@font/pretendard_bold"
         android:letterSpacing="0.009"

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_focused="false" android:state_pressed="false">
+    <item android:state_checked="false" android:state_focused="false" android:state_pressed="false">
         <shape>
             <solid android:color="#FFFFFF" />
             <stroke android:width="4dp" android:color="#4E4E4E" />
+            <corners android:radius="36dp" />
+        </shape>
+    </item>
+
+    <item android:state_checked="true" android:state_focused="true" android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/material_dynamic_primary80" />
             <corners android:radius="36dp" />
         </shape>
     </item>
