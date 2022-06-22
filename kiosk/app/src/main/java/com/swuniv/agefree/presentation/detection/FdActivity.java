@@ -326,55 +326,54 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
         MultipartBody.Part fileBody = MultipartBody.Part.createFormData(multiPartQuery, faceFile.getName(), requestFile);
 
 
-        new Thread(() -> {
-            Call<FaceDetectResponse> faceRequestCall = RetrofitBuilder.INSTANCE.getFaceDetectApi().validateFaceAge(fileBody);
-            faceRequestCall.enqueue(new Callback<FaceDetectResponse>() {
-                @Override
-                public void onResponse(Call<FaceDetectResponse> call, Response<FaceDetectResponse> response) {
-                    Log.d(TAG, "onResponse: " + response);
-                    if (response.isSuccessful()) {
-                        // 나이 추정 완료시 완료 화면 VISIBLE!
-                        FaceDetectResponse faceDetectResponse = response.body();
-                        int age = faceDetectResponse.getAge();
-                        String gender = faceDetectResponse.getGender();
+        Call<FaceDetectResponse> faceRequestCall = RetrofitBuilder.INSTANCE.getFaceDetectApi().validateFaceAge(fileBody);
+        faceRequestCall.enqueue(new Callback<FaceDetectResponse>() {
+            @Override
+            public void onResponse(Call<FaceDetectResponse> call, Response<FaceDetectResponse> response) {
+                Log.d(TAG, "onResponse: " + response);
+                if (response.isSuccessful()) {
+                    // 나이 추정 완료시 완료 화면 VISIBLE!
+                    FaceDetectResponse faceDetectResponse = response.body();
+                    int age = faceDetectResponse.getAge();
+                    String gender = faceDetectResponse.getGender();
 
-                        if (faceDetectResponse.getSuccess()) {
-                            //((LottieAnimationView) findViewById(R.id.scan_container).setVisibility(View.VISIBLE));
-                            findViewById(R.id.complete_container).setVisibility(View.VISIBLE);
+                    if (faceDetectResponse.getSuccess()) {
+                        //((LottieAnimationView) findViewById(R.id.scan_container).setVisibility(View.VISIBLE));
+                        findViewById(R.id.complete_container).setVisibility(View.VISIBLE);
 
-                            try {
-                                Thread.sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                            // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
-                            Intent intent = new Intent(FdActivity.this, MainActivity.class)
-                                    .putExtra("age", age)
-                                    .putExtra("gender", gender);
-                            startActivity(intent);
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
-                    } else {
-                        // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
-                        isLocked = false;
-                        // ProgressBar hide!
-                        //findViewById(R.id.scan_animation_view).setVisibility(View.GONE);
-                        ((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.VISIBLE);
+
+                        // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
+                        Intent intent = new Intent(FdActivity.this, MainActivity.class)
+                                .putExtra("age", age)
+                                .putExtra("gender", gender);
+                        startActivity(intent);
                     }
-                }
-
-                @Override
-                public void onFailure(Call<FaceDetectResponse> call, Throwable t) {
-                    Log.d(TAG, "onFailure: " + t.getMessage());
-
+                } else {
                     // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
                     isLocked = false;
                     // ProgressBar hide!
-                    //((LottieAnimationView) findViewById(R.id.scan_animation_view).setVisibility(View.GONE));
+                    //findViewById(R.id.scan_animation_view).setVisibility(View.GONE);
                     ((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.VISIBLE);
                 }
-            });
+            }
+
+            @Override
+            public void onFailure(Call<FaceDetectResponse> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t.getMessage());
+
+                // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
+                isLocked = false;
+                // ProgressBar hide!
+                //((LottieAnimationView) findViewById(R.id.scan_animation_view).setVisibility(View.GONE));
+                ((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.VISIBLE);
+            }
         });
+
 
     }
 
