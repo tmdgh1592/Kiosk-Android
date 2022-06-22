@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="169dp"
+        android:text="세부 메뉴를 선택해주세요!"
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/menu_image_view"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="89dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_text_view"
+        app:riv_corner_radius="36dip"
+        app:riv_mutate_background="true"
+        app:riv_oval="false"
+        tools:src="@drawable/img_sample" />
+
+    <TextView
+        android:id="@+id/menu_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/price_text_view"
+        app:layout_constraintLeft_toRightOf="@+id/menu_image_view"
+        app:layout_constraintTop_toTopOf="@+id/menu_image_view"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="아메리카노" />
+
+    <TextView
+        android:id="@+id/price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_image_view"
+        app:layout_constraintLeft_toLeftOf="@+id/menu_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/menu_text_view"
+        tools:text="5,000원" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rectangle_divider"
+        app:layout_constraintTop_toBottomOf="@+id/menu_image_view" />
+
+
+    <TextView
+        android:id="@+id/cold_hot_question_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="60dp"
+        android:text="차갑게 할까요 뜨겁게 할까요?"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <!-- 차갑게 버튼 -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cold_container"
+        android:layout_width="0dp"
+        android:layout_height="332dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="#EDEDED"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/hot_container"
+        app:layout_constraintTop_toBottomOf="@+id/cold_hot_question_text_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/cold_image_view"
+                android:layout_width="132dp"
+                android:layout_height="132dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:riv_mutate_background="true"
+                app:riv_oval="true"
+                tools:src="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:text="차갑게"
+                android:textColor="@color/black"
+                android:textSize="60sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- 뜨겁게 버튼 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hot_container"
+        android:layout_width="0dp"
+        android:layout_height="332dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="62dp"
+        app:cardBackgroundColor="#EDEDED"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="0dp"
+        app:layout_constraintLeft_toRightOf="@id/cold_container"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cold_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/hot_image_view"
+                android:layout_width="132dp"
+                android:layout_height="132dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:riv_mutate_background="true"
+                app:riv_oval="true"
+                tools:src="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:text="뜨겁게"
+                android:textColor="@color/black"
+                android:textSize="60sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
