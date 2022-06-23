@@ -16,32 +16,43 @@
 
 ## 👊 Introduction
 에이지프리 키오스크 관련 실제 구동 화면입니다.<br>
-"TODO"
 
 1. 시작( 포장, 매장 )
 2. 얼굴 인식
 3. 기본 화면 ( default ) -> 옵션 선택 -> 추천 메뉴 -> 선택 제품 확인 -> 결제 수단 선택 -> 결제 -> 영수증
 4. 쉬운 화면 ( old ) -> 옵션 선택 (온도 -> 농도 -> 양 -> 수량 ) -> 선택 제품 확인 -> 결제 수단 선택 -> 결제 -> 영수증
 
+### 1. 시작 ( 포장, 매장 ) ✌
+<p align="left" display="inline">
+  <img src="https://user-images.githubusercontent.com/56534241/175430358-0a95607d-d98c-4b5f-9eae-50eae14abd3c.png" width="270" height="495"/>
+</p><br><br>
 
-### 1. 시작 ( 포장, 매장 )
-사진
+### 2. 얼굴 인식 ✨
+<p align="left" display="inline">
+  <img src="https://user-images.githubusercontent.com/56534241/175430361-28a0543d-8d7e-470d-9b83-3c33f382c545.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430363-fb1660f9-9220-4116-8a35-3cdd110016a2.png" width="270" height="495"/>
+</p><br><br>
 
-### 2. 얼굴 인식 
-사진
+### 3. 기본 화면 👨👩
+<p align="left" display="inline">
+  <img src="https://user-images.githubusercontent.com/56534241/175430367-6ef666ad-65cc-4505-9a37-f24d66aa730f.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430368-6e802166-fe57-4952-9c17-f1df36e8f043.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430369-0dd34943-46b0-4433-999f-595f25b1f993.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430373-b4c4eaa3-2d93-433a-bbbf-f4edff5cf7aa.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430336-5a633ca7-fc1d-40c8-9aa9-4c1754f33930.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430340-95922a87-93bf-4a25-b3ad-a0d89af64358.png" width="270" height="495"/>
+ 
+</p><br><br>
 
-### 3. 기본 화면
-사진
-3-1. 옵션 선택
-사진
-3-2. 추천 메뉴
-3-3. 선택 제품 확인
-3-4. 결제 수단 선택
-3-5. 결제
-3-6. 영수증
-
-### 4. 쉬운 화면
-
+### 4. 쉬운 화면 👴🏻👵🏻
+<p align="left" display="inline">
+  <img src="https://user-images.githubusercontent.com/56534241/175430342-95944b6d-4ac2-4196-9b87-caf9805e415d.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430344-e00c9b56-27a5-483d-9e4e-80e5482b6b53.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430345-85c95ba7-598b-40d9-af50-5eb3cf198a97.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430347-30297355-ef22-4198-af3a-eabfdf2c8e05.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430352-addf7555-cf0f-4719-9dea-b06de619b544.png" width="270" height="495"/>
+  <img src="https://user-images.githubusercontent.com/56534241/175430357-172492ef-1fba-4622-aa29-035558484dee.png" width="270" height="495"/>
+</p><br><br>
 
 
 ## 😃 Client: Package
