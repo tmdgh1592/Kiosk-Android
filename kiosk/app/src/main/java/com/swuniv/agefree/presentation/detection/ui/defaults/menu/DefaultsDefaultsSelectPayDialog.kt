@@ -58,9 +58,10 @@ class DefaultsDefaultsSelectPayDialog : DialogFragment() {
         val displayMetrics = DisplayMetrics()
         requireActivity().windowManager.defaultDisplay.getMetrics(displayMetrics)
         val deviceWidth: Int = displayMetrics.widthPixels
+        val deviceHeight: Int = displayMetrics.heightPixels
         val params: ViewGroup.LayoutParams = dialog!!.window!!.attributes
         params.width = (deviceWidth * 0.9).roundToInt()
-        params.height = ViewGroup.LayoutParams.WRAP_CONTENT
+        params.height = (deviceHeight * 0.9).roundToInt()
         dialog!!.window!!.attributes = params as WindowManager.LayoutParams
     }
 

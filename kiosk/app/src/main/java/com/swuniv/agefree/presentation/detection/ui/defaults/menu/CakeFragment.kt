@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentMenuRecyclerBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.adapter.MenuAdapter
+import com.swuniv.agefree.presentation.detection.utils.DataProvider
 import com.swuniv.agefree.presentation.detection.utils.HorizontalItemDecorator
 import com.swuniv.agefree.presentation.detection.utils.VerticalItemDecorator
 import com.swuniv.agefree.presentation.detection.utils.printLog
@@ -49,9 +50,10 @@ class CakeFragment: Fragment() {
         binding.recycler.layoutManager = GridLayoutManager(context, 4)
     }
 
-    private fun addData(){
-        for (i in 0 until 20) {
-            data.add(Menu("아메리카노$i", 5000 + i, R.drawable.coffeetest))
-        }
+    private fun addData() {
+        val img = DataProvider.getCakeList()
+        data.add(img[0])
+        data.add(img[1])
+        data.add(img[2])
     }
 }
