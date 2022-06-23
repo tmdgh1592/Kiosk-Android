@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentOldSelectMenuBinding
@@ -39,6 +40,9 @@ class OldSelectMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
+        binding.defaultScreenButton.setOnClickListener {
+            requireView().findNavController().navigate(R.id.action_oldSelectMenuFragment_to_defaultMenuFragment)
+        }
 
         with(binding) {
             // 메뉴 카테고리 선택 리스너 (커피, 탄산음료, etc...)

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="533dp"
-    android:background="@drawable/round_36_box">
+    android:background="@drawable/round_36_border_4_box">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/menu_img"
@@ -13,7 +13,7 @@
         android:layout_marginHorizontal="131dp"
         android:layout_marginTop="60dp"
         android:scaleType="centerCrop"
-        android:src="#111111"
+        android:src="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"

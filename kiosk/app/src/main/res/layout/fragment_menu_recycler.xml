@@ -14,6 +14,6 @@
         android:paddingVertical="104dp"
         app:spanCount="4"
         tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/item_old_menu"/>
+        tools:listitem="@layout/item_default_menu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

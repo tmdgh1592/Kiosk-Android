@@ -30,11 +30,11 @@
         app:layout_constraintTop_toBottomOf="@+id/unknown_box"
         app:tabGravity="fill"
         app:tabIndicator="@drawable/custom_indicator"
-        app:tabIndicatorColor="#111111"
+
         app:tabIndicatorHeight="20dp"
         app:tabMaxWidth="0dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/tabSelectedTextColor"
+        app:tabSelectedTextColor="@color/deepPurple"
         app:tabTextAppearance="@style/tabTextStyle"
         app:tabTextColor="#A0A0A0" />
 
