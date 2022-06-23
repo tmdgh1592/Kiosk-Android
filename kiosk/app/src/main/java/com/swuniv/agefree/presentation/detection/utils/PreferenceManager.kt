@@ -19,6 +19,7 @@ object PreferenceManager {
 
     const val ageKey = "age"
     const val genderKey = "gender"
+    const val inOutKey = "inout"
 
     private fun getPreferences(context: Context): SharedPreferences {
         return context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)

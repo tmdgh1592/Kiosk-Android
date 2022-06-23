@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.swuniv.agefree.databinding.ActivityStartBinding
 import com.swuniv.agefree.presentation.detection.FdActivity
+import com.swuniv.agefree.presentation.detection.utils.PreferenceManager
 import com.swuniv.agefree.presentation.detection.utils.showToast
 
 class StartActivity : AppCompatActivity() {
@@ -21,6 +22,8 @@ class StartActivity : AppCompatActivity() {
          * take out : 102
          * */
         binding.takeinBtn.setOnClickListener {
+            PreferenceManager.setString(this, PreferenceManager.inOutKey, "out")
+
             val intent = Intent(this, FdActivity::class.java)
             intent.putExtra("take_mode", 101)
             startActivity(intent)
@@ -28,6 +31,8 @@ class StartActivity : AppCompatActivity() {
         }
 
         binding.takeoutBtn.setOnClickListener {
+            PreferenceManager.setString(this, PreferenceManager.inOutKey, "in")
+
             val intent = Intent(this, FdActivity::class.java)
             intent.putExtra("take_mode", 102)
             startActivity(intent)

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="62dp">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="62dp"
+        android:gravity="center"
+        android:letterSpacing="0.09"
+        android:lineHeight="90dp"
+        android:text="주문내역을 확인해주세요!\n음료가 준비되면 불러드리겠습니다."
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/order_number_text_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/order_number_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="109dp"
+        android:text="주문번호 67"
+        android:textColor="@color/deepPurple"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toTopOf="@+id/order_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <View
+        android:id="@+id/order_container"
+        android:layout_width="match_parent"
+        android:layout_height="377dp"
+        android:layout_marginTop="79dp"
+        android:background="@drawable/round_30_border_8_box"
+        app:layout_constraintBottom_toTopOf="@+id/order_pay_container"
+        app:layout_constraintTop_toBottomOf="@+id/order_number_text_view" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/menu_image_view"
+        android:layout_width="239dp"
+        android:layout_height="239dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/order_container"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="@+id/order_container"
+        app:layout_constraintRight_toLeftOf="@+id/order_options_view"
+        app:layout_constraintTop_toTopOf="@+id/order_container"
+        app:riv_corner_radius="30dip"
+        tools:src="@drawable/coffeetest" />
+
+    <TextView
+        android:id="@+id/menu_and_count_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/order_options_view"
+        app:layout_constraintLeft_toLeftOf="@+id/order_options_view"
+        app:layout_constraintTop_toTopOf="@+id/menu_image_view"
+        tools:text="아메리카노 1개" />
+
+    <LinearLayout
+        android:id="@+id/order_options_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_24_border_4_box"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="42dp"
+        android:paddingVertical="31dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_image_view"
+        app:layout_constraintLeft_toRightOf="@+id/menu_image_view"
+        app:layout_constraintRight_toRightOf="@+id/order_container"
+        app:layout_constraintTop_toBottomOf="@+id/menu_and_count_text_view">
+
+        <TextView
+            android:id="@+id/cold_hot_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4E4E4E"
+            android:textSize="44sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_detail_select_text_view"
+            tools:text="차갑게" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="21dp"
+            android:background="@drawable/rectangle_divider" />
+
+        <TextView
+            android:id="@+id/soft_deep_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="#4E4E4E"
+            android:textSize="44sp"
+            app:layout_constraintLeft_toRightOf="@+id/cold_hot_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/my_detail_select_text_view"
+            tools:text="연하게" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="21dp"
+            android:background="@drawable/rectangle_divider" />
+
+        <TextView
+            android:id="@+id/amount_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="132dp"
+            android:textColor="#4E4E4E"
+            android:textSize="44sp"
+            app:layout_constraintLeft_toRightOf="@+id/cold_hot_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/my_detail_select_text_view"
+            tools:text="많이" />
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/order_pay_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round_30_border_8_box"
+        android:paddingHorizontal="75dp"
+        android:paddingVertical="74dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_container">
+
+        <TextView
+            android:id="@+id/receipt_menu_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#767676"
+            android:textSize="40sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="아메리카노" />
+
+        <TextView
+            android:id="@+id/option2_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:textColor="#767676"
+            android:textSize="40sp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/receipt_menu_text_view"
+            tools:text="ㄴ 진하게"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/option3_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:textColor="#767676"
+            android:textSize="40sp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option2_text_view"
+            tools:text="ㄴ 양 많이"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/menu_price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="44sp"
+            app:layout_constraintBottom_toBottomOf="@+id/receipt_menu_text_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/receipt_menu_text_view"
+            tools:text="5,000원" />
+
+        <TextView
+            android:id="@+id/option2_price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="44sp"
+            app:layout_constraintBottom_toBottomOf="@+id/option2_text_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/option2_text_view"
+            tools:text="500원" />
+
+        <TextView
+            android:id="@+id/option3_price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="44sp"
+            app:layout_constraintBottom_toBottomOf="@+id/option3_text_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/option3_text_view"
+            tools:text="700원" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="41dp"
+            android:background="@drawable/rectangle_divider"
+            app:layout_constraintTop_toBottomOf="@+id/option3_text_view" />
+
+        <TextView
+            android:id="@+id/total_price_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:text="총 결제 금액"
+            android:textSize="44sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/total_price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="@+id/total_price_title_text_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/total_price_title_text_view"
+            tools:text="5,500원" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,12 +33,12 @@ class OldSelectMenuFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        MenuRecommendDialog().show(parentFragmentManager, "recommend")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
-        MenuRecommendDialog().show(parentFragmentManager, "recommend")
 
         with(binding) {
             // 메뉴 카테고리 선택 리스너 (커피, 탄산음료, etc...)
