@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="533dp"
-    android:background="@drawable/old_menu_item_box">
+    android:background="@drawable/selector_default_menu_option">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/menu_img"
