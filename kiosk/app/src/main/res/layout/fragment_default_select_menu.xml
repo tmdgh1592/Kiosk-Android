@@ -437,7 +437,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="62dp"
             android:layout_marginTop="96dp"
-            android:text="Shot"
+            android:text="Size"
             android:textColor="#4E4E4E"
             android:textSize="36sp"
             app:layout_constraintLeft_toLeftOf="parent"

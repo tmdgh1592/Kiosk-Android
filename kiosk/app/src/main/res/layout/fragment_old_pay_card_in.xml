@@ -41,15 +41,16 @@
         android:id="@+id/input_card_title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="174dp"
         android:gravity="center"
         android:letterSpacing="0.12"
         android:lineHeight="120dp"
         android:text="신용카드를\n투입구에 꽂아주세요!"
         android:textSize="80sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_card_desc_text_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_button" />
+        app:layout_constraintTop_toBottomOf="@+id/back_button"
+        app:layout_constraintVertical_chainStyle="packed" />
 
 
     <TextView
@@ -63,6 +64,7 @@
         android:text="결제 오류 시 마그네틱을\n아래로 향하게 긁어주세요"
         android:textColor="#767676"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/credit_card_image_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_card_title_text_view" />
@@ -73,6 +75,7 @@
         android:layout_height="473dp"
         android:layout_marginTop="59dp"
         android:src="@drawable/img_card_in"
+        app:layout_constraintBottom_toTopOf="@+id/total_pay_title_text_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_card_desc_text_view" />
@@ -88,6 +91,7 @@
         android:text="총 결제 금액"
         android:textColor="#767676"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_card_text_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/credit_card_image_view" />
@@ -101,6 +105,7 @@
         android:letterSpacing="0.12"
         android:lineHeight="120dp"
         android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total_pay_title_text_view"

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -16,7 +17,7 @@ import com.swuniv.agefree.presentation.detection.utils.convertOldColdHot
 import com.swuniv.agefree.presentation.detection.utils.convertOldSoftDeep
 import com.swuniv.agefree.presentation.detection.utils.toWon
 
-class OldOrderListFragment : Fragment() {
+class OldOrderListFragment : Fragment(), OnCreditDialogDismissListener {
 
     private var _binding: FragmentOldOrderListBinding? = null
     private val binding get() = _binding!!
@@ -54,8 +55,13 @@ class OldOrderListFragment : Fragment() {
 
 
             orderBtn.setOnClickListener {
-                val bundle = bundleOf("menu" to selectedMenu)
-                OldSelectPayDialog().show(parentFragmentManager, "DialogOldSelectPay")
+                val oldSelectPayDialog = OldSelectPayDialog()
+                oldSelectPayDialog.setDismissListener(this@OldOrderListFragment)
+                oldSelectPayDialog.show(parentFragmentManager, "DialogOldSelectPay")
+            }
+
+            backButton.setOnClickListener {
+                requireView().findNavController().popBackStack()
             }
 
             homeButton.setOnClickListener {
@@ -65,8 +71,12 @@ class OldOrderListFragment : Fragment() {
 
         }
     }
-}
 
-interface OnSelectPayCategory {
-    fun onClick()
+
+    // 결제하기 종류 선택 완료시 다이얼로그 종료
+    // 다음화면으로 전환
+    override fun onDismiss(creditType: PayType) {
+        val bundle = bundleOf("menu" to selectedMenu)
+        requireView().findNavController().navigate(R.id.action_oldOrderListFragment_to_oldCardInFragment, bundle)
+    }
 }

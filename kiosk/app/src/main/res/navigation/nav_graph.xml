@@ -9,7 +9,7 @@
         android:id="@+id/defaultMenuFragment"
         android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsMenuFragment"
         android:label="fragment_default_menu"
-        tools:layout="@layout/fragment_default_menu" >
+        tools:layout="@layout/fragment_default_menu">
         <action
             android:id="@+id/action_defaultMenuFragment_to_defaultsSelectFragment"
             app:destination="@id/defaultsSelectFragment" />
@@ -19,8 +19,7 @@
         android:id="@+id/defaultsSelectFragment"
         android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsSelectMenuFragment"
         android:label="fragment_default_select_menu"
-        tools:layout="@layout/fragment_default_select_menu"
-        />
+        tools:layout="@layout/fragment_default_select_menu" />
 
 
     <fragment
@@ -93,6 +92,9 @@
         <action
             android:id="@+id/action_oldOrderListFragment_to_oldSelectMenuFragment"
             app:destination="@id/oldSelectMenuFragment" />
+        <action
+            android:id="@+id/action_oldOrderListFragment_to_oldCardInFragment"
+            app:destination="@id/oldCardInFragment" />
     </fragment>
 
     <action
@@ -102,5 +104,32 @@
     <action
         android:id="@+id/currentFragment_oldSelectMenuFragment"
         app:popUpTo="@id/oldSelectMenuFragment" />
+    <fragment
+        android:id="@+id/oldCardInFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldCardInFragment"
+        android:label="OldCardInFragment"
+        tools:layout="@layout/fragment_old_pay_card_in">
+        <action
+            android:id="@+id/action_oldCardInFragment_to_oldCardOutFragment"
+            app:destination="@id/oldCardOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oldCardOutFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldCardOutFragment"
+        android:label="OldCardOutFragment"
+        tools:layout="@layout/fragment_old_pay_card_out">
+        <action
+            android:id="@+id/action_oldCardOutFragment_to_oldOrderReceiptFragment"
+            app:destination="@id/oldOrderReceiptFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oldOrderReceiptFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldOrderReceiptFragment"
+        android:label="OldOrderReceiptFragment"
+        tools:layout="@layout/fragment_old_receipt" >
+        <action
+            android:id="@+id/action_oldOrderReceiptFragment_to_oldSelectMenuFragment"
+            app:destination="@id/oldSelectMenuFragment" />
+    </fragment>
 
 </navigation>
