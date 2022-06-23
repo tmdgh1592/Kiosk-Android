@@ -26,9 +26,6 @@
         android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectColdHotFragment"
         android:label="OldSelectColdHotFragment"
         tools:layout="@layout/fragment_old_select_cold_hot">
-        <argument
-            android:name="menu"
-            app:argType="com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu" />
     </fragment>
 
 
