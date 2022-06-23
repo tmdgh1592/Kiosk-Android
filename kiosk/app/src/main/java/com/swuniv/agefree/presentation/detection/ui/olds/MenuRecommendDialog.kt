@@ -49,8 +49,8 @@ class MenuRecommendDialog : DialogFragment() {
         val age = PreferenceManager.getInt(requireContext(), PreferenceManager.ageKey)
         val gender = PreferenceManager.getString(requireContext(), PreferenceManager.genderKey)
         Log.d("user Age and gender", "onViewCreated: " + age + " " + gender!!)
-        val menuService = RetrofitBuilder.menuApi.getBestMenu(age, gender!!)
-        //val menuService = RetrofitBuilder.menuApi.getBestMenu(50, "female")
+        val menuService = RetrofitBuilder.menuApi.getBestMenu(age, gender)
+        //val menuService = RetrofitBuilder.menuApi.getBestMenu(60, "female")
 
         menuService.enqueue(object : Callback<BestMenuResponse> {
             override fun onResponse(
@@ -74,9 +74,9 @@ class MenuRecommendDialog : DialogFragment() {
                     when (menu) {
                         "자몽에이드" -> imgResId = R.drawable.ade_04
                         "아메리카노" -> imgResId = R.drawable.coffee_03
-                        "캐모마일" -> R.drawable.tea_06
-                        "티라미수케이크" -> R.drawable.cake_03
-                        "복숭아아이스티" -> R.drawable.tea_03
+                        "캐모마일" -> imgResId = R.drawable.tea_06
+                        "티라미수케이크" -> imgResId = R.drawable.cake_03
+                        "복숭아아이스티" -> imgResId = R.drawable.tea_03
                     }
 
                     // 가져온 이미지 적용
