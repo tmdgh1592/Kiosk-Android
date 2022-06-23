@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_old_select_menu">
         <action
             android:id="@+id/action_oldSelectMenuFragment_to_oldSelectColdHotFragment"
-            app:destination="@id/oldSelectColdHotFragment"/>
+            app:destination="@id/oldSelectColdHotFragment" />
     </fragment>
 
     <fragment
@@ -32,7 +32,7 @@
             app:destination="@id/oldSelectSoftDeepFragment" />
         <action
             android:id="@+id/action_oldSelectColdHotFragment_to_oldSelectMenuFragment2"
-            app:destination="@id/oldSelectMenuFragment"/>
+            app:destination="@id/oldSelectMenuFragment" />
     </fragment>
 
     <fragment
@@ -46,5 +46,12 @@
             app:destination="@id/oldSelectMenuFragment" />
     </fragment>
 
+    <action
+        android:id="@+id/currentFragment_defaultMenuFragment"
+        app:popUpTo="@id/defaultMenuFragment" />
+
+    <action
+        android:id="@+id/currentFragment_oldSelectMenuFragment"
+        app:popUpTo="@id/oldSelectMenuFragment" />
 
 </navigation>
