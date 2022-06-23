@@ -3,12 +3,12 @@ package com.swuniv.agefree.presentation.detection
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import com.swuniv.agefree.BuildConfig
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.ActivityMainBinding
-import com.swuniv.agefree.databinding.ActivityStartBinding
-import com.swuniv.agefree.presentation.detection.utils.printLog
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val intent = intent
 
-        val age: Int = intent.getIntExtra("age", 1)
+        var age: Int = intent.getIntExtra("age", 1)
         //TODO age 설정하여 원하는 Fragment 진입
 
         if (BuildConfig.DEBUG) {
@@ -33,9 +33,9 @@ class MainActivity : AppCompatActivity() {
         if (age >= 50) {
             navController.navigate(R.id.oldSelectMenuFragment)
         }
-        else {
-            navController.navigate(R.id.defaultMenuFragment)
-        }
+//        else {
+//            navController.navigate(R.id.defaultMenuFragment)
+//        }
 
     }
 }
