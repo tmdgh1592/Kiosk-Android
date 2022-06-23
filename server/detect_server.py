@@ -1,15 +1,19 @@
-from flask import Flask, request
-from flask_restx import Api, Resource, reqparse
+from flask import Flask, request, send_file
+from flask_restx import Api, Resource, reqparse, fields
 from PIL import Image
 from io import BytesIO
 from urllib.parse import urlencode, quote_plus
+import werkzeug
+
 
 import requests
 import json
 import random
 import os
+import uuid
 
 app = Flask(__name__)
+port = 5052
 
 api = Api(app, version='1.0', title='키오스크 API 문서', description='Swagger 문서', doc="/api-docs")
 
@@ -21,30 +25,38 @@ class Test(Resource):
         return 'Hello World!'
 
 l = reqparse.RequestParser()
-#server_addr = "http://" + server_addr + "/uploads/" + image.filename
-server_addr = "https://www.sciencetimes.co.kr/wp-content/uploads/2018/10/fc08a3_ecc89ba4706a4199a9a51be9500037d0mv2_d_1754_2480_s_2.jpg"
-l.add_argument('image', type=bytes, default=None, help="image file(PNG or JPG)")
+server_addr = "<ADDR>" + str(port)
+l.add_argument('image', type=werkzeug.datastructures.FileStorage, default=None, required=True, location='files', help="image file(PNG or JPG)")
+resp_model = api.model('', {
+    'success': fields.Boolean,
+    'age': fields.Integer,
+    'gender': fields.String,
+})
 @api.route('/detect', methods=['POST'])
 class Detect(Resource):
     @api.expect(l)
+    @api.response(200, 'Success', resp_model)
     def post(self):
+        print("started")
         # 클라에서 image(png or jpg)를 받아옴
         image = request.files['image']
-        # XXX: multipart/form-data 관련 작동이 제대로 안됨. 
+        # XXX: multipart/form-data 관련 작동이 제대로 안됨.
         # 카카오 서버에서 500 error만 나고 이유를 알려주지 않음
         # 따라서 먼저 서버에 이미지 저장을 해주고, 해당 url을 카카오 서버로 전송
-        image.save(os.path.join('uploads/', image.filename))
-        
-        api_key = "<API-KEY>"
+        filename = str(uuid.uuid4())
+        image.save(os.path.join('uploads/', filename))
+        print(filename)
+        api_key = "<API Key>"
         api_url = "https://dapi.kakao.com/v2/vision/face/detect"
         headers, data = {}, {}
         headers['Content-Type'] = 'application/x-www-form-urlencoded'
         headers['Authorization'] = 'KakaoAK %s'%api_key
-        
+
         threshold = 0.7
         data['threshold'] = threshold
         # TODO: url encode
-        data["image_url"] = server_addr
+        data["image_url"] = server_addr + "/uploads/?path=" + filename
+        #print(data["image_url"])
         # kakao dev에 요청을 보냄
         r = requests.post(api_url, data=data, headers=headers)
         # 받아온 요청을 기반으로 클라로 보내줌.
@@ -71,6 +83,7 @@ class Detect(Resource):
                     else:
                         max_gender = "female"
 
+            body["success"] = True
             body["age"] = int(max_age)
             body["gender"] = max_gender
             #assert(max_age != -1)
@@ -81,5 +94,13 @@ class Detect(Resource):
             body["success"] = False
             return body
 
+@app.route('/uploads/')
+def down_image():
+    #print(request.view_args)
+    path = request.args.get('path')
+    return send_file("uploads/" + path)
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    from waitress import serve
+    serve(app, host='0.0.0.0', port=port)
