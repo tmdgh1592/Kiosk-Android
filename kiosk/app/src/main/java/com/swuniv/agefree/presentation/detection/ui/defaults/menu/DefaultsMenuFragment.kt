@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentDefaultMenuBinding
 
-class DefaultSelectMenuFragment : Fragment() {
+class DefaultsMenuFragment : Fragment() {
 
     private var _binding: FragmentDefaultMenuBinding? = null
     private val binding get() = _binding!!
@@ -30,6 +33,10 @@ class DefaultSelectMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewPager2()
+        binding.toolbar.changeUiBtn.setOnClickListener {
+            requireView().findNavController().navigate(R.id.currentFragment_oldSelectMenuFragment)
+        }
+
     }
 
     private fun viewPager2() {

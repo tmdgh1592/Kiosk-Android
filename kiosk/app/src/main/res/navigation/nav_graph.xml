@@ -7,9 +7,13 @@
 
     <fragment
         android:id="@+id/defaultMenuFragment"
-        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultSelectMenuFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsMenuFragment"
         android:label="fragment_default_menu"
-        tools:layout="@layout/fragment_default_menu" />
+        tools:layout="@layout/fragment_default_menu" >
+        <action
+            android:id="@+id/action_defaultMenuFragment_to_defaultsSelectFragment"
+            app:destination="@id/defaultsSelectFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/oldSelectMenuFragment"
@@ -53,5 +57,12 @@
     <action
         android:id="@+id/currentFragment_oldSelectMenuFragment"
         app:popUpTo="@id/oldSelectMenuFragment" />
+
+    <fragment
+        android:id="@+id/defaultsSelectFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsSelectMenuFragment"
+        android:label="fragment_default_select_menu"
+        tools:layout="@layout/fragment_default_select_menu"
+        />
 
 </navigation>

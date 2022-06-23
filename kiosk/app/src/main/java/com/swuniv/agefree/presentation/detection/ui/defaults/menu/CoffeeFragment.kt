@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentMenuRecyclerBinding
@@ -32,6 +34,9 @@ class CoffeeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         menuAdapter = MenuAdapter(requireActivity(), data, onItemClickListener = {
             "$it 클릭".printLog()
+            val menu = data[it]
+            val bundle = bundleOf("menu" to menu)
+            requireView().findNavController().navigate(R.id.action_defaultMenuFragment_to_defaultsSelectFragment,bundle)
         })
         addData()
         initRecycler()

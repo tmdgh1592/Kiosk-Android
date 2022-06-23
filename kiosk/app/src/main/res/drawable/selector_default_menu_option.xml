@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="false">
-        <shape android:shape="rectangle">
-            <solid android:color="#EDEDED" />
-        </shape>
-    </item>
-
-    <item android:state_selected="true">
-        <shape android:shape="rectangle">
-            <solid android:color="#EDEDED" />
-            <stroke android:width="4dp" android:color="#111111" />
-        </shape>
-    </item>
+    <item android:drawable="@drawable/round_36_border_4_4919e6_box" android:state_selected="true" android:state_focused="true" />
+    <item android:drawable="@drawable/round_36_border_4_box" android:state_selected="false" />
+    <item android:drawable="@drawable/round_36_border_4_box"/>
 </selector>
