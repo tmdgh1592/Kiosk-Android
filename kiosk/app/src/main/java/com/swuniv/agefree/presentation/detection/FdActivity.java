@@ -16,6 +16,7 @@ import com.swuniv.agefree.BuildConfig;
 import com.swuniv.agefree.R;
 import com.swuniv.agefree.presentation.detection.data.model.FaceDetectResponse;
 import com.swuniv.agefree.presentation.detection.data.network.RetrofitBuilder;
+import com.swuniv.agefree.presentation.detection.utils.PreferenceManager;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraActivity;
@@ -30,7 +31,6 @@ import org.opencv.core.MatOfRect;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
-import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
 import java.io.ByteArrayOutputStream;
@@ -351,6 +351,9 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
                         //((LottieAnimationView) findViewById(R.id.scan_container).setVisibility(View.VISIBLE));
                         findViewById(R.id.scan_container).setVisibility(View.GONE);
                         findViewById(R.id.complete_container).setVisibility(View.VISIBLE);
+
+                        PreferenceManager.INSTANCE.setInt(FdActivity.this, PreferenceManager.ageKey, age);
+                        PreferenceManager.INSTANCE.setString(FdActivity.this, PreferenceManager.genderKey, gender);
 
                         new Handler().postDelayed(() -> {
                             // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
