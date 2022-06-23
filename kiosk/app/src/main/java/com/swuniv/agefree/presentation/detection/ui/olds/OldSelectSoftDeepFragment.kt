@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.swuniv.agefree.databinding.FragmentOldSelectSoftDeepBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
+import com.swuniv.agefree.presentation.detection.utils.convertOldColdHot
 import com.swuniv.agefree.presentation.detection.utils.toWon
 
 class OldSelectSoftDeepFragment : Fragment() {
@@ -38,10 +39,12 @@ class OldSelectSoftDeepFragment : Fragment() {
         with(binding) {
 
             // 선택한 메뉴 정보 표시
-            selectedMenu.let {
-                menuTextView.text = it.name
-                priceTextView.text = it.price.toWon()
-                Glide.with(requireContext()).load(it.image).into(menuImageView)
+            selectedMenu.apply {
+                menuTextView.text = name
+                priceTextView.text = price.toWon()
+                Glide.with(requireContext()).load(image).into(menuImageView)
+
+                coldHotTextView.text = option1.convertOldColdHot()
             }
 
 

@@ -21,3 +21,31 @@ fun Int.toWon(): String {
     val format = DecimalFormat("#,###")
     return "${format.format(this)}원"
 }
+
+fun String.convertOldColdHot(): String {
+    return if (this == "cold") {
+        "차갑게"
+    } else {
+        "뜨겁게"
+    }
+}
+
+fun String.convertOldSoftDeep(): String {
+    return if (this == "soft") {
+        "연하게"
+    } else if (this == "normal") {
+        "기본"
+    } else {
+        "진하게"
+    }
+}
+
+fun String.convertOldAmount(): String {
+    return if (this == "normal") {
+        "기본"
+    } else if (this == "many") {
+        "많이"
+    } else {
+        "아주 많이"
+    }
+}
