@@ -36,6 +36,7 @@ import org.opencv.core.MatOfRect;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
+import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
 import java.io.ByteArrayOutputStream;
@@ -212,8 +213,16 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
     @Override
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
         // 현재 서버로 이미지 전송중이 아닌 경우
+
         mRgba = inputFrame.rgba();
         mGray = inputFrame.gray();
+
+        // OpenCV RGB색상 적용 코드
+        if(!mRgba.empty()) {
+            Mat convertedMat = new Mat();
+            Imgproc.cvtColor(mRgba, convertedMat, Imgproc.COLOR_RGB2BGR);
+            mRgba = convertedMat;
+        }
 
         if (mAbsoluteFaceSize == 0) {
             int height = mGray.rows();
