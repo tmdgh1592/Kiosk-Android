@@ -429,11 +429,13 @@ public abstract class CameraBridgeViewBase extends SurfaceView implements Surfac
             }
         }
 
+        // 카메라 각도 회전
         if (bmpValid && mCacheBitmap != null) {
             Canvas canvas = getHolder().lockCanvas();
             if (canvas != null) {
                 canvas.drawColor(0, android.graphics.PorterDuff.Mode.CLEAR);
-                int rotation = windowManager.getDefaultDisplay().getRotation();
+                //int rotation = windowManager.getDefaultDisplay().getRotation();
+                int rotation = Surface.ROTATION_90;
                 int degrees = 0;
                 // config degrees as you need
                 switch (rotation) {

@@ -46,14 +46,13 @@
         <activity
             android:name="com.swuniv.agefree.presentation.detection.MainActivity"
             android:exported="true">
+        </activity>
+        <activity android:name=".presentation.detection.ui.start.StartActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".presentation.detection.ui.start.StartActivity"
-            android:exported="true">
-
         </activity>
     </application>
 
