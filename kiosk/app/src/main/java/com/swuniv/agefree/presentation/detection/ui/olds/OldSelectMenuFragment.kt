@@ -1,23 +1,21 @@
 package com.swuniv.agefree.presentation.detection.ui.olds
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
+import androidx.navigation.fragment.findNavController
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentOldSelectMenuBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import com.swuniv.agefree.presentation.detection.ui.olds.adapter.OldMenuAdapter
+import com.swuniv.agefree.presentation.detection.ui.olds.adapter.OnMenuClickListener
 import com.swuniv.agefree.presentation.detection.utils.HorizontalItemDecorator
 import com.swuniv.agefree.presentation.detection.utils.VerticalItemDecorator
 
 class OldSelectMenuFragment : Fragment() {
-
-    private var selectedCategory: MutableLiveData<MenuCategory> =
-        MutableLiveData(MenuCategory.COFFEE);
 
     private var _binding: FragmentOldSelectMenuBinding? = null
     private val binding get() = _binding!!
@@ -43,23 +41,22 @@ class OldSelectMenuFragment : Fragment() {
         MenuRecommendDialog().show(parentFragmentManager, "recommend")
 
         with(binding) {
-            Log.d("TAG", "onViewCreated: " + categoryRadioGroup.selectedRadioButtonId)
-
-            selectedCategory.observe(viewLifecycleOwner) {
+            // 메뉴 카테고리 선택 리스너 (커피, 탄산음료, etc...)
+            categoryRadioGroup.isCheckedButtonId.observe(viewLifecycleOwner) {
                 when (it) {
-                    MenuCategory.COFFEE -> {
+                    R.id.radio_coffee_btn -> {
 
                     }
-                    MenuCategory.SODA -> {
+                    R.id.radio_soda_btn -> {
 
                     }
-                    MenuCategory.TEA -> {
+                    R.id.radio_tea_btn -> {
 
                     }
-                    MenuCategory.JUICE -> {
+                    R.id.radio_juice_btn -> {
 
                     }
-                    MenuCategory.CAKE -> {
+                    R.id.radio_cake_btn -> {
 
                     }
                 }
@@ -70,7 +67,14 @@ class OldSelectMenuFragment : Fragment() {
 
 
     private fun initRecycler() {
-        menuAdapter = OldMenuAdapter(requireContext())
+        menuAdapter = OldMenuAdapter(requireContext(), object : OnMenuClickListener {
+            override fun onClick(menu: Menu) {
+                // 리사이클러뷰의 메뉴(음식) 클릭 리스너
+                val bundle = bundleOf("menu" to menu)
+                findNavController().navigate(R.id.oldSelectColdHotFragment, bundle)
+            }
+        })
+
         binding.menuRecyclerView.adapter = menuAdapter
         binding.menuRecyclerView.apply {
             addItemDecoration(HorizontalItemDecorator(8))

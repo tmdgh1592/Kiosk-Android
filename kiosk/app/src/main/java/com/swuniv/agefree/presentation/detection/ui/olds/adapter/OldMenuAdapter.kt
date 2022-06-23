@@ -12,9 +12,11 @@ import com.swuniv.agefree.R
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import java.text.DecimalFormat
 
-class OldMenuAdapter(private val context: Context) : RecyclerView.Adapter<OldMenuAdapter.ViewHolder>() {
+class OldMenuAdapter(private val context: Context, private val menuClickListener: OnMenuClickListener) :
+    RecyclerView.Adapter<OldMenuAdapter.ViewHolder>() {
 
     var menuList = mutableListOf<Menu>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_old_menu, parent, false)
@@ -38,7 +40,13 @@ class OldMenuAdapter(private val context: Context) : RecyclerView.Adapter<OldMen
             name.text = item.name
             price.text = "${dec.format(item.price)}원"
             Glide.with(context).load(item.image).into(image)
+            itemView.setOnClickListener {
+                menuClickListener.onClick(item)
+            }
         }
     }
+}
 
+interface OnMenuClickListener {
+    fun onClick(menu: Menu)
 }

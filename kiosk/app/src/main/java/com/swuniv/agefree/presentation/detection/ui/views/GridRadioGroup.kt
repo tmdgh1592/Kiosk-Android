@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.annotation.IdRes
 import androidx.gridlayout.widget.GridLayout
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 /**
  * A GridLayout subclass that acts like a RadioGroup. Important: it only accepts RadioButton as children.
@@ -15,6 +17,9 @@ import androidx.gridlayout.widget.GridLayout
 class GridRadioGroup @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : GridLayout(context, attrs, defStyleAttr), View.OnClickListener {
+
+    private var _isCheckedButtonId = MutableLiveData<Int>(0)
+    val isCheckedButtonId: LiveData<Int> = _isCheckedButtonId
 
     @IdRes
     var selectedRadioButtonId: Int? = null
@@ -38,6 +43,7 @@ class GridRadioGroup @JvmOverloads constructor(
         }
         val radioButton = view as RadioButton
         radioButton.isChecked = true
+        _isCheckedButtonId.value = view.id
     }
 
     override fun addView(child: View?, index: Int, params: ViewGroup.LayoutParams?) {

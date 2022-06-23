@@ -15,6 +15,21 @@
         android:id="@+id/oldSelectMenuFragment"
         android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectMenuFragment"
         android:label="fragment_old_select_menu"
-        tools:layout="@layout/fragment_old_select_menu" />
+        tools:layout="@layout/fragment_old_select_menu">
+        <action
+            android:id="@+id/action_oldSelectMenuFragment_to_oldSelectColdHotFragment"
+            app:destination="@id/oldSelectColdHotFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/oldSelectColdHotFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectColdHotFragment"
+        android:label="OldSelectColdHotFragment"
+        tools:layout="@layout/fragment_old_select_cold_hot">
+        <argument
+            android:name="menu"
+            app:argType="com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu" />
+    </fragment>
+
 
 </navigation>
