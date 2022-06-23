@@ -26,7 +26,6 @@ class MenuRecommendDialog : DialogFragment() {
 
     private lateinit var onRecommendDialogDismissListener: OnRecommendDialogDismissListener
     private var selectedMenu: Menu? = null
-    val recommendMenu = "캐모마일"
 
     fun setDismissListener(onRecommendDialogDismissListener: OnRecommendDialogDismissListener) {
         this.onRecommendDialogDismissListener = onRecommendDialogDismissListener
@@ -50,8 +49,8 @@ class MenuRecommendDialog : DialogFragment() {
 
         val age = PreferenceManager.getInt(requireContext(), PreferenceManager.ageKey)
         val gender = PreferenceManager.getString(requireContext(), PreferenceManager.genderKey)
-        val menuService = RetrofitBuilder.menuApi.getBestMenu(age, gender!!)
-        //val menuService = RetrofitBuilder.menuApi.getBestMenu(50, "female")
+        //val menuService = RetrofitBuilder.menuApi.getBestMenu(age, gender!!)
+        val menuService = RetrofitBuilder.menuApi.getBestMenu(50, "female")
 
         menuService.enqueue(object : Callback<BestMenuResponse> {
             override fun onResponse(
@@ -73,11 +72,7 @@ class MenuRecommendDialog : DialogFragment() {
                     view.findViewById<TextView>(R.id.menu_price).text = price.toWon()
 
                     when (menu) {
-                        "추천메뉴" -> {
-                            imgResId = R.drawable.tea_06
-                            view.findViewById<TextView>(R.id.menu_name).text =
-                                "($menu) $recommendMenu"
-                        }
+                        "자몽에이드" -> imgResId = R.drawable.ade_04
                         "아메리카노" -> imgResId = R.drawable.coffee_03
                         "캐모마일" -> R.drawable.tea_06
                         "티라미수케이크" -> R.drawable.cake_03
@@ -88,9 +83,6 @@ class MenuRecommendDialog : DialogFragment() {
                     Glide.with(requireContext()).load(imgResId)
                         .into(view.findViewById(R.id.menu_img))
 
-                    if (menu == "추천메뉴") {
-                        menu = recommendMenu
-                    }
 
                     selectedMenu =
                         Menu(

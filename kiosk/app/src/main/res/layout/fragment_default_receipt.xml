@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,11 +10,13 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="62dp"
         android:layout_marginTop="94dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
         android:gravity="center"
         android:letterSpacing="0.072"
         android:lineHeight="72dp"
         android:text="주문내역을 확인해주세요!\n음료가 준비되면 불러드리겠습니다."
-        android:textSize="48sp"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/receipt_container"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,10 +24,11 @@
     <TextView
         android:id="@+id/receipt_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="150dp"
         android:layout_marginTop="99dp"
         android:background="@drawable/receipt"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
     <TextView
@@ -34,11 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:text="주문번호 2022062210"
         android:textSize="36sp"
         app:layout_constraintLeft_toLeftOf="@id/receipt_container"
         app:layout_constraintRight_toRightOf="@id/receipt_container"
-        app:layout_constraintTop_toTopOf="@id/receipt_container"
-        android:text="주문번호 2022062210" />
+        app:layout_constraintTop_toTopOf="@id/receipt_container" />
 
     <TextView
         android:id="@+id/line1"
@@ -208,11 +210,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:text="6,000원"
         android:textColor="#111111"
         android:textSize="44sp"
         app:layout_constraintLeft_toLeftOf="@id/second_menu_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/second_menu_text_view"
-        android:text="6,000원" />
+        app:layout_constraintTop_toBottomOf="@+id/second_menu_text_view" />
 
     <TextView
         android:id="@+id/divider2"
@@ -253,10 +255,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="60dp"
+        android:text="바닐라 라떼"
         android:textSize="28sp"
         app:layout_constraintLeft_toLeftOf="@id/receipt_container"
-        app:layout_constraintTop_toTopOf="@id/line3"
-        android:text="바닐라 라떼" />
+        app:layout_constraintTop_toTopOf="@id/line3" />
 
     <TextView
         android:id="@+id/first_menu_price"
@@ -264,10 +266,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="51dp"
         android:layout_marginRight="60dp"
+        android:text="5,000원"
         android:textSize="40sp"
         app:layout_constraintRight_toRightOf="@id/receipt_container"
-        app:layout_constraintTop_toTopOf="@id/line3"
-        android:text="5,000원" />
+        app:layout_constraintTop_toTopOf="@id/line3" />
 
     <TextView
         android:id="@+id/second_menu_name"
@@ -275,10 +277,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="23dp"
+        android:text="쇼콜라갸또"
         android:textSize="28sp"
         app:layout_constraintLeft_toLeftOf="@id/receipt_container"
-        app:layout_constraintTop_toBottomOf="@id/first_menu_name"
-        android:text="쇼콜라갸또" />
+        app:layout_constraintTop_toBottomOf="@id/first_menu_name" />
 
     <TextView
         android:id="@+id/second_menu_price"
@@ -286,10 +288,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:layout_marginRight="60dp"
+        android:text="6,000원"
         android:textSize="40sp"
         app:layout_constraintRight_toRightOf="@id/receipt_container"
-        app:layout_constraintTop_toBottomOf="@id/first_menu_price"
-        android:text="6,000원" />
+        app:layout_constraintTop_toBottomOf="@id/first_menu_price" />
 
     <TextView
         android:id="@+id/line4"
@@ -319,9 +321,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
         android:layout_marginRight="60dp"
+        android:text="11,000원"
         android:textSize="60sp"
         app:layout_constraintRight_toRightOf="@id/receipt_container"
-        app:layout_constraintTop_toBottomOf="@id/line4"
-        android:text="11,000원" />
+        app:layout_constraintTop_toBottomOf="@id/line4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

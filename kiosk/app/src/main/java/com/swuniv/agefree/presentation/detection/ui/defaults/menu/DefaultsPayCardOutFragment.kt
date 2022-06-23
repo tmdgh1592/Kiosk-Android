@@ -9,6 +9,10 @@ import androidx.navigation.findNavController
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentDefaultPayCardInBinding
 import com.swuniv.agefree.databinding.FragmentDefaultPayCardOutBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class DefaultsPayCardOutFragment : Fragment() {
 
@@ -26,7 +30,8 @@ class DefaultsPayCardOutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.root.setOnClickListener {
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(3000)
             requireView().findNavController().navigate(R.id.defaultsReceiptFragment) //TODO 내역확인
         }
     }

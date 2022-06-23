@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.swuniv.agefree.R
-import com.swuniv.agefree.databinding.FragmentDefaultOrderListBinding
-import com.swuniv.agefree.databinding.FragmentDefaultPayCardInBinding
 import com.swuniv.agefree.databinding.FragmentDefaultReceiptBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class DefaultsReceiptFragment : Fragment() {
 
@@ -27,7 +29,8 @@ class DefaultsReceiptFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.root.setOnClickListener {
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(4000)
             requireView().findNavController().navigate(R.id.currentFragment_defaultMenuFragment)
         }
 

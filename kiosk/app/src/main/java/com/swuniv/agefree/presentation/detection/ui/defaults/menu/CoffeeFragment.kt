@@ -66,5 +66,6 @@ class CoffeeFragment : Fragment() {
         data.add(img[3])
         data.add(img[2])
         data.add(img[1])
+        data.add(img[4])
     }
 }

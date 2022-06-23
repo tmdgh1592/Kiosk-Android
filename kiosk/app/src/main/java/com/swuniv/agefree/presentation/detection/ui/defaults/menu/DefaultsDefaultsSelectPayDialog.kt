@@ -5,7 +5,9 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.*
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.card.MaterialCardView
@@ -31,12 +33,28 @@ class DefaultsDefaultsSelectPayDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val payBtn: TextView = view.findViewById(R.id.pay_button)
-        val credit_card_button: MaterialCardView = view.findViewById(R.id.credit_card_button)
 
-
-        credit_card_button.findViewById<MaterialCardView>(R.id.credit_card_button)
+        view.findViewById<MaterialCardView>(R.id.credit_card_button)
             .setOnClickListener {
                 setSelected(it)
+                view.findViewById<MaterialCardView>(R.id.credit_card_button).setCardBackgroundColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.normalPurple
+                    )
+                )
+                view.findViewById<TextView>(R.id.credit_card_text_view).setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.white
+                    )
+                )
+                view.findViewById<ImageView>(R.id.credit_card_icon).setColorFilter(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.white
+                    )
+                )
                 payBtn.isEnabled = true
             }
 

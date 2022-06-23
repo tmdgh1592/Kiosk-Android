@@ -15,7 +15,7 @@
         android:layout_height="80dp"
         android:text="이전으로"
         android:textColor="#767676"
-        android:textSize="28dp"
+        android:textSize="30dp"
         app:backgroundTint="@color/white"
         app:cornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"

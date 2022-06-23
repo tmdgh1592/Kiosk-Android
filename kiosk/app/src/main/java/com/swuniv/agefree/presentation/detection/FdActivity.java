@@ -158,7 +158,7 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.fd_activity_surface_view);
         mOpenCvCameraView.setVisibility(CameraBridgeViewBase.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
-        mOpenCvCameraView.setCameraIndex(1);
+        mOpenCvCameraView.setCameraIndex(0); // 카메라 전면/후면 0 : 전면, 1 : 후면
 
         String title = ((TextView) findViewById(R.id.title)).getText().toString();
         SpannableStringBuilder ssb = new SpannableStringBuilder(title);

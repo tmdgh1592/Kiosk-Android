@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="50dp">
+        android:paddingBottom="0dp">
 
         <include
             android:id="@+id/top_container"
@@ -19,8 +19,8 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/menu_image_view"
-            android:layout_width="148dp"
-            android:layout_height="224dp"
+            android:layout_width="209dp"
+            android:layout_height="209dp"
             android:layout_marginStart="62dp"
             android:layout_marginTop="28dp"
             android:scaleType="centerCrop"
@@ -35,7 +35,7 @@
             android:id="@+id/menu_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="30dp"
             android:textColor="#4E4E4E"
             android:textSize="28sp"
             app:layout_constraintBottom_toTopOf="@+id/price_text_view"
@@ -90,7 +90,7 @@
             android:layout_height="68dp"
             android:layout_marginRight="62dp"
             android:background="@drawable/ic_circle"
-            android:backgroundTint="#4E4E4E"
+            android:backgroundTint="@color/deepPurple"
             android:clickable="true"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="@id/minus_button"
@@ -130,11 +130,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ice_button"
             android:layout_width="263dp"
-            android:nestedScrollingEnabled="false"
             android:layout_height="326dp"
             android:layout_marginLeft="62dp"
             android:layout_marginTop="23dp"
             android:background="@drawable/selector_default_menu_option"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ice_hot_title_text_view">
 
@@ -151,9 +151,7 @@
                     android:layout_height="132dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    tools:src="@color/white" />
+                    android:src="@drawable/ic_cold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -194,9 +192,7 @@
                     android:layout_height="132dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    tools:src="@color/white" />
+                    android:src="@drawable/ic_hot" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -251,9 +247,7 @@
                     android:layout_height="132dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    tools:src="@color/white" />
+                    android:src="@drawable/ic_soft" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -295,9 +289,7 @@
                     android:layout_height="132dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    tools:src="@color/white" />
+                    android:src="@drawable/ic_soft_normal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -339,9 +331,7 @@
                     android:layout_height="132dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    tools:src="@color/white" />
+                    android:src="@drawable/ic_deep" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -396,9 +386,7 @@
                     android:layout_height="132dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    tools:src="@color/white" />
+                    android:src="@drawable/ic_amount_normal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -440,9 +428,7 @@
                     android:layout_height="132dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    tools:src="@color/white" />
+                    android:src="@drawable/ic_amount_many"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -484,9 +470,7 @@
                     android:layout_height="132dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    tools:src="@color/white" />
+                    android:src="@drawable/ic_amount_very_many"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -510,8 +494,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginHorizontal="62dp"
-            android:layout_marginTop="144dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginTop="300dp"
             android:backgroundTint="@color/color_button_background"
             android:text="담기"
             android:textColor="@color/white"
