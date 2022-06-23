@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
@@ -14,6 +13,7 @@ import com.swuniv.agefree.BuildConfig
 import com.swuniv.agefree.R
 import com.swuniv.agefree.presentation.detection.data.network.RetrofitBuilder
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.BestMenuResponse
+import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import com.swuniv.agefree.presentation.detection.utils.PreferenceManager
 import com.swuniv.agefree.presentation.detection.utils.toWon
 import retrofit2.Call
@@ -23,6 +23,14 @@ import kotlin.math.roundToInt
 
 
 class MenuRecommendDialog : DialogFragment() {
+
+    private lateinit var onRecommendDialogDismissListener: OnRecommendDialogDismissListener
+    private var selectedMenu: Menu? = null
+    val recommendMenu = "캐모마일"
+
+    fun setDismissListener(onRecommendDialogDismissListener: OnRecommendDialogDismissListener) {
+        this.onRecommendDialogDismissListener = onRecommendDialogDismissListener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,8 +50,9 @@ class MenuRecommendDialog : DialogFragment() {
 
         val age = PreferenceManager.getInt(requireContext(), PreferenceManager.ageKey)
         val gender = PreferenceManager.getString(requireContext(), PreferenceManager.genderKey)
-        //val menuService = RetrofitBuilder.menuApi.getBestMenu(age, gender!!)
-        val menuService = RetrofitBuilder.menuApi.getBestMenu(10, "female")
+        val menuService = RetrofitBuilder.menuApi.getBestMenu(age, gender!!)
+        //val menuService = RetrofitBuilder.menuApi.getBestMenu(50, "female")
+
         menuService.enqueue(object : Callback<BestMenuResponse> {
             override fun onResponse(
                 call: Call<BestMenuResponse>,
@@ -54,25 +63,47 @@ class MenuRecommendDialog : DialogFragment() {
                 }
                 if (response.isSuccessful) {
                     val recommendMsg = (response.body() as BestMenuResponse).bestMenuContent.message
-                    val menu = (response.body() as BestMenuResponse).bestMenuContent.menu
+                    var menu = (response.body() as BestMenuResponse).bestMenuContent.menu
                     val price = 5000
+                    val option1 = (response.body() as BestMenuResponse).bestMenuContent.option1
+                    var imgResId: Int = R.drawable.coffee_03
 
                     view.findViewById<TextView>(R.id.title).text = recommendMsg
                     view.findViewById<TextView>(R.id.menu_name).text = menu
                     view.findViewById<TextView>(R.id.menu_price).text = price.toWon()
 
                     when (menu) {
-                        "추천메뉴" -> Glide.with(requireContext()).load(R.drawable.cake_02)
-                            .into(view.findViewById<ImageView>(R.id.menu_img))
-                        "아메리카노" -> Glide.with(requireContext()).load(R.drawable.coffee_03)
-                            .into(view.findViewById<ImageView>(R.id.menu_img))
-                        "캐모마일" -> Glide.with(requireContext()).load(R.drawable.tea_06)
-                            .into(view.findViewById<ImageView>(R.id.menu_img))
-                        "티라미수케이크" -> Glide.with(requireContext()).load(R.drawable.cake_03)
-                            .into(view.findViewById<ImageView>(R.id.menu_img))
-                        "복숭아아이스티" -> Glide.with(requireContext()).load(R.drawable.tea_03)
-                            .into(view.findViewById<ImageView>(R.id.menu_img))
+                        "추천메뉴" -> {
+                            imgResId = R.drawable.tea_06
+                            view.findViewById<TextView>(R.id.menu_name).text =
+                                "($menu) $recommendMenu"
+                        }
+                        "아메리카노" -> imgResId = R.drawable.coffee_03
+                        "캐모마일" -> R.drawable.tea_06
+                        "티라미수케이크" -> R.drawable.cake_03
+                        "복숭아아이스티" -> R.drawable.tea_03
                     }
+
+                    // 가져온 이미지 적용
+                    Glide.with(requireContext()).load(imgResId)
+                        .into(view.findViewById(R.id.menu_img))
+
+                    if (menu == "추천메뉴") {
+                        menu = recommendMenu
+                    }
+
+                    selectedMenu =
+                        Menu(
+                            name = menu,
+                            price = price,
+                            image = imgResId,
+                            option1 = option1,
+                            option2 = "normal",
+                            option3 = "normal",
+                            orderCount = 1,
+                            inOut = "in"
+                        )
+
                 } else {
                     dismissAllowingStateLoss()
                 }
@@ -88,9 +119,11 @@ class MenuRecommendDialog : DialogFragment() {
         }
 
         view.findViewById<TextView>(R.id.order_btn).setOnClickListener {
-            dismissAllowingStateLoss()
+            if (selectedMenu != null) {
+                onRecommendDialogDismissListener.onDismissWithBuying(selectedMenu!!)
+                dismissAllowingStateLoss()
+            }
         }
-
     }
 
     override fun onResume() {

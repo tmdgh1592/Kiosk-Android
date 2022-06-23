@@ -35,7 +35,15 @@ class OldSelectMenuFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MenuRecommendDialog().show(parentFragmentManager, "recommend")
+        val recommendDialog = MenuRecommendDialog()
+        recommendDialog.setDismissListener(object : OnRecommendDialogDismissListener {
+            override fun onDismissWithBuying(menu: Menu) {
+                val bundle = bundleOf("menu" to menu)
+                findNavController().navigate(R.id.action_oldSelectMenuFragment_to_oldOrderListFragment3, bundle)
+            }
+        })
+
+        recommendDialog.show(parentFragmentManager, "recommend")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
