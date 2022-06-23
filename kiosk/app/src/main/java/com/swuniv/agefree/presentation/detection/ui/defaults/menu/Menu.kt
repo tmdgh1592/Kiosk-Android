@@ -10,7 +10,7 @@ import java.io.Serializable
 * opt2 : soft, normal, deep
 * opt3 : normal, many, very_many
 * in_out : in, out
-* gender : M, F
+* gender : male, female
 * */
 
 /*

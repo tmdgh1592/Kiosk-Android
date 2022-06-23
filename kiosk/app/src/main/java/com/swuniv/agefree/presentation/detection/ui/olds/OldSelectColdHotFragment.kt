@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.swuniv.agefree.R
@@ -49,18 +50,18 @@ class OldSelectColdHotFragment : Fragment() {
             coldContainer.setOnClickListener {
                 selectedMenu.option1 = "cold"
                 val bundle = bundleOf("menu" to selectedMenu)
-                findNavController().navigate(R.id.oldSelectSoftDeepFragment, bundle)
+                requireView().findNavController().navigate(R.id.oldSelectSoftDeepFragment, bundle)
             }
             hotContainer.setOnClickListener {
                 selectedMenu.option1 = "hot"
                 val bundle = bundleOf("menu" to selectedMenu)
-                findNavController().navigate(R.id.oldSelectSoftDeepFragment, bundle)
+                requireView().findNavController().navigate(R.id.oldSelectSoftDeepFragment, bundle)
             }
             backButton.setOnClickListener {
-                findNavController().popBackStack()
+                requireView().findNavController().popBackStack()
             }
             homeButton.setOnClickListener {
-                findNavController().navigate(R.id.oldSelectMenuFragment)
+                requireView().findNavController().navigateUp()
             }
 
         }

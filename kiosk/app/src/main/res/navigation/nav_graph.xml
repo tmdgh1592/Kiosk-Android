@@ -32,7 +32,7 @@
             app:destination="@id/oldSelectSoftDeepFragment" />
         <action
             android:id="@+id/action_oldSelectColdHotFragment_to_oldSelectMenuFragment2"
-            app:destination="@id/oldSelectMenuFragment" />
+            app:destination="@id/oldSelectMenuFragment"/>
     </fragment>
 
     <fragment

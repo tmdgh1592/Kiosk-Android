@@ -5,16 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.swuniv.agefree.R
-import com.swuniv.agefree.databinding.FragmentOldSelectColdHotBinding
+import com.swuniv.agefree.databinding.FragmentOldSelectSoftDeepBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import com.swuniv.agefree.presentation.detection.utils.toWon
 
 class OldSelectSoftDeepFragment : Fragment() {
 
-    private var _binding: FragmentOldSelectColdHotBinding? = null
+    private var _binding: FragmentOldSelectSoftDeepBinding? = null
     private val binding get() = _binding!!
     lateinit var selectedMenu: Menu
 
@@ -23,7 +23,7 @@ class OldSelectSoftDeepFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentOldSelectColdHotBinding.inflate(inflater, container, false)
+        _binding = FragmentOldSelectSoftDeepBinding.inflate(inflater, container, false)
         selectedMenu = arguments?.getSerializable("menu") as Menu
 
         return binding.root
@@ -44,14 +44,13 @@ class OldSelectSoftDeepFragment : Fragment() {
                 Glide.with(requireContext()).load(it.image).into(menuImageView)
             }
 
-            coldContainer.setOnClickListener {
-                selectedMenu.option1 = "cold"
-                //findNavController().navigate(R.id)
-            }
-            hotContainer.setOnClickListener {
-                selectedMenu.option1 = "hot"
-            }
 
+            backButton.setOnClickListener {
+                requireView().findNavController().popBackStack()
+            }
+            homeButton.setOnClickListener {
+                requireView().findNavController().navigateUp()
+            }
         }
     }
 }
