@@ -9,12 +9,12 @@ class ViewPagerAdapter(fragment: FragmentActivity) : FragmentStateAdapter(fragme
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> MenuFragment()
-            1 -> MenuFragment()
-            2 -> MenuFragment()
-            3 -> MenuFragment()
-            4 -> MenuFragment()
-            else -> MenuFragment()
+            0 -> CoffeeFragment()
+            1 -> AidFragment()
+            2 -> JuiceFragment()
+            3 -> TeaFragment()
+            4 -> CakeFragment()
+            else -> CoffeeFragment()
         }
     }
 }
