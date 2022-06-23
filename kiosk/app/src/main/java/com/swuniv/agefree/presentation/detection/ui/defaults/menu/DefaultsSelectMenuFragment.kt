@@ -1,16 +1,20 @@
 package com.swuniv.agefree.presentation.detection.ui.defaults.menu
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentDefaultSelectMenuBinding
+import com.swuniv.agefree.presentation.detection.ui.olds.MenuRecommendDialog
 import com.swuniv.agefree.presentation.detection.ui.olds.OldSelectPayDialog
+import com.swuniv.agefree.presentation.detection.ui.olds.OnRecommendDialogDismissListener
 import com.swuniv.agefree.presentation.detection.utils.convertOldAmount
 import com.swuniv.agefree.presentation.detection.utils.convertOldColdHot
 import com.swuniv.agefree.presentation.detection.utils.convertOldSoftDeep
@@ -25,6 +29,7 @@ class DefaultsSelectMenuFragment : Fragment() {
     private val temperature: String = "cold".convertOldColdHot()
     private val shot: String = "normal".convertOldSoftDeep()
     private val size: String = "normal".convertOldAmount()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

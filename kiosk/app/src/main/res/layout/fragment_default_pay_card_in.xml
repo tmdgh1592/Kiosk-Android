@@ -33,7 +33,7 @@
         android:gravity="center"
         android:letterSpacing="0.06"
         android:lineHeight="60dp"
-        android:text="결제 오류 시 마그네틱을\n아래로 향하게 긁어주세요"
+        android:text="결제 오류 시 마그네틱을 아래로 향하게 긁어주세요"
         android:textColor="#767676"
         android:textSize="40sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -73,10 +73,11 @@
         android:gravity="center"
         android:letterSpacing="0.09"
         android:lineHeight="90dp"
+        android:textColor="@color/deepPurple"
         android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total_pay_title_text_view"
-        tools:text="11,000원" />
+        android:text="11,000원" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

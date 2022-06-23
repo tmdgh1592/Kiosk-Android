@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_defaultMenuFragment_to_oldSelectMenuFragment"
             app:popUpTo="@id/oldSelectMenuFragment" />
+        <action
+            android:id="@+id/action_defaultMenuFragment_self"
+            app:destination="@id/defaultMenuFragment" />
+        <action
+            android:id="@+id/action_defaultMenuFragment_to_defaultsRecommendOrderListFragment"
+            app:destination="@id/defaultsRecommendOrderListFragment" />
     </fragment>
 
     <fragment
@@ -160,12 +166,25 @@
         android:id="@+id/defaultsPayCardOutFragment"
         android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsPayCardOutFragment"
         android:label="fragment_default_pay_card_out"
-        tools:layout="@layout/fragment_default_pay_card_out" />
+        tools:layout="@layout/fragment_default_pay_card_out" >
+        <action
+            android:id="@+id/action_defaultsPayCardOutFragment_to_defaultsRecommendReceiptFragment"
+            app:destination="@id/defaultsRecommendReceiptFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/defaultsReceiptFragment"
         android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsReceiptFragment"
         android:label="fragment_default_receipt"
         tools:layout="@layout/fragment_default_receipt" />
+    <fragment
+        android:id="@+id/defaultsRecommendOrderListFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsRecommendOrderListFragment"
+        android:label="DefaultsRecommendOrderListFragment"
+        tools:layout="@layout/fragment_default_recommend_order_list"/>
+    <fragment
+        android:id="@+id/defaultsRecommendReceiptFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsRecommendReceiptFragment"
+        android:label="DefaultsRecommendReceiptFragment" />
 
 </navigation>

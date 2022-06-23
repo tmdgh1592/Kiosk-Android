@@ -4,18 +4,21 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.card.MaterialCardView
 import com.swuniv.agefree.R
+import com.swuniv.agefree.presentation.detection.utils.toWon
 import kotlin.math.roundToInt
 
 
-class DefaultsDefaultsSelectPayDialog : DialogFragment() {
+class DefaultsDefaultsSelectPayDialog(var selectedMenu: Menu? = null) : DialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,7 +63,13 @@ class DefaultsDefaultsSelectPayDialog : DialogFragment() {
 
         payBtn.setOnClickListener {
             dismissAllowingStateLoss()
-            findNavController().navigate(R.id.defaultsPayCardInFragment)
+            if (selectedMenu != null) {
+                Log.d("hello", "onViewCreated: "+selectedMenu!!.price.toWon())
+                val bundle = bundleOf("menu" to selectedMenu)
+                findNavController().navigate(R.id.defaultsPayCardInFragment, bundle)
+            }else {
+                findNavController().navigate(R.id.defaultsPayCardInFragment)
+            }
         }
 
 //        firstContainer.setOnClickListener {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.swuniv.agefree.R
@@ -32,7 +33,13 @@ class DefaultsPayCardOutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
-            requireView().findNavController().navigate(R.id.defaultsReceiptFragment) //TODO 내역확인
+            val menuBundle = (arguments?.getSerializable("menu") as Menu?)
+            if (menuBundle != null) {
+                val sendBundle = bundleOf("menu" to menuBundle)
+                requireView().findNavController().navigate(R.id.action_defaultsPayCardOutFragment_to_defaultsRecommendReceiptFragment, sendBundle) //TODO 내역확인
+            }else {
+                requireView().findNavController().navigate(R.id.defaultsReceiptFragment) //TODO 내역확인
+            }
         }
     }
 }

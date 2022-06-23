@@ -23,7 +23,6 @@ import kotlin.math.roundToInt
 
 
 class MenuRecommendDialog : DialogFragment() {
-
     private lateinit var onRecommendDialogDismissListener: OnRecommendDialogDismissListener
     private var selectedMenu: Menu? = null
 

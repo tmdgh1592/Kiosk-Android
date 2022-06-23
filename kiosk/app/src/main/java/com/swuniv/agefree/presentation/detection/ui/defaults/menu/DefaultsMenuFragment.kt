@@ -1,16 +1,23 @@
 package com.swuniv.agefree.presentation.detection.ui.defaults.menu
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentDefaultMenuBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.adapter.ViewPagerAdapter
+import com.swuniv.agefree.presentation.detection.ui.olds.MenuRecommendDialog
+import com.swuniv.agefree.presentation.detection.ui.olds.OnRecommendDialogDismissListener
+import com.swuniv.agefree.presentation.detection.utils.PreferenceManager
 
 class DefaultsMenuFragment : Fragment() {
 
@@ -28,6 +35,17 @@ class DefaultsMenuFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.d("TAG", "onCreate: 12345")
+        val recommendDialog = MenuRecommendDialog()
+        recommendDialog.setDismissListener(object : OnRecommendDialogDismissListener {
+            override fun onDismissWithBuying(menu: Menu) {
+                val bundle = bundleOf("menu" to menu)
+                findNavController().navigate(R.id.action_defaultMenuFragment_to_defaultsRecommendOrderListFragment, bundle)
+            }
+        })
+
+        recommendDialog.show(parentFragmentManager, "recommend")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,6 +54,13 @@ class DefaultsMenuFragment : Fragment() {
 
         binding.toolbar.changeUiBtn.setOnClickListener {
             requireView().findNavController().navigate(R.id.oldSelectMenuFragment)
+        }
+
+        // 남자면
+        if(PreferenceManager.getString(requireContext(), PreferenceManager.genderKey) == "male") {
+            Glide.with(requireContext()).load(R.drawable.banner_man_20).into(binding.bannerImageView)
+        }else { // 여자면
+            Glide.with(requireContext()).load(R.drawable.banner_woman_20).into(binding.bannerImageView)
         }
 
     }

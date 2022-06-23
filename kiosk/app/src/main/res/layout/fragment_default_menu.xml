@@ -11,11 +11,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/banner_box"
+    <ImageView
+        android:id="@+id/banner_image_view"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="@drawable/banner_man_20"
+        android:scaleType="centerCrop"
+        android:src="@drawable/banner_man_20"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
@@ -27,7 +28,7 @@
         android:layout_marginHorizontal="62dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner_box"
+        app:layout_constraintTop_toBottomOf="@+id/banner_image_view"
         app:tabGravity="fill"
         app:tabIndicator="@drawable/custom_indicator"
 
