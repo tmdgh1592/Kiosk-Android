@@ -42,6 +42,7 @@ class OldMenuAdapter(private val context: Context, private val menuClickListener
             Glide.with(context).load(item.image).into(image)
             itemView.setOnClickListener {
                 menuClickListener.onClick(item)
+                it.isSelected = true
             }
         }
     }

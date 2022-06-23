@@ -11,10 +11,9 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_best"
         android:translationZ="1dp"
-        android:visibility="gone"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/menu_layout"
-        app:layout_constraintEnd_toStartOf="@id/menu_layout"
-        app:layout_constraintStart_toStartOf="@+id/menu_layout"
+        app:layout_constraintStart_toStartOf="@id/menu_layout"
         app:layout_constraintTop_toTopOf="@id/menu_layout"
         tools:visibility="visible" />
 
