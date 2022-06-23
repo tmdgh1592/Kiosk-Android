@@ -9,8 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentOldPayCardInBinding
+import com.swuniv.agefree.presentation.detection.data.network.RetrofitBuilder
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
+import com.swuniv.agefree.presentation.detection.ui.defaults.menu.MenuResponse
+import com.swuniv.agefree.presentation.detection.utils.PreferenceManager
+import com.swuniv.agefree.presentation.detection.utils.showToast
 import kotlinx.coroutines.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class OldCardInFragment : Fragment() {
 
@@ -48,16 +55,45 @@ class OldCardInFragment : Fragment() {
                     .navigate(R.id.currentFragment_oldSelectMenuFragment)
             }
 
-            CoroutineScope(Dispatchers.Default + job).launch {
-                // 시연용으로 카드 결제가 완료되었다고 가정하고
-                // 5초 뒤에 다음화면으로 이동
-                delay(5000)
-                withContext(Dispatchers.Main) {
-                    val bundle = bundleOf("menu" to selectedMenu)
-                    requireView().findNavController()
-                        .navigate(R.id.action_oldCardInFragment_to_oldCardOutFragment, bundle)
+
+            // 서버에 결제할 메뉴 및 요금 데이터 전송
+            selectedMenu.inOut =
+                PreferenceManager.getString(requireContext(), PreferenceManager.inOutKey)!!
+            selectedMenu.gender =
+                PreferenceManager.getString(requireContext(), PreferenceManager.genderKey)!!
+            selectedMenu.age =
+                PreferenceManager.getInt(requireContext(), PreferenceManager.ageKey)
+
+            val menuApi = RetrofitBuilder.menuApi.postMenu(selectedMenu)
+            menuApi.enqueue(object : Callback<MenuResponse> {
+                override fun onResponse(
+                    call: Call<MenuResponse>,
+                    response: Response<MenuResponse>
+                ) {
+                    if (response.isSuccessful && response.body()?.success!!) {
+                        // 시연용으로 카드 결제가 완료되었다고 가정하고
+                        // 5초 뒤에 다음화면으로 이동
+                        CoroutineScope(Dispatchers.Default + job).launch {
+                            delay(5000)
+                            withContext(Dispatchers.Main) {
+                                val bundle = bundleOf("menu" to selectedMenu)
+                                requireView().findNavController()
+                                    .navigate(
+                                        R.id.action_oldCardInFragment_to_oldCardOutFragment,
+                                        bundle
+                                    )
+                            }
+                        }
+                    }
                 }
-            }
+
+                override fun onFailure(call: Call<MenuResponse>, t: Throwable) {
+                    // 결제 실패시 뒤로가기
+                    requireContext().showToast("알 수 없는 이유로 결제에 실패하였습니다.")
+                    requireView().findNavController().popBackStack()
+                }
+            })
+
 
         }
     }

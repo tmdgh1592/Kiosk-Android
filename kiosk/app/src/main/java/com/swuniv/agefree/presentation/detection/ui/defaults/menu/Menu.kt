@@ -17,7 +17,7 @@ import java.io.Serializable
 * 디저트류 같이 옵션 없는 것들은 '-' default 값 지정
 * */
 
-class Menu(
+data class Menu(
     @SerializedName("menu")
     var name: String = "",
     @SerializedName("price")
@@ -41,3 +41,8 @@ class Menu(
     @SerializedName("in_out")
     var inOut: String = "in"
 ) : Serializable
+
+data class MenuResponse(
+    @SerializedName("success")
+    var success: Boolean
+)
