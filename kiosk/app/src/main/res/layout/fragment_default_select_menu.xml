@@ -17,46 +17,6 @@
             layout="@layout/toolbar"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-        <!--            android:id="@+id/top_container"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:background="#A0A0A0"-->
-        <!--            android:gravity="center_vertical"-->
-        <!--            android:orientation="horizontal"-->
-        <!--            android:paddingHorizontal="62dp"-->
-        <!--            android:paddingVertical="55dp"-->
-        <!--            app:layout_constraintTop_toTopOf="parent">-->
-
-        <!--            <com.google.android.material.button.MaterialButton-->
-        <!--                android:id="@+id/back_button"-->
-        <!--                android:layout_width="163dp"-->
-        <!--                android:layout_height="80dp"-->
-        <!--                android:text="이전으로"-->
-        <!--                android:textColor="#767676"-->
-        <!--                android:textSize="28dp"-->
-        <!--                app:backgroundTint="@color/white"-->
-        <!--                app:cornerRadius="24dp"-->
-        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--                app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/home_button"-->
-        <!--                android:layout_width="74dp"-->
-        <!--                android:layout_height="67dp"-->
-        <!--                android:layout_gravity="center|right"-->
-        <!--                android:background="?attr/selectableItemBackgroundBorderless"-->
-        <!--                android:clickable="true"-->
-        <!--                android:src="@drawable/ic_home"-->
-        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--                app:layout_constraintRight_toRightOf="parent"-->
-        <!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/menu_image_view"
             android:layout_width="148dp"
@@ -170,13 +130,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ice_button"
             android:layout_width="263dp"
+            android:nestedScrollingEnabled="false"
             android:layout_height="326dp"
             android:layout_marginLeft="62dp"
             android:layout_marginTop="23dp"
             android:background="@drawable/selector_default_menu_option"
-            android:clickable="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ice_hot_title_text_view">
 
@@ -214,35 +172,17 @@
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/test_box"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="200dp"
-            android:background="@drawable/selector_default_menu_option"
-            android:clickable="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/hot_button"
             android:layout_width="263dp"
             android:layout_height="326dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="23dp"
-            android:clickable="true"
-            app:cardBackgroundColor="#EDEDED"
-            app:cardCornerRadius="36dp"
-            app:cardElevation="0dp"
+            android:background="@drawable/selector_default_menu_option"
             app:layout_constraintLeft_toRightOf="@+id/ice_button"
             app:layout_constraintTop_toBottomOf="@+id/ice_hot_title_text_view">
 
             <LinearLayout
-                android:id="@+id/hot_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -273,7 +213,7 @@
                     android:textColor="#4E4E4E"
                     android:textSize="28sp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <!-- Shot -->
@@ -289,16 +229,13 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ice_button" />
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/soft_button"
             android:layout_width="263dp"
             android:layout_height="326dp"
             android:layout_marginLeft="62dp"
             android:layout_marginTop="23dp"
-            android:clickable="true"
-            app:cardBackgroundColor="#EDEDED"
-            app:cardCornerRadius="36dp"
-            app:cardElevation="0dp"
+            android:background="@drawable/selector_default_menu_option"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shot_title_text_view">
 
@@ -333,19 +270,16 @@
                     android:textColor="#4E4E4E"
                     android:textSize="28sp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/normal_button"
             android:layout_width="263dp"
             android:layout_height="326dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="23dp"
-            android:clickable="true"
-            app:cardBackgroundColor="#EDEDED"
-            app:cardCornerRadius="36dp"
-            app:cardElevation="0dp"
+            android:background="@drawable/selector_default_menu_option"
             app:layout_constraintLeft_toRightOf="@+id/soft_button"
             app:layout_constraintTop_toBottomOf="@+id/shot_title_text_view">
 
@@ -380,19 +314,16 @@
                     android:textColor="#4E4E4E"
                     android:textSize="28sp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/deep_button"
             android:layout_width="263dp"
             android:layout_height="326dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="23dp"
-            android:clickable="true"
-            app:cardBackgroundColor="#EDEDED"
-            app:cardCornerRadius="36dp"
-            app:cardElevation="0dp"
+            android:background="@drawable/selector_default_menu_option"
             app:layout_constraintLeft_toRightOf="@+id/normal_button"
             app:layout_constraintTop_toBottomOf="@+id/shot_title_text_view">
 
@@ -427,7 +358,7 @@
                     android:textColor="#4E4E4E"
                     android:textSize="28sp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <!-- Size -->
@@ -437,22 +368,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="62dp"
             android:layout_marginTop="96dp"
-            android:text="Shot"
+            android:text="Size"
             android:textColor="#4E4E4E"
             android:textSize="36sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/soft_button" />
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/regular_button"
             android:layout_width="263dp"
             android:layout_height="326dp"
             android:layout_marginLeft="62dp"
             android:layout_marginTop="23dp"
-            android:clickable="true"
-            app:cardBackgroundColor="#EDEDED"
-            app:cardCornerRadius="36dp"
-            app:cardElevation="0dp"
+            android:background="@drawable/selector_default_menu_option"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/size_title_text_view">
 
@@ -487,19 +415,16 @@
                     android:textColor="#4E4E4E"
                     android:textSize="28sp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/medium_button"
             android:layout_width="263dp"
             android:layout_height="326dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="23dp"
-            android:clickable="true"
-            app:cardBackgroundColor="#EDEDED"
-            app:cardCornerRadius="36dp"
-            app:cardElevation="0dp"
+            android:background="@drawable/selector_default_menu_option"
             app:layout_constraintLeft_toRightOf="@+id/regular_button"
             app:layout_constraintTop_toBottomOf="@+id/size_title_text_view">
 
@@ -534,19 +459,16 @@
                     android:textColor="#4E4E4E"
                     android:textSize="28sp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/large_button"
             android:layout_width="263dp"
             android:layout_height="326dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="23dp"
-            android:clickable="true"
-            app:cardBackgroundColor="#EDEDED"
-            app:cardCornerRadius="36dp"
-            app:cardElevation="0dp"
+            android:background="@drawable/selector_default_menu_option"
             app:layout_constraintLeft_toRightOf="@+id/medium_button"
             app:layout_constraintTop_toBottomOf="@+id/size_title_text_view">
 
@@ -581,8 +503,7 @@
                     android:textColor="#4E4E4E"
                     android:textSize="28sp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/confirm_button"
@@ -592,7 +513,6 @@
             android:layout_marginTop="144dp"
             android:layout_marginBottom="100dp"
             android:backgroundTint="@color/color_button_background"
-            android:enabled="false"
             android:text="담기"
             android:textColor="@color/white"
             android:textSize="60sp"

@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentMenuRecyclerBinding
+import com.swuniv.agefree.presentation.detection.ui.defaults.menu.adapter.MenuAdapter
 import com.swuniv.agefree.presentation.detection.utils.HorizontalItemDecorator
 import com.swuniv.agefree.presentation.detection.utils.VerticalItemDecorator
 import com.swuniv.agefree.presentation.detection.utils.printLog
@@ -18,7 +19,7 @@ class CoffeeFragment : Fragment() {
     private var _binding: FragmentMenuRecyclerBinding? = null
     private val binding get() = _binding!!
     val data: ArrayList<Menu> = arrayListOf()
-    private lateinit var menuAdapter:MenuAdapter
+    private lateinit var menuAdapter: MenuAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,

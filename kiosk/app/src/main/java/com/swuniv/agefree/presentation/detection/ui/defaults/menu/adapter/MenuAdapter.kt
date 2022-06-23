@@ -1,16 +1,12 @@
-package com.swuniv.agefree.presentation.detection.ui.defaults.menu
+package com.swuniv.agefree.presentation.detection.ui.defaults.menu.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.ItemDefaultMenuBinding
+import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import java.text.DecimalFormat
 
 class MenuAdapter(

@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentDefaultMenuBinding
+import com.swuniv.agefree.presentation.detection.ui.defaults.menu.adapter.ViewPagerAdapter
 
 class DefaultsMenuFragment : Fragment() {
 

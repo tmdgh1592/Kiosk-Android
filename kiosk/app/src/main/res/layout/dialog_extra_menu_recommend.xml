@@ -2,9 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginHorizontal="62dp"
-    android:layout_marginVertical="482dp"
+    android:layout_height="956dp"
     android:background="@drawable/dialog_best_menu_recommend">
 
     <TextView
@@ -23,15 +21,15 @@
 
     <TextView
         android:id="@+id/first_menu_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="256dp"
+        android:layout_height="352dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="93dp"
         android:layout_marginRight="17dp"
         android:layout_marginBottom="114dp"
-        android:background="@drawable/round_36_box"
-        app:layout_constraintBottom_toTopOf="@id/cancel_btn"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:background="@drawable/selector_default_menu_option"
+        app:layout_constraintBottom_toTopOf="@id/cancel"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/second_menu_container"
         app:layout_constraintTop_toBottomOf="@id/title" />
@@ -42,7 +40,7 @@
         android:layout_height="165dp"
         android:layout_marginTop="40dp"
         android:scaleType="centerCrop"
-        android:src="@color/white"
+        android:src="@drawable/chocolateghatto"
         app:layout_constraintLeft_toLeftOf="@+id/first_menu_container"
         app:layout_constraintRight_toRightOf="@+id/first_menu_container"
         app:layout_constraintTop_toTopOf="@+id/first_menu_container"
@@ -50,10 +48,10 @@
 
     <TextView
         android:id="@+id/first_recommend_item_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="71dp"
+        android:layout_height="23dp"
         android:layout_marginTop="17dp"
-        android:text="티라미수"
+        android:text="쇼콜라갸또"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="@+id/first_recommend_item_image_view"
         app:layout_constraintRight_toRightOf="@+id/first_recommend_item_image_view"
@@ -72,13 +70,13 @@
 
     <TextView
         android:id="@+id/second_menu_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="256dp"
+        android:layout_height="352dp"
         android:layout_marginHorizontal="17dp"
         android:layout_marginTop="93dp"
         android:layout_marginBottom="114dp"
-        android:background="@drawable/round_36_box"
-        app:layout_constraintBottom_toTopOf="@id/cancel_btn"
+        android:background="@drawable/selector_default_menu_option"
+        app:layout_constraintBottom_toTopOf="@id/cancel"
         app:layout_constraintLeft_toRightOf="@+id/first_menu_container"
         app:layout_constraintRight_toLeftOf="@+id/third_menu_container"
         app:layout_constraintTop_toBottomOf="@id/title" />
@@ -89,7 +87,7 @@
         android:layout_height="165dp"
         android:layout_marginTop="40dp"
         android:scaleType="centerCrop"
-        android:src="@color/white"
+        android:src="@drawable/basquecheesecake"
         app:layout_constraintLeft_toLeftOf="@+id/second_menu_container"
         app:layout_constraintRight_toRightOf="@+id/second_menu_container"
         app:layout_constraintTop_toTopOf="@+id/second_menu_container"
@@ -100,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
-        android:text="레드벨벳 케이크"
+        android:text="바스크치즈"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="@+id/second_recommend_item_image_view"
         app:layout_constraintRight_toRightOf="@+id/second_recommend_item_image_view"
@@ -119,14 +117,14 @@
 
     <TextView
         android:id="@+id/third_menu_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="256dp"
+        android:layout_height="352dp"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="93dp"
         android:layout_marginRight="60dp"
         android:layout_marginBottom="114dp"
-        android:background="@drawable/round_36_box"
-        app:layout_constraintBottom_toTopOf="@id/cancel_btn"
+        android:background="@drawable/selector_default_menu_option"
+        app:layout_constraintBottom_toTopOf="@id/cancel"
         app:layout_constraintLeft_toRightOf="@+id/second_menu_container"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
@@ -137,7 +135,7 @@
         android:layout_height="165dp"
         android:layout_marginTop="40dp"
         android:scaleType="centerCrop"
-        android:src="@color/white"
+        android:src="@drawable/whippedcreamcastella"
         app:layout_constraintLeft_toLeftOf="@+id/third_menu_container"
         app:layout_constraintRight_toRightOf="@id/third_menu_container"
         app:layout_constraintTop_toTopOf="@+id/third_menu_container"
@@ -148,7 +146,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
-        android:text="쇼콜라 케이크"
+        android:text="생크림 카스테라"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="@+id/third_recommend_item_image_view"
         app:layout_constraintRight_toRightOf="@+id/third_recommend_item_image_view"
@@ -164,10 +162,9 @@
         app:layout_constraintRight_toRightOf="@+id/third_recommend_item_image_view"
         app:layout_constraintTop_toBottomOf="@+id/third_recommend_item_text_view" />
 
-
     <TextView
-        android:id="@+id/cancel_btn"
-        android:layout_width="0dp"
+        android:id="@+id/cancel"
+        android:layout_width="402dp"
         android:layout_height="150dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="16dp"
@@ -182,11 +179,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/add_btn" />
+        app:layout_constraintRight_toLeftOf="@id/add" />
 
     <TextView
-        android:id="@+id/add_btn"
-        android:layout_width="0dp"
+        android:id="@+id/add"
+        android:layout_width="402dp"
         android:layout_height="150dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="60dp"
@@ -199,6 +196,6 @@
         android:textColor="@color/white"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/cancel_btn"
+        app:layout_constraintLeft_toRightOf="@id/cancel"
         app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
