@@ -56,7 +56,7 @@ class CoffeeFragment : Fragment() {
 
     private fun addData(){
         for (i in 0 until 20) {
-            data.add(Menu("아메리카노$i", 5000 + i, R.drawable.coffeetest))
+            data.add(Menu("아메리카노$i", 5000 + i, R.drawable.americano))
         }
     }
 }

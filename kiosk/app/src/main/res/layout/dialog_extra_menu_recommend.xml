@@ -2,26 +2,44 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="956dp"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="482dp"
     android:background="@drawable/dialog_best_menu_recommend">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/title_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="54dp"
-        android:letterSpacing="0.072"
-        android:lineHeight="72dp"
-        android:text="함께 하면 더 맛있는\n케이크 추천!"
+        android:text="함께 하면 더 맛있는"
         android:textColor="#111111"
         android:textSize="48sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="케이크"
+        android:textColor="@color/deepPurple"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toLeftOf="@id/title_top"
+        app:layout_constraintTop_toBottomOf="@id/title_top" />
+
+    <TextView
+        android:id="@+id/title_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 추천!"
+        android:textColor="#111111"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toRightOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title_top" />
+    <TextView
         android:id="@+id/first_menu_container"
-        android:layout_width="256dp"
+        android:layout_width="0dp"
         android:layout_height="352dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="93dp"
@@ -29,7 +47,6 @@
         android:layout_marginBottom="114dp"
         android:background="@drawable/selector_default_menu_option"
         app:layout_constraintBottom_toTopOf="@id/cancel"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/second_menu_container"
         app:layout_constraintTop_toBottomOf="@id/title" />
@@ -48,8 +65,8 @@
 
     <TextView
         android:id="@+id/first_recommend_item_text_view"
-        android:layout_width="71dp"
-        android:layout_height="23dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:text="쇼콜라갸또"
         android:textSize="24sp"
@@ -70,7 +87,7 @@
 
     <TextView
         android:id="@+id/second_menu_container"
-        android:layout_width="256dp"
+        android:layout_width="0dp"
         android:layout_height="352dp"
         android:layout_marginHorizontal="17dp"
         android:layout_marginTop="93dp"
@@ -117,7 +134,7 @@
 
     <TextView
         android:id="@+id/third_menu_container"
-        android:layout_width="256dp"
+        android:layout_width="0dp"
         android:layout_height="352dp"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="93dp"
@@ -164,17 +181,16 @@
 
     <TextView
         android:id="@+id/cancel"
-        android:layout_width="402dp"
+        android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/round_border_4dp_btn"
+        android:background="@drawable/round_36_border_4_4919e6_box"
         android:fontFamily="@font/pretendard_bold"
         android:gravity="center"
-        android:letterSpacing="0.072"
         android:text="아니요"
-        android:textColor="#111111"
+        android:textColor="@color/deepPurple"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -183,7 +199,7 @@
 
     <TextView
         android:id="@+id/add"
-        android:layout_width="402dp"
+        android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="60dp"
@@ -191,7 +207,6 @@
         android:background="@drawable/order_btn"
         android:fontFamily="@font/pretendard_bold"
         android:gravity="center"
-        android:letterSpacing="0.072"
         android:text="추가하기"
         android:textColor="@color/white"
         android:textSize="48sp"

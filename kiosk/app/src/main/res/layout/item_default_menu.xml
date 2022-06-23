@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/round_36_box">
+    android:background="@drawable/selector_default_menu_option">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/menu_img"
@@ -19,7 +19,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:riv_corner_radius="30dp" />
-
 
     <TextView
         android:id="@+id/menu_name"

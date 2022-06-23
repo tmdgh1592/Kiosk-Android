@@ -28,6 +28,9 @@ class DefaultsMenuRecommendDialog : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val firstContainer: TextView = view.findViewById(R.id.first_menu_container)
+        val secondContainer: TextView = view.findViewById(R.id.second_menu_container)
+        val thirdContainer: TextView = view.findViewById(R.id.third_menu_container)
 
         view.findViewById<TextView>(R.id.cancel).setOnClickListener {
             dismissAllowingStateLoss()
@@ -35,6 +38,22 @@ class DefaultsMenuRecommendDialog : DialogFragment() {
 
         view.findViewById<TextView>(R.id.add).setOnClickListener {
             dismissAllowingStateLoss()
+        }
+
+        firstContainer.setOnClickListener {
+            setSelected(it)
+            cancelSelected(secondContainer)
+            cancelSelected(thirdContainer)
+        }
+        secondContainer.setOnClickListener {
+            setSelected(it)
+            cancelSelected(firstContainer)
+            cancelSelected(thirdContainer)
+        }
+        thirdContainer.setOnClickListener {
+            setSelected(it)
+            cancelSelected(firstContainer)
+            cancelSelected(secondContainer)
         }
 
     }
@@ -48,5 +67,13 @@ class DefaultsMenuRecommendDialog : DialogFragment() {
         params.width = (deviceWidth * 0.9).roundToInt()
         params.height = ViewGroup.LayoutParams.WRAP_CONTENT
         dialog!!.window!!.attributes = params as WindowManager.LayoutParams
+    }
+
+    private fun setSelected(view: View) {
+        view.isSelected = true
+    }
+
+    private fun cancelSelected(view: View) {
+        view.isSelected = false
     }
 }

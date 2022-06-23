@@ -33,6 +33,7 @@ class DefaultsMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewPager2()
+
         binding.toolbar.changeUiBtn.setOnClickListener {
             requireView().findNavController().navigate(R.id.currentFragment_oldSelectMenuFragment)
         }
