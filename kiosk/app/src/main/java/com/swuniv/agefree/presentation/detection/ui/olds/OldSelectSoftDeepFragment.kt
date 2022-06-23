@@ -50,12 +50,14 @@ class OldSelectSoftDeepFragment : Fragment() {
 
             softContainer.setOnClickListener {
                 selectedMenu.option2 = "soft"
+                it.isSelected = true
                 val bundle = bundleOf("menu" to selectedMenu)
                 requireView().findNavController().navigate(R.id.oldSelectAmountFragment, bundle)
             }
 
             normalContainer.setOnClickListener {
                 selectedMenu.option2 = "normal"
+                it.isSelected = true
                 val bundle = bundleOf("menu" to selectedMenu)
                 requireView().findNavController().navigate(R.id.oldSelectAmountFragment, bundle)
             }
@@ -63,6 +65,7 @@ class OldSelectSoftDeepFragment : Fragment() {
             deepContainer.setOnClickListener {
                 selectedMenu.option2 = "deep"
                 selectedMenu.price += 500
+                it.isSelected = true
                 val bundle = bundleOf("menu" to selectedMenu)
                 requireView().findNavController().navigate(R.id.oldSelectAmountFragment, bundle)
             }

@@ -109,16 +109,14 @@
 
     <!-- 차갑게 버튼 -->
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cold_container"
         android:layout_width="0dp"
         android:layout_height="560dp"
         android:layout_marginStart="62dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="8dp"
-        android:clickable="true"
-        app:cardCornerRadius="36dp"
-        app:cardElevation="0dp"
+        android:background="@drawable/selector_default_6dp_menu_option"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/hot_container"
         app:layout_constraintTop_toBottomOf="@+id/cold_hot_question_text_view">
@@ -126,7 +124,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/round_36_border_6_box"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -148,19 +145,17 @@
                 android:textSize="60sp" />
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <!-- 뜨겁게 버튼 -->
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hot_container"
         android:layout_width="0dp"
         android:layout_height="560dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="62dp"
-        android:clickable="true"
-        app:cardCornerRadius="36dp"
-        app:cardElevation="0dp"
+        android:background="@drawable/selector_default_6dp_menu_option"
         app:layout_constraintLeft_toRightOf="@id/cold_container"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cold_container">
@@ -168,7 +163,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/round_36_border_6_box"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -189,7 +183,7 @@
                 android:textSize="60sp" />
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/back_button"
