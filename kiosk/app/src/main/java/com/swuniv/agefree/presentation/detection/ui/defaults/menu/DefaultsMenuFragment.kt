@@ -36,7 +36,6 @@ class DefaultsMenuFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Log.d("TAG", "onCreate: 12345")
         val recommendDialog = MenuRecommendDialog()
         recommendDialog.setDismissListener(object : OnRecommendDialogDismissListener {
             override fun onDismissWithBuying(menu: Menu) {

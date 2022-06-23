@@ -48,8 +48,9 @@ class MenuRecommendDialog : DialogFragment() {
 
         val age = PreferenceManager.getInt(requireContext(), PreferenceManager.ageKey)
         val gender = PreferenceManager.getString(requireContext(), PreferenceManager.genderKey)
-        //val menuService = RetrofitBuilder.menuApi.getBestMenu(age, gender!!)
-        val menuService = RetrofitBuilder.menuApi.getBestMenu(50, "female")
+        Log.d("user Age and gender", "onViewCreated: " + age + " " + gender!!)
+        val menuService = RetrofitBuilder.menuApi.getBestMenu(age, gender!!)
+        //val menuService = RetrofitBuilder.menuApi.getBestMenu(50, "female")
 
         menuService.enqueue(object : Callback<BestMenuResponse> {
             override fun onResponse(
