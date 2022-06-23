@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_old_select_menu">
         <action
             android:id="@+id/action_oldSelectMenuFragment_to_oldSelectColdHotFragment"
-            app:destination="@id/oldSelectColdHotFragment" />
+            app:destination="@id/oldSelectColdHotFragment"/>
     </fragment>
 
     <fragment
@@ -26,6 +26,24 @@
         android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectColdHotFragment"
         android:label="OldSelectColdHotFragment"
         tools:layout="@layout/fragment_old_select_cold_hot">
+
+        <action
+            android:id="@+id/action_oldSelectColdHotFragment_to_oldSelectSoftDeepFragment"
+            app:destination="@id/oldSelectSoftDeepFragment" />
+        <action
+            android:id="@+id/action_oldSelectColdHotFragment_to_oldSelectMenuFragment2"
+            app:destination="@id/oldSelectMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/oldSelectSoftDeepFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectSoftDeepFragment"
+        android:label="OldSelectSoftDeepFragment"
+        tools:layout="@layout/fragment_old_select_soft_deep">
+
+        <action
+            android:id="@+id/action_oldSelectSoftDeepFragment_to_oldSelectMenuFragment"
+            app:destination="@id/oldSelectMenuFragment" />
     </fragment>
 
 
