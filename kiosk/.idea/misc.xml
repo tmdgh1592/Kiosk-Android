@@ -36,10 +36,13 @@
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_default_order_list.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_default_pay_card_in.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_default_pay_card_out.xml" value="0.1" />
+        <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_default_receipt.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_default_select_menu.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_menu.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_menu_recycler.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_menu.xml" value="0.1" />
+        <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_order_list.xml" value="0.1" />
+        <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_pay_card_in.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_pay_card_out.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_receipt.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_select_amount.xml" value="0.1" />

@@ -111,7 +111,6 @@ class DefaultsSelectMenuFragment : Fragment() {
                 }
                 val bundle = bundleOf("option" to selectedMenu)
                 DefaultsMenuRecommendDialog().show(parentFragmentManager, "DefaultsMenuRecommendDialog")
-//                requireView().findNavController().navigate(R.id.)
             }
         }
     }

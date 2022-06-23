@@ -8,18 +8,19 @@ import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.card.MaterialCardView
 import com.swuniv.agefree.R
 import kotlin.math.roundToInt
 
 
-class DefaultsMenuRecommendDialog : DialogFragment() {
+class DefaultsDefaultsSelectPayDialog : DialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view = inflater.inflate(R.layout.dialog_extra_menu_recommend, container, false)
+        val view = inflater.inflate(R.layout.dialog_default_select_pay, container, false)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
         isCancelable = false
@@ -29,35 +30,26 @@ class DefaultsMenuRecommendDialog : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val firstContainer: TextView = view.findViewById(R.id.first_menu_container)
-        val secondContainer: TextView = view.findViewById(R.id.second_menu_container)
-        val thirdContainer: TextView = view.findViewById(R.id.third_menu_container)
+        val payBtn: TextView = view.findViewById(R.id.pay_button)
+        val credit_card_button: MaterialCardView = view.findViewById(R.id.credit_card_button)
 
-        view.findViewById<TextView>(R.id.cancel).setOnClickListener {
-            findNavController().navigate(R.id.defaultsOrderListFragment)
+
+        credit_card_button.findViewById<MaterialCardView>(R.id.credit_card_button)
+            .setOnClickListener {
+                setSelected(it)
+                payBtn.isEnabled = true
+            }
+
+        payBtn.setOnClickListener {
             dismissAllowingStateLoss()
+            findNavController().navigate(R.id.defaultsPayCardInFragment)
         }
 
-        view.findViewById<TextView>(R.id.add).setOnClickListener {
-            dismissAllowingStateLoss()
-            findNavController().navigate(R.id.defaultsOrderListFragment)
-        }
-
-        firstContainer.setOnClickListener {
-            setSelected(it)
-            cancelSelected(secondContainer)
-            cancelSelected(thirdContainer)
-        }
-        secondContainer.setOnClickListener {
-            setSelected(it)
-            cancelSelected(firstContainer)
-            cancelSelected(thirdContainer)
-        }
-        thirdContainer.setOnClickListener {
-            setSelected(it)
-            cancelSelected(firstContainer)
-            cancelSelected(secondContainer)
-        }
+//        firstContainer.setOnClickListener {
+//            setSelected(it)
+//            cancelSelected(secondContainer)
+//            cancelSelected(thirdContainer)
+//        }
 
     }
 
@@ -66,9 +58,10 @@ class DefaultsMenuRecommendDialog : DialogFragment() {
         val displayMetrics = DisplayMetrics()
         requireActivity().windowManager.defaultDisplay.getMetrics(displayMetrics)
         val deviceWidth: Int = displayMetrics.widthPixels
+        val deviceHeight: Int = displayMetrics.heightPixels
         val params: ViewGroup.LayoutParams = dialog!!.window!!.attributes
         params.width = (deviceWidth * 0.9).roundToInt()
-        params.height = ViewGroup.LayoutParams.WRAP_CONTENT
+        params.height = (deviceHeight * 0.9).roundToInt()
         dialog!!.window!!.attributes = params as WindowManager.LayoutParams
     }
 

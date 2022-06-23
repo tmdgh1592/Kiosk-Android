@@ -133,10 +133,34 @@
         android:id="@+id/oldOrderReceiptFragment"
         android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldOrderReceiptFragment"
         android:label="OldOrderReceiptFragment"
-        tools:layout="@layout/fragment_old_receipt" >
+        tools:layout="@layout/fragment_old_receipt">
         <action
             android:id="@+id/action_oldOrderReceiptFragment_to_oldSelectMenuFragment"
             app:destination="@id/oldSelectMenuFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/defaultsOrderListFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsOrderListFragment"
+        android:label="fragment_default_order_list"
+        tools:layout="@layout/fragment_default_order_list" />
+
+    <fragment
+        android:id="@+id/defaultsPayCardInFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsPayCardInFragment"
+        android:label="fragment_default_pay_card_in"
+        tools:layout="@layout/fragment_default_pay_card_in" />
+
+    <fragment
+        android:id="@+id/defaultsPayCardOutFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsPayCardOutFragment"
+        android:label="fragment_default_pay_card_out"
+        tools:layout="@layout/fragment_default_pay_card_out" />
+
+    <fragment
+        android:id="@+id/defaultsReceiptFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsReceiptFragment"
+        android:label="fragment_default_receipt"
+        tools:layout="@layout/fragment_default_receipt" />
 
 </navigation>
