@@ -15,6 +15,7 @@ import com.swuniv.agefree.presentation.detection.ui.olds.adapter.OldMenuAdapter
 import com.swuniv.agefree.presentation.detection.ui.olds.adapter.OnMenuClickListener
 import com.swuniv.agefree.presentation.detection.utils.HorizontalItemDecorator
 import com.swuniv.agefree.presentation.detection.utils.VerticalItemDecorator
+import com.swuniv.agefree.presentation.detection.utils.showToast
 
 class OldSelectMenuFragment : Fragment() {
 
@@ -40,7 +41,9 @@ class OldSelectMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
-        binding.defaultScreenButton.setOnClickListener {
+
+        binding.topContainer.changeUiBtn.setOnClickListener {
+            context!!.showToast("클릭")
             requireView().findNavController().navigate(R.id.action_oldSelectMenuFragment_to_defaultMenuFragment)
         }
 

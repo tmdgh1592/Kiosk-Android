@@ -35,7 +35,7 @@ class DefaultsMenuFragment : Fragment() {
         viewPager2()
 
         binding.toolbar.changeUiBtn.setOnClickListener {
-            requireView().findNavController().navigate(R.id.currentFragment_oldSelectMenuFragment)
+            requireView().findNavController().navigate(R.id.oldSelectMenuFragment)
         }
 
     }
