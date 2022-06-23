@@ -10,7 +10,6 @@
         layout="@layout/toolbar"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/order_list_text_view"
         android:layout_width="wrap_content"
@@ -136,7 +135,7 @@
         android:layout_marginTop="144dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/color_button_background"
-        android:enabled="false"
+        android:enabled="true"
         android:text="주문하기"
         android:textColor="@color/white"
         android:textSize="60sp"
