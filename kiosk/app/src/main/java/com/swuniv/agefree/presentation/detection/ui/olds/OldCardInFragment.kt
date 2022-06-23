@@ -7,6 +7,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -50,17 +51,15 @@ class OldCardInFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
 
-            val titleStringBuilder = SpannableStringBuilder(inputCardTitleTextView.text)
-            titleStringBuilder.setSpan(
-                ForegroundColorSpan(
-                    ContextCompat.getColor(requireContext(), R.color.deepPurple)
-                ),
-                6,
-                inputCardTitleTextView.text.length,
+            val title = inputCardTitleTextView.text.toString()
+            val ssb = SpannableStringBuilder(title)
+            ssb.setSpan(
+                ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.deepPurple)),
+                0,
+                5,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
-            inputCardTitleTextView.text = titleStringBuilder.toString()
-
+            inputCardTitleTextView.text = ssb
 
 
             backButton.setOnClickListener {

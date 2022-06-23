@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp"
         android:text="결제 수단"
-        android:textSize="60sp"
+        android:textSize="80sp"
         android:textColor="@color/deepPurple"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp"
         android:text="을 선택해주세요!"
-        android:textSize="60sp"
+        android:textSize="80sp"
         app:layout_constraintLeft_toRightOf="@+id/select_pay_title_text_view1"
         app:layout_constraintTop_toTopOf="parent" />
 

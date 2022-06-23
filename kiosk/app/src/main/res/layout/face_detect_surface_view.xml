@@ -11,13 +11,14 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="169dp"
             android:lineHeight="90dp"
             android:text="최적의 맞춤 서비스를 위해\n고객님의 얼굴 인식을 진행합니다"
             android:textColor="#111111"
-            android:textSize="60sp"
+            android:textSize="80sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +49,8 @@
                     android:contentDescription="Left Top Angle"
                     android:src="@drawable/img_face_detection_left_top"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/deepPurple" />
 
                 <ImageView
                     android:layout_width="120dp"
@@ -57,7 +59,8 @@
                     android:contentDescription="Right Top Angle"
                     android:src="@drawable/img_face_detection_right_top"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/deepPurple" />
 
                 <ImageView
                     android:layout_width="120dp"
@@ -66,7 +69,8 @@
                     android:contentDescription="Left Bottom Angle"
                     android:src="@drawable/img_face_detection_left_bottom"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent" />
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:tint="@color/deepPurple" />
 
                 <ImageView
                     android:layout_width="120dp"
@@ -75,7 +79,8 @@
                     android:contentDescription="Right Bottom Angle"
                     android:src="@drawable/img_face_detection_right_bottom"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent" />
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:tint="@color/deepPurple" />
 
                 <TextView
                     android:id="@+id/close_come_text_view"
@@ -84,8 +89,8 @@
                     android:gravity="center"
                     android:lineHeight="66dp"
                     android:text="화면에 가까이 와주세요"
-                    android:textColor="#111111"
-                    android:textSize="44sp"
+                    android:textColor="@color/white"
+                    android:textSize="60sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

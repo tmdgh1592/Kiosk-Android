@@ -27,7 +27,7 @@ class StartActivity : AppCompatActivity() {
             val intent = Intent(this, FdActivity::class.java)
             intent.putExtra("take_mode", 101)
             startActivity(intent)
-            showToast("포장 버튼 클릭")
+            //showToast("포장 버튼 클릭")
         }
 
         binding.takeoutBtn.setOnClickListener {
@@ -36,7 +36,7 @@ class StartActivity : AppCompatActivity() {
             val intent = Intent(this, FdActivity::class.java)
             intent.putExtra("take_mode", 102)
             startActivity(intent)
-            showToast("매장 버튼 클릭")
+            //showToast("매장 버튼 클릭")
         }
 
     }

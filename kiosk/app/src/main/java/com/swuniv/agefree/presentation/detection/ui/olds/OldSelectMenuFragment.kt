@@ -40,8 +40,9 @@ class OldSelectMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
-        binding.defaultScreenButton.setOnClickListener {
-            requireView().findNavController().navigate(R.id.action_oldSelectMenuFragment_to_defaultMenuFragment)
+        binding.topContainer.changeUiBtn.setOnClickListener {
+            requireView().findNavController()
+                .navigate(R.id.action_oldSelectMenuFragment_to_defaultMenuFragment)
         }
 
         with(binding) {
