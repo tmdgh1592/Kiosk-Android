@@ -22,15 +22,16 @@
 ## 😃 Client: Package
 클라이언트에서 사용한 패키지 관련 설명입니다.
 
-### - Ui : Activity, Fragment 등 화면과 커스텀뷰 관련 클래스
-- old - 고령층을 위한 화면을 겸비한 패키지
-- defaults - 그 외, 키오스크에 크게 불편함을 느끼지 않는 유저를 위한 패키지
+### - Ui : Activity, Fragment 등 화면과 CustomView 관련 클래스
+- old - 시니어 고객을 위한 패키지
+- defaults - 그 외, 키오스크에 크게 불편함을 느끼지 않는 고객을 위한 패키지
+
 ### - Data : 서버와 통신하기 위한 RestAPI, DTO 관련 클래스
-### - Utils : 
-Extensions, PreferenceManager, DataProvider 등 프로그램 작성에 도움을 제공하는 클래스
+
+### - Utils : Extensions, PreferenceManager, DataProvider 등 프로그램 작성에 도움을 제공하는 클래스
 
 ### - OpenCV를 사용하여 얼굴인식
-- 얼굴인식 후 사용자가 촬영된 사진을 서버에 전송하여 성별, 나이 등 분석
+- 얼굴인식 후 사용자가 촬영된 사진을 retrofit2 library를 이용해 서버에 전송하여 학습된 AI 모델을 이용해 성별, 나이 등 분석 
 
 ## 🌕 Server: API Architecture
 서버에서 사용한 API 아키텍쳐 관련 설명입니다.
