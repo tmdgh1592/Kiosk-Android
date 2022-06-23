@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="62dp">
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:lineHeight="90dp"
+        android:text="선택하신 상품의 수량을\n정해주세요!"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cafe_name_text_view"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/cafe_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="45dp"
+        android:text="Cafe"
+        android:textSize="60sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_28_border_4_box"
+        android:clickable="true"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp"
+        android:text="처음으로"
+        android:textColor="#A0A0A0"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cafe_name_text_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cafe_name_text_view" />
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/menu_image_view"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="89dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_text_view"
+        app:riv_corner_radius="36dip"
+        app:riv_mutate_background="true"
+        app:riv_oval="false"
+        tools:src="@drawable/img_sample" />
+
+    <TextView
+        android:id="@+id/menu_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:textColor="#111111"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/price_text_view"
+        app:layout_constraintLeft_toRightOf="@+id/menu_image_view"
+        app:layout_constraintTop_toTopOf="@+id/menu_image_view"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="아메리카노" />
+
+    <TextView
+        android:id="@+id/price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#111111"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_image_view"
+        app:layout_constraintLeft_toLeftOf="@+id/menu_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/menu_text_view"
+        tools:text="5,000원" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rectangle_divider"
+        app:layout_constraintTop_toBottomOf="@+id/menu_image_view" />
+
+    <TextView
+        android:id="@+id/cold_hot_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_24_border_4_box"
+        android:paddingHorizontal="26.5dp"
+        android:paddingVertical="23.5dp"
+        android:textColor="#767676"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:text="차갑게" />
+
+    <TextView
+        android:id="@+id/soft_deep_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/round_24_border_4_box"
+        android:paddingHorizontal="26.5dp"
+        android:paddingVertical="23.5dp"
+        android:textColor="#767676"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cold_hot_text_view"
+        app:layout_constraintLeft_toRightOf="@+id/cold_hot_text_view"
+        app:layout_constraintTop_toTopOf="@+id/cold_hot_text_view"
+        tools:text="연하게" />
+
+    <TextView
+        android:id="@+id/amount_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/round_24_border_4_box"
+        android:gravity="center"
+        android:minWidth="160dp"
+        android:paddingHorizontal="26.5dp"
+        android:paddingVertical="23.5dp"
+        android:textColor="#767676"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toBottomOf="@+id/soft_deep_text_view"
+        app:layout_constraintLeft_toRightOf="@+id/soft_deep_text_view"
+        app:layout_constraintTop_toTopOf="@+id/soft_deep_text_view"
+        tools:text="많이" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="306dp"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/round_30_border_8_box"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/order_count_title_text_view">
+
+        <LinearLayout
+            android:id="@+id/minus_button"
+            android:layout_width="116dp"
+            android:layout_height="116dp"
+            android:background="@drawable/ic_circle"
+            android:backgroundTint="#EDEDED"
+            android:clickable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_minus" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/count_text_view"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="100sp" />
+
+        <LinearLayout
+            android:id="@+id/plus_button"
+            android:layout_width="116dp"
+            android:layout_height="116dp"
+            android:background="@drawable/ic_circle"
+            android:backgroundTint="#4E4E4E"
+            android:clickable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_plus" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/order_count_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="94dp"
+        android:text="몇 잔 주문하시겠어요?"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cold_hot_text_view" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/done_btn"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="100dp"
+        android:text="확인"
+        android:textSize="60sp"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

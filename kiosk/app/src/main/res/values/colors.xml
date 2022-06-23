@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="tabSelectedTextColor">#000000</color>
+    <color name="normalPurple">#6D47EB</color>
+    <color name="deepPurple">#4919E6</color>
 </resources>

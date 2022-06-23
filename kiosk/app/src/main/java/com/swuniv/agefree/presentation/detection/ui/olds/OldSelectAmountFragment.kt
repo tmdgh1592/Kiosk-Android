@@ -9,14 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.swuniv.agefree.R
-import com.swuniv.agefree.databinding.FragmentOldSelectSoftDeepBinding
+import com.swuniv.agefree.databinding.FragmentOldSelectAmountBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import com.swuniv.agefree.presentation.detection.utils.convertOldColdHot
+import com.swuniv.agefree.presentation.detection.utils.convertOldSoftDeep
 import com.swuniv.agefree.presentation.detection.utils.toWon
 
-class OldSelectSoftDeepFragment : Fragment() {
+class OldSelectAmountFragment : Fragment() {
 
-    private var _binding: FragmentOldSelectSoftDeepBinding? = null
+    private var _binding: FragmentOldSelectAmountBinding? = null
     private val binding get() = _binding!!
     lateinit var selectedMenu: Menu
 
@@ -25,7 +26,7 @@ class OldSelectSoftDeepFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentOldSelectSoftDeepBinding.inflate(inflater, container, false)
+        _binding = FragmentOldSelectAmountBinding.inflate(inflater, container, false)
         selectedMenu = arguments?.getSerializable("menu") as Menu
 
         return binding.root
@@ -46,25 +47,27 @@ class OldSelectSoftDeepFragment : Fragment() {
                 Glide.with(requireContext()).load(image).into(menuImageView)
 
                 coldHotTextView.text = option1.convertOldColdHot()
-            }
-
-            softContainer.setOnClickListener {
-                selectedMenu.option2 = "soft"
-                val bundle = bundleOf("menu" to selectedMenu)
-                requireView().findNavController().navigate(R.id.oldSelectAmountFragment, bundle)
+                softDeepTextView.text = option2.convertOldSoftDeep()
             }
 
             normalContainer.setOnClickListener {
-                selectedMenu.option2 = "normal"
+                selectedMenu.option3 = "normal"
                 val bundle = bundleOf("menu" to selectedMenu)
-                requireView().findNavController().navigate(R.id.oldSelectAmountFragment, bundle)
+                requireView().findNavController().navigate(R.id.oldSelectCountFragment, bundle)
             }
 
-            deepContainer.setOnClickListener {
-                selectedMenu.option2 = "deep"
+            manyContainer.setOnClickListener {
+                selectedMenu.option3 = "many"
                 selectedMenu.price += 500
                 val bundle = bundleOf("menu" to selectedMenu)
-                requireView().findNavController().navigate(R.id.oldSelectAmountFragment, bundle)
+                requireView().findNavController().navigate(R.id.oldSelectCountFragment, bundle)
+            }
+
+            veryManyContainer.setOnClickListener {
+                selectedMenu.option3 = "very_many"
+                selectedMenu.price += 700
+                val bundle = bundleOf("menu" to selectedMenu)
+                requireView().findNavController().navigate(R.id.oldSelectCountFragment, bundle)
             }
 
             backButton.setOnClickListener {

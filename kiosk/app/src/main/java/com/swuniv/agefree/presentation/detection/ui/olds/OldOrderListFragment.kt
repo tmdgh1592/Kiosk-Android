@@ -4,20 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.swuniv.agefree.R
-import com.swuniv.agefree.databinding.FragmentOldSelectColdHotBinding
+import com.swuniv.agefree.databinding.FragmentOldOrderListBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
+import com.swuniv.agefree.presentation.detection.utils.convertOldAmount
+import com.swuniv.agefree.presentation.detection.utils.convertOldColdHot
+import com.swuniv.agefree.presentation.detection.utils.convertOldSoftDeep
 import com.swuniv.agefree.presentation.detection.utils.toWon
 
-class OldSelectColdHotFragment : Fragment() {
+class OldOrderListFragment : Fragment() {
 
-    private var _binding: FragmentOldSelectColdHotBinding? = null
+    private var _binding: FragmentOldOrderListBinding? = null
     private val binding get() = _binding!!
     lateinit var selectedMenu: Menu
 
@@ -26,7 +27,7 @@ class OldSelectColdHotFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentOldSelectColdHotBinding.inflate(inflater, container, false)
+        _binding = FragmentOldOrderListBinding.inflate(inflater, container, false)
         selectedMenu = arguments?.getSerializable("menu") as Menu
 
         return binding.root
@@ -41,29 +42,31 @@ class OldSelectColdHotFragment : Fragment() {
         with(binding) {
 
             // 선택한 메뉴 정보 표시
-            selectedMenu.let {
-                menuTextView.text = it.name
-                priceTextView.text = it.price.toWon()
-                Glide.with(requireContext()).load(it.image).into(menuImageView)
+            selectedMenu.apply {
+                menuAndCountTextView.text = "$name ${orderCount}개"
+                totalPayTextView.text = price.toWon()
+                Glide.with(requireContext()).load(image).into(menuImageView)
+
+                coldHotTextView.text = option1.convertOldColdHot()
+                softDeepTextView.text = option2.convertOldSoftDeep()
+                amountTextView.text = option3.convertOldAmount()
             }
 
-            coldContainer.setOnClickListener {
-                selectedMenu.option1 = "cold"
+
+            orderBtn.setOnClickListener {
                 val bundle = bundleOf("menu" to selectedMenu)
-                requireView().findNavController().navigate(R.id.oldSelectSoftDeepFragment, bundle)
+                OldSelectPayDialog().show(parentFragmentManager, "DialogOldSelectPay")
             }
-            hotContainer.setOnClickListener {
-                selectedMenu.option1 = "hot"
-                val bundle = bundleOf("menu" to selectedMenu)
-                requireView().findNavController().navigate(R.id.oldSelectSoftDeepFragment, bundle)
-            }
-            backButton.setOnClickListener {
-                requireView().findNavController().popBackStack()
-            }
+
             homeButton.setOnClickListener {
-                requireView().findNavController().navigate(R.id.currentFragment_oldSelectMenuFragment)
+                requireView().findNavController()
+                    .navigate(R.id.currentFragment_oldSelectMenuFragment)
             }
 
         }
     }
+}
+
+interface OnSelectPayCategory {
+    fun onClick()
 }

@@ -16,6 +16,14 @@
     </fragment>
 
     <fragment
+        android:id="@+id/defaultsSelectFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsSelectMenuFragment"
+        android:label="fragment_default_select_menu"
+        tools:layout="@layout/fragment_default_select_menu"
+        />
+
+
+    <fragment
         android:id="@+id/oldSelectMenuFragment"
         android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectMenuFragment"
         android:label="fragment_old_select_menu"
@@ -48,6 +56,43 @@
         <action
             android:id="@+id/action_oldSelectSoftDeepFragment_to_oldSelectMenuFragment"
             app:destination="@id/oldSelectMenuFragment" />
+        <action
+            android:id="@+id/action_oldSelectSoftDeepFragment_to_oldSelectAmountFragment"
+            app:destination="@id/oldSelectAmountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/oldSelectAmountFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectAmountFragment"
+        android:label="OldSelectAmountFragment"
+        tools:layout="@layout/fragment_old_select_amount">
+        <action
+            android:id="@+id/action_oldSelectAmountFragment_to_oldSelectMenuFragment"
+            app:destination="@id/oldSelectMenuFragment" />
+        <action
+            android:id="@+id/action_oldSelectAmountFragment_to_oldSelectCountFragment"
+            app:destination="@id/oldSelectCountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oldSelectCountFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldSelectCountFragment"
+        android:label="OldSelectCountFragment"
+        tools:layout="@layout/fragment_old_select_count">
+        <action
+            android:id="@+id/action_oldSelectCountFragment_to_oldSelectMenuFragment"
+            app:destination="@id/oldSelectMenuFragment" />
+        <action
+            android:id="@+id/action_oldSelectCountFragment_to_oldOrderListFragment"
+            app:destination="@id/oldOrderListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oldOrderListFragment"
+        android:name="com.swuniv.agefree.presentation.detection.ui.olds.OldOrderListFragment"
+        android:label="OldOrderListFragment"
+        tools:layout="@layout/fragment_old_order_list">
+        <action
+            android:id="@+id/action_oldOrderListFragment_to_oldSelectMenuFragment"
+            app:destination="@id/oldSelectMenuFragment" />
     </fragment>
 
     <action
@@ -57,12 +102,5 @@
     <action
         android:id="@+id/currentFragment_oldSelectMenuFragment"
         app:popUpTo="@id/oldSelectMenuFragment" />
-
-    <fragment
-        android:id="@+id/defaultsSelectFragment"
-        android:name="com.swuniv.agefree.presentation.detection.ui.defaults.menu.DefaultsSelectMenuFragment"
-        android:label="fragment_default_select_menu"
-        tools:layout="@layout/fragment_default_select_menu"
-        />
 
 </navigation>
