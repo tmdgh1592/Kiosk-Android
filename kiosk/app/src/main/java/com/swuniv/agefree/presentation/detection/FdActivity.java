@@ -2,10 +2,8 @@ package com.swuniv.agefree.presentation.detection;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
@@ -167,7 +165,6 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
         ssb.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.deepPurple)), 0, 10, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         ((TextView) findViewById(R.id.title)).setText(ssb);
 
-
     }
 
     @Override
@@ -219,7 +216,7 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
         mGray = inputFrame.gray();
 
         // OpenCV RGB색상 적용 코드
-        if(!mRgba.empty()) {
+        if (!mRgba.empty()) {
             Mat convertedMat = new Mat();
             Imgproc.cvtColor(mRgba, convertedMat, Imgproc.COLOR_RGB2BGR);
             mRgba = convertedMat;
@@ -376,16 +373,11 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
                         PreferenceManager.INSTANCE.setInt(FdActivity.this, PreferenceManager.ageKey, age);
                         PreferenceManager.INSTANCE.setString(FdActivity.this, PreferenceManager.genderKey, gender);
 
-                        new Handler().postDelayed(() -> {
-                            // 전송을 완료하고 나이 추정 성공시 다음 화면으로 이동
-                            Intent intent = new Intent(FdActivity.this, MainActivity.class)
-                                    .putExtra("age", age)
-                                    .putExtra("gender", gender);
-                            startActivity(intent);
-                        }, 1500);
-//                        runOnUiThread(() -> {
-//
-//                        });
+                        findViewById(R.id.progress_bar).setVisibility(View.VISIBLE);
+
+                        startActivity(new Intent(FdActivity.this, MainActivity.class).putExtra("age", age).putExtra("gender", gender));
+                        finish();
+
                     }
                 } else {
                     // 전송을 완료하고 나이 추정 실패시 True로 갱신하여 다시 얼굴인식 시도
@@ -407,7 +399,6 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
                 ((TextView) findViewById(R.id.close_come_text_view)).setVisibility(View.VISIBLE);
             }
         });
-
 
     }
 

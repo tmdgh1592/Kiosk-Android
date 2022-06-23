@@ -1,5 +1,6 @@
 package com.swuniv.agefree.presentation.detection.ui.olds
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentOldReceiptBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
+import com.swuniv.agefree.presentation.detection.ui.start.StartActivity
 import com.swuniv.agefree.presentation.detection.utils.convertOldAmount
 import com.swuniv.agefree.presentation.detection.utils.convertOldColdHot
 import com.swuniv.agefree.presentation.detection.utils.convertOldSoftDeep
@@ -101,8 +103,10 @@ class OldOrderReceiptFragment : Fragment() {
                 // 시연용으로 카드 결제가 완료되었다고 가정하고
                 // 5초 뒤에 다음화면으로 이동
                 delay(5000)
-                requireView().findNavController()
-                    .navigate(R.id.currentFragment_oldSelectMenuFragment)
+//                requireView().findNavController()
+//                    .navigate(R.id.currentFragment_oldSelectMenuFragment)
+                requireActivity().finish()
+                startActivity(Intent(requireContext(), StartActivity::class.java))
             }
 
         }

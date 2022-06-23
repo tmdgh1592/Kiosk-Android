@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val intent = intent
 
-        var age: Int = intent.getIntExtra("age", 1)
+        val age: Int = intent.getIntExtra("age", 1)
         //TODO age 설정하여 원하는 Fragment 진입
 
         if (BuildConfig.DEBUG) {
@@ -33,9 +33,9 @@ class MainActivity : AppCompatActivity() {
         if (age >= 50) {
             navController.navigate(R.id.oldSelectMenuFragment)
         }
-//        else {
-//            navController.navigate(R.id.defaultMenuFragment)
-//        }
+        else {
+            navController.navigate(R.id.defaultMenuFragment)
+        }
 
     }
 }

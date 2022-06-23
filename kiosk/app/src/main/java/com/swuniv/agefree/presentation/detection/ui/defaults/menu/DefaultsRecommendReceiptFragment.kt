@@ -1,5 +1,6 @@
 package com.swuniv.agefree.presentation.detection.ui.defaults.menu
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.swuniv.agefree.R
 import com.swuniv.agefree.databinding.FragmentDefaultReceiptBinding
 import com.swuniv.agefree.databinding.FragmentDefaultRecommendReceiptBinding
+import com.swuniv.agefree.presentation.detection.ui.start.StartActivity
 import com.swuniv.agefree.presentation.detection.utils.toWon
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,7 +38,9 @@ class DefaultsRecommendReceiptFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         CoroutineScope(Dispatchers.Main).launch {
             delay(4000)
-            requireView().findNavController().navigate(R.id.currentFragment_defaultMenuFragment)
+            //requireView().findNavController().navigate(R.id.currentFragment_defaultMenuFragment)
+            requireActivity().finish()
+            startActivity(Intent(requireContext(), StartActivity::class.java))
         }
 
         with(binding) {
