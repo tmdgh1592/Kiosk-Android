@@ -30,5 +30,8 @@ class DefaultsReceiptFragment : Fragment() {
         binding.root.setOnClickListener {
             requireView().findNavController().navigate(R.id.currentFragment_defaultMenuFragment)
         }
+
+        binding.firstMenuImageView.setImageResource(R.drawable.coffee_02)
+        binding.secondMenuImageView.setImageResource(R.drawable.cake_03)
     }
 }

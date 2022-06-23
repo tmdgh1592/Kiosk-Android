@@ -38,7 +38,7 @@
         app:layout_constraintLeft_toLeftOf="@id/receipt_container"
         app:layout_constraintRight_toRightOf="@id/receipt_container"
         app:layout_constraintTop_toTopOf="@id/receipt_container"
-        tools:text="주문번호 2022062210" />
+        android:text="주문번호 2022062210" />
 
     <TextView
         android:id="@+id/line1"
@@ -66,25 +66,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
+        android:text="바닐라 라떼"
         android:textColor="#4E4E4E"
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/first_price_text_view"
         app:layout_constraintLeft_toRightOf="@+id/first_menu_image_view"
         app:layout_constraintTop_toTopOf="@id/first_menu_image_view"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:text="바닐라 라떼" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/first_price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:text="5,000원"
         android:textColor="#111111"
         android:textSize="44sp"
         app:layout_constraintBottom_toTopOf="@+id/option_container"
         app:layout_constraintLeft_toLeftOf="@id/first_menu_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/first_menu_text_view"
-        tools:text="5,000원" />
+        app:layout_constraintTop_toBottomOf="@+id/first_menu_text_view" />
 
     <TextView
         android:id="@+id/divider"
@@ -104,12 +104,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="4dp"
+        android:text="1개"
         android:textColor="#111111"
         android:textSize="44sp"
         app:layout_constraintBottom_toBottomOf="@id/first_price_text_view"
         app:layout_constraintLeft_toRightOf="@+id/divider"
-        app:layout_constraintTop_toTopOf="@+id/first_price_text_view"
-        tools:text="1개" />
+        app:layout_constraintTop_toTopOf="@+id/first_price_text_view" />
 
     <LinearLayout
         android:id="@+id/option_container"
@@ -127,9 +127,9 @@
             android:id="@+id/ice_hot_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Ice"
             android:textColor="#767676"
-            android:textSize="28sp"
-            tools:text="Ice" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/bar1"
@@ -144,9 +144,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="21dp"
+            android:text="Shot 기본"
             android:textColor="#767676"
-            android:textSize="28sp"
-            tools:text="Shot 기본" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/bar2"
@@ -161,9 +161,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="21dp"
+            android:text="Regular"
             android:textColor="#767676"
-            android:textSize="28sp"
-            tools:text="Regular" />
+            android:textSize="28sp" />
 
     </LinearLayout>
 
@@ -194,13 +194,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
+        android:layout_marginTop="90.5dp"
+        android:text="쇼콜라갸또"
         android:textColor="#4E4E4E"
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/second_price_text_view"
         app:layout_constraintLeft_toRightOf="@+id/second_menu_image_view"
-        app:layout_constraintTop_toTopOf="@id/second_menu_image_view"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:text="레드벨벳 케이크" />
+        app:layout_constraintTop_toTopOf="@id/line2"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/second_price_text_view"
@@ -209,10 +210,9 @@
         android:layout_marginTop="4dp"
         android:textColor="#111111"
         android:textSize="44sp"
-        app:layout_constraintBottom_toTopOf="@+id/second_option_container"
         app:layout_constraintLeft_toLeftOf="@id/second_menu_text_view"
         app:layout_constraintTop_toBottomOf="@+id/second_menu_text_view"
-        tools:text="5,000원" />
+        android:text="6,000원" />
 
     <TextView
         android:id="@+id/divider2"
@@ -232,68 +232,13 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="4dp"
+        android:text="1개"
         android:textColor="#111111"
         android:textSize="44sp"
         app:layout_constraintBottom_toBottomOf="@id/second_price_text_view"
         app:layout_constraintLeft_toRightOf="@+id/divider2"
-        app:layout_constraintTop_toTopOf="@+id/second_price_text_view"
-        tools:text="1개" />
+        app:layout_constraintTop_toTopOf="@+id/second_price_text_view" />
 
-    <LinearLayout
-        android:id="@+id/second_option_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/second_menu_image_view"
-        app:layout_constraintLeft_toLeftOf="@+id/second_menu_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/second_price_text_view">
-
-        <TextView
-            android:id="@+id/second_ice_hot_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#767676"
-            android:textSize="28sp"
-            tools:text="Ice" />
-
-        <TextView
-            android:id="@+id/second_bar1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:text="|"
-            android:textSize="28sp" />
-
-        <TextView
-            android:id="@+id/second_shot_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="21dp"
-            android:textColor="#767676"
-            android:textSize="28sp"
-            tools:text="Shot 기본" />
-
-        <TextView
-            android:id="@+id/second_bar2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:text="|"
-            android:textSize="28sp" />
-
-        <TextView
-            android:id="@+id/second_size_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="21dp"
-            android:textColor="#767676"
-            android:textSize="28sp"
-            tools:text="Regular" />
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/line3"
@@ -311,7 +256,7 @@
         android:textSize="28sp"
         app:layout_constraintLeft_toLeftOf="@id/receipt_container"
         app:layout_constraintTop_toTopOf="@id/line3"
-        tools:text="바닐라 라떼" />
+        android:text="바닐라 라떼" />
 
     <TextView
         android:id="@+id/first_menu_price"
@@ -322,7 +267,7 @@
         android:textSize="40sp"
         app:layout_constraintRight_toRightOf="@id/receipt_container"
         app:layout_constraintTop_toTopOf="@id/line3"
-        tools:text="5,000원" />
+        android:text="5,000원" />
 
     <TextView
         android:id="@+id/second_menu_name"
@@ -333,7 +278,7 @@
         android:textSize="28sp"
         app:layout_constraintLeft_toLeftOf="@id/receipt_container"
         app:layout_constraintTop_toBottomOf="@id/first_menu_name"
-        tools:text="레드벨벳 케이크" />
+        android:text="쇼콜라갸또" />
 
     <TextView
         android:id="@+id/second_menu_price"
@@ -344,7 +289,7 @@
         android:textSize="40sp"
         app:layout_constraintRight_toRightOf="@id/receipt_container"
         app:layout_constraintTop_toBottomOf="@id/first_menu_price"
-        tools:text="6,000원" />
+        android:text="6,000원" />
 
     <TextView
         android:id="@+id/line4"
@@ -377,6 +322,6 @@
         android:textSize="60sp"
         app:layout_constraintRight_toRightOf="@id/receipt_container"
         app:layout_constraintTop_toBottomOf="@id/line4"
-        tools:text="11,000원" />
+        android:text="11,000원" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
