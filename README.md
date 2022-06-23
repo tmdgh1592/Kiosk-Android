@@ -71,7 +71,9 @@
 
 ## 🌕 Server: API Architecture
 서버에서 사용한 API 아키텍쳐 관련 설명입니다.
-
+<br><br>
+<img src="https://user-images.githubusercontent.com/56534241/175431852-f8a7d85f-7f26-4841-8683-4477e752a548.png" width="995" height="521"/>
+<br><br>
 ### - POST /v1/detect: 클라이언트에서 사진을 보냈을 때 연령, 성별을 알려주는 API
 - 내부적으로 Kakao Vision API를 call 하면서 동작함
 - 기존 다른 머신러닝 모델들(FaceNet)과 비교했을 때 정확도가 더 높아 선택
