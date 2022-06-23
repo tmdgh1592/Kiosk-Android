@@ -46,3 +46,19 @@ data class MenuResponse(
     @SerializedName("success")
     var success: Boolean
 )
+
+
+data class BestMenuResponse(
+    @SerializedName("best")
+    val bestMenuContent: BestMenuContent
+)
+
+data class BestMenuContent (
+
+    @SerializedName("menu")
+    val menu: String,
+    @SerializedName("opt1")
+    val option1: String,
+    @SerializedName("msg")
+    val message: String
+)

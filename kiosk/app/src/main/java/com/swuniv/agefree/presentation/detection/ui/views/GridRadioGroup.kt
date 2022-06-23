@@ -34,6 +34,10 @@ class GridRadioGroup @JvmOverloads constructor(
         return null
     }
 
+    fun setSelectedRadioButton(view: RadioButton) {
+        onClick(view)
+    }
+
     override fun onClick(view: View) {
         // While this looks inefficient, it does fix a bug (2 RadioButtons could be selected at the
         // same time) when navigating back by popping-up a fragment from the backstack.

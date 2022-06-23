@@ -13,16 +13,16 @@ import com.swuniv.agefree.databinding.FragmentOldSelectMenuBinding
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import com.swuniv.agefree.presentation.detection.ui.olds.adapter.OldMenuAdapter
 import com.swuniv.agefree.presentation.detection.ui.olds.adapter.OnMenuClickListener
+import com.swuniv.agefree.presentation.detection.utils.DataProvider
 import com.swuniv.agefree.presentation.detection.utils.HorizontalItemDecorator
 import com.swuniv.agefree.presentation.detection.utils.VerticalItemDecorator
-import com.swuniv.agefree.presentation.detection.utils.showToast
 
 class OldSelectMenuFragment : Fragment() {
 
     private var _binding: FragmentOldSelectMenuBinding? = null
     private val binding get() = _binding!!
     private lateinit var menuAdapter: OldMenuAdapter
-    val data = mutableListOf<Menu>()
+    var data = mutableListOf<Menu>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,7 +44,8 @@ class OldSelectMenuFragment : Fragment() {
 
         binding.topContainer.changeUiBtn.setOnClickListener {
             //context!!.showToast("클릭")
-            requireView().findNavController().navigate(R.id.action_oldSelectMenuFragment_to_defaultMenuFragment)
+            requireView().findNavController()
+                .navigate(R.id.action_oldSelectMenuFragment_to_defaultMenuFragment)
         }
 
         with(binding) {
@@ -52,20 +53,25 @@ class OldSelectMenuFragment : Fragment() {
             categoryRadioGroup.isCheckedButtonId.observe(viewLifecycleOwner) {
                 when (it) {
                     R.id.radio_coffee_btn -> {
-
+                        data = DataProvider.getCoffeeList().toMutableList()
                     }
                     R.id.radio_soda_btn -> {
-
+                        data = DataProvider.getAdeList().toMutableList()
                     }
                     R.id.radio_tea_btn -> {
-
+                        data = DataProvider.getTeaList().toMutableList()
                     }
                     R.id.radio_juice_btn -> {
-
+                        data = DataProvider.getJuiceList().toMutableList()
                     }
                     R.id.radio_cake_btn -> {
-
+                        data = DataProvider.getCakeList().toMutableList()
                     }
+                }
+
+                menuAdapter.apply {
+                    menuList = data
+                    notifyDataSetChanged()
                 }
             }
         }
@@ -79,6 +85,9 @@ class OldSelectMenuFragment : Fragment() {
                 // 리사이클러뷰의 메뉴(음식) 클릭 리스너
                 val bundle = bundleOf("menu" to menu)
                 findNavController().navigate(R.id.oldSelectColdHotFragment, bundle)
+
+                // 다음에 메뉴 고를 때를 대비해서 기본값인 커피(Coffee)로 재변경
+                binding.categoryRadioGroup.setSelectedRadioButton(binding.radioCoffeeBtn)
             }
         })
 
@@ -89,12 +98,7 @@ class OldSelectMenuFragment : Fragment() {
         }
         //binding.menuRecyclerView.layoutManager = GridLayoutManager(context, 2)
 
-        for (i in 0 until 20) {
-            data.add(Menu("아메리카노$i", 5000 + i, R.drawable.coffeetest))
-        }
-
-        menuAdapter.menuList = data
-
+        data = DataProvider.getCoffeeList().toMutableList()
         menuAdapter.apply {
             menuList = data
             notifyDataSetChanged()

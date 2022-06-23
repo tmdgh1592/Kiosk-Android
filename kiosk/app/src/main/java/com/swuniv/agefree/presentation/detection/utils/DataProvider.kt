@@ -5,7 +5,7 @@ import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 
 object DataProvider {
 
-    private fun getCoffeeList(): List<Menu> {
+    fun getCoffeeList(): List<Menu> {
         return listOf<Menu>(
             Menu("돌체라떼", 5000, R.drawable.coffee_01),
             Menu("바닐라라떼", 5500, R.drawable.coffee_02),
@@ -16,7 +16,7 @@ object DataProvider {
         )
     }
 
-    private fun getAdeList(): List<Menu> {
+    fun getAdeList(): List<Menu> {
         return listOf<Menu>(
             Menu("딸기레몬에이드", 6000, R.drawable.ade_01),
             Menu("레몬에이드", 6000, R.drawable.ade_02),
@@ -27,7 +27,7 @@ object DataProvider {
         )
     }
 
-    private fun getTeaList(): List<Menu> {
+    fun getTeaList(): List<Menu> {
         return listOf<Menu>(
             Menu("레몬티", 5000, R.drawable.tea_01),
             Menu("밀크티", 5000, R.drawable.tea_02),
@@ -38,7 +38,7 @@ object DataProvider {
         )
     }
 
-    private fun getJuiceList(): List<Menu> {
+    fun getJuiceList(): List<Menu> {
         return listOf<Menu>(
             Menu("딸기주스", 5000, R.drawable.juice_01),
             Menu("망고주스", 5500, R.drawable.juice_02),
@@ -47,7 +47,7 @@ object DataProvider {
         )
     }
 
-    private fun getCakeList(): List<Menu> {
+    fun getCakeList(): List<Menu> {
         return listOf<Menu>(
             Menu("바스크치즈", 6000, R.drawable.cake_01),
             Menu("생크림카스테라", 6000, R.drawable.cake_02),
