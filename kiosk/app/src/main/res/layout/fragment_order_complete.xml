@@ -10,7 +10,7 @@
         android:layout_width="388dp"
         android:layout_height="388dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_border_circle_ok"
+        android:src="@drawable/ic_border_circle_ok"
         app:layout_constraintBottom_toTopOf="@+id/scan_complete_text_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

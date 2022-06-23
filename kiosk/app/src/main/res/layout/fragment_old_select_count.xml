@@ -22,24 +22,23 @@
         android:id="@+id/cafe_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="62dp"
         android:layout_marginTop="45dp"
-        android:text="Cafe"
+        android:text="Cafe A8"
+        android:textColor="@color/deepPurple"
         android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/home_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_28_border_4_box"
+        android:background="@drawable/purple_round_36_border_48"
+        android:textColor="@color/softPurple"
         android:clickable="true"
         android:paddingHorizontal="20dp"
         android:paddingVertical="20dp"
         android:text="처음으로"
-        android:textColor="#A0A0A0"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/cafe_name_text_view"
         app:layout_constraintRight_toRightOf="parent"
@@ -177,7 +176,7 @@
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:background="@drawable/ic_circle"
-            android:backgroundTint="#4E4E4E"
+            android:backgroundTint="@color/deepPurple"
             android:clickable="true"
             android:gravity="center">
 

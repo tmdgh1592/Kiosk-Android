@@ -5,16 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/cafe_name_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="62dp"
-        android:layout_marginTop="45dp"
-        android:text="Cafe"
-        android:textSize="60sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include
+        android:id="@+id/top_container"
+        layout="@layout/toolbar_old_white" />
 
     <TextView
         android:id="@+id/title_text_view"
@@ -25,23 +18,8 @@
         android:text="메뉴를 선택해주세요!"
         android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cafe_name_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/top_container" />
 
-    <TextView
-        android:id="@+id/default_screen_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="62dp"
-        android:background="@drawable/round_28_border_4_box"
-        android:clickable="true"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="20dp"
-        android:text="기본 화면으로 보기"
-        android:textColor="#A0A0A0"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/cafe_name_text_view"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cafe_name_text_view" />
 
     <com.swuniv.agefree.presentation.detection.ui.views.GridRadioGroup
         android:id="@+id/category_radio_group"

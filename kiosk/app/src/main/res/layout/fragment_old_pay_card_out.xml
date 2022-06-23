@@ -8,12 +8,13 @@
         android:id="@+id/okay_image_view"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:src="@drawable/img_border_circle_ok"
+        android:src="@drawable/ic_border_circle_ok"
         app:layout_constraintBottom_toTopOf="@+id/input_card_title_text_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:tint="@color/deepPurple" />
 
 
     <TextView

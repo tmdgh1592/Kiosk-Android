@@ -10,4 +10,5 @@
     <color name="tabSelectedTextColor">#000000</color>
     <color name="normalPurple">#6D47EB</color>
     <color name="deepPurple">#4919E6</color>
+    <color name="softPurple">#9175F0</color>
 </resources>

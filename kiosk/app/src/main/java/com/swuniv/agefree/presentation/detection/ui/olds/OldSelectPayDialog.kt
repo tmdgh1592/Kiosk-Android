@@ -1,12 +1,12 @@
 package com.swuniv.agefree.presentation.detection.ui.olds
 
-import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.*
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -71,9 +71,15 @@ class OldSelectPayDialog : DialogFragment() {
             when (it) {
                 PayType.CREDIT_CARD -> {
                     checkView(R.id.credit_card_button, R.id.credit_card_text_view)
+                    (view?.findViewById<ImageView>(R.id.credit_card_icon)).setColorFilter(
+                        ContextCompat.getColor(requireContext(), R.color.white)
+                    )
                 }
                 PayType.CREDIT -> {
                     checkView(R.id.credit_button, R.id.credit_text_view)
+                    (view?.findViewById<ImageView>(R.id.credit_icon)).setColorFilter(
+                        ContextCompat.getColor(requireContext(), R.color.white)
+                    )
                 }
                 PayType.SAMSUNG_PAY -> {
                     checkView(R.id.samsung_pay_button, R.id.samsung_pay_text)
@@ -121,6 +127,9 @@ class OldSelectPayDialog : DialogFragment() {
             view?.findViewById<TextView>(id)?.setTextColor(Color.parseColor("#4E4E4E"))
 
         }
+
+        (view?.findViewById<ImageView>(R.id.credit_card_icon))?.colorFilter = null
+        (view?.findViewById<ImageView>(R.id.credit_icon))?.colorFilter = null
     }
 
     private fun checkView(cardViewId: Int, textViewId: Int) {

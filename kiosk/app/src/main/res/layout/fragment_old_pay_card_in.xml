@@ -11,14 +11,15 @@
         android:layout_height="96dp"
         android:layout_marginLeft="62dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/purple_round_36_border_48"
         android:text="뒤로가기"
-        android:textColor="#A0A0A0"
+        android:textColor="@color/softPurple"
         android:textSize="40dp"
         app:backgroundTint="@color/white"
-        app:cornerRadius="24dp"
+        app:cornerRadius="48dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#A0A0A0"
+        app:strokeColor="@color/softPurple"
         app:strokeWidth="4dp" />
 
     <com.google.android.material.button.MaterialButton
@@ -27,14 +28,15 @@
         android:layout_height="96dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="62dp"
+        android:background="@drawable/purple_round_36_border_48"
         android:text="처음으로"
-        android:textColor="#A0A0A0"
+        android:textColor="@color/softPurple"
         android:textSize="40dp"
         app:backgroundTint="@color/white"
-        app:cornerRadius="24dp"
+        app:cornerRadius="48dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#A0A0A0"
+        app:strokeColor="@color/softPurple"
         app:strokeWidth="4dp" />
 
     <TextView
@@ -45,6 +47,7 @@
         android:letterSpacing="0.12"
         android:lineHeight="120dp"
         android:text="신용카드를\n투입구에 꽂아주세요!"
+        android:textColor="#111111"
         android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/input_card_desc_text_view"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -91,19 +94,19 @@
         android:text="총 결제 금액"
         android:textColor="#767676"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/input_card_text_view"
+        app:layout_constraintBottom_toTopOf="@+id/total_price_text_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/credit_card_image_view" />
 
     <TextView
-        android:id="@+id/input_card_text_view"
+        android:id="@+id/total_price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:letterSpacing="0.12"
         android:lineHeight="120dp"
+        android:textColor="@color/deepPurple"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

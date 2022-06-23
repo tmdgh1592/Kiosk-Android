@@ -1,9 +1,13 @@
 package com.swuniv.agefree.presentation.detection.ui.olds
 
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -14,6 +18,7 @@ import com.swuniv.agefree.presentation.detection.ui.defaults.menu.Menu
 import com.swuniv.agefree.presentation.detection.ui.defaults.menu.MenuResponse
 import com.swuniv.agefree.presentation.detection.utils.PreferenceManager
 import com.swuniv.agefree.presentation.detection.utils.showToast
+import com.swuniv.agefree.presentation.detection.utils.toWon
 import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -45,6 +50,19 @@ class OldCardInFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
 
+            val titleStringBuilder = SpannableStringBuilder(inputCardTitleTextView.text)
+            titleStringBuilder.setSpan(
+                ForegroundColorSpan(
+                    ContextCompat.getColor(requireContext(), R.color.deepPurple)
+                ),
+                6,
+                inputCardTitleTextView.text.length,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            inputCardTitleTextView.text = titleStringBuilder.toString()
+
+
+
             backButton.setOnClickListener {
                 job.cancel()
                 requireView().findNavController().popBackStack()
@@ -55,6 +73,8 @@ class OldCardInFragment : Fragment() {
                     .navigate(R.id.currentFragment_oldSelectMenuFragment)
             }
 
+            // 총 결제 금액 표시
+            totalPriceTextView.text = selectedMenu.price.toWon()
 
             // 서버에 결제할 메뉴 및 요금 데이터 전송
             selectedMenu.inOut =

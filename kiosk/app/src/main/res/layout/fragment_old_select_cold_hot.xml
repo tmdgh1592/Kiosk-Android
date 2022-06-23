@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="62dp"
         android:layout_marginTop="45dp"
-        android:text="Cafe"
+        android:text="Cafe A8"
+        android:textColor="@color/deepPurple"
         android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,12 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="62dp"
-        android:background="@drawable/round_28_border_4_box"
+        android:background="@drawable/purple_round_36_border_48"
         android:clickable="true"
         android:paddingHorizontal="20dp"
         android:paddingVertical="20dp"
         android:text="처음으로"
-        android:textColor="#A0A0A0"
+        android:textColor="@color/softPurple"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/cafe_name_text_view"
         app:layout_constraintRight_toRightOf="parent"
@@ -99,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="78dp"
         android:text="차갑게 할까요 뜨겁게 할까요?"
         android:textColor="#111111"
         android:textSize="48sp"
@@ -116,8 +117,6 @@
         android:layout_marginTop="31dp"
         android:layout_marginEnd="8dp"
         android:clickable="true"
-        app:cardBackgroundColor="#EDEDED"
-        android:background="?attr/selectableItemBackgroundBorderless"
         app:cardCornerRadius="36dp"
         app:cardElevation="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -127,23 +126,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/round_36_border_6_box"
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <ImageView
                 android:id="@+id/cold_image_view"
-                android:layout_width="132dp"
-                android:layout_height="132dp"
+                android:layout_width="274dp"
+                android:layout_height="274dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                app:riv_mutate_background="true"
-                app:riv_oval="true"
-                tools:src="@color/white" />
+                android:src="@drawable/ic_cold"
+                app:riv_mutate_background="true" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="49dp"
+                android:layout_marginTop="3dp"
                 android:text="차갑게"
                 android:textColor="#111111"
                 android:textSize="60sp" />
@@ -160,7 +159,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="62dp"
         android:clickable="true"
-        app:cardBackgroundColor="#EDEDED"
         app:cardCornerRadius="36dp"
         app:cardElevation="0dp"
         app:layout_constraintLeft_toRightOf="@id/cold_container"
@@ -170,23 +168,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/round_36_border_6_box"
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <ImageView
                 android:id="@+id/hot_image_view"
-                android:layout_width="132dp"
-                android:layout_height="132dp"
+                android:layout_width="274dp"
+                android:layout_height="274dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                app:riv_mutate_background="true"
-                app:riv_oval="true"
-                tools:src="@color/white" />
+                android:src="@drawable/ic_hot" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="49dp"
+                android:layout_marginTop="3dp"
                 android:text="뜨겁게"
                 android:textColor="#111111"
                 android:textSize="60sp" />
