@@ -52,6 +52,7 @@ class OldSelectAmountFragment : Fragment() {
 
             normalContainer.setOnClickListener {
                 selectedMenu.option3 = "normal"
+                it.isSelected = true
                 val bundle = bundleOf("menu" to selectedMenu)
                 requireView().findNavController().navigate(R.id.oldSelectCountFragment, bundle)
             }
@@ -59,12 +60,14 @@ class OldSelectAmountFragment : Fragment() {
             manyContainer.setOnClickListener {
                 selectedMenu.option3 = "many"
                 selectedMenu.price += 500
+                it.isSelected = true
                 val bundle = bundleOf("menu" to selectedMenu)
                 requireView().findNavController().navigate(R.id.oldSelectCountFragment, bundle)
             }
 
             veryManyContainer.setOnClickListener {
                 selectedMenu.option3 = "very_many"
+                it.isSelected = true
                 selectedMenu.price += 700
                 val bundle = bundleOf("menu" to selectedMenu)
                 requireView().findNavController().navigate(R.id.oldSelectCountFragment, bundle)

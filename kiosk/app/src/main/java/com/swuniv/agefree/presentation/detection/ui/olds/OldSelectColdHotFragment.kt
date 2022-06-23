@@ -50,10 +50,12 @@ class OldSelectColdHotFragment : Fragment() {
             coldContainer.setOnClickListener {
                 selectedMenu.option1 = "cold"
                 val bundle = bundleOf("menu" to selectedMenu)
+                it.isSelected = true
                 requireView().findNavController().navigate(R.id.oldSelectSoftDeepFragment, bundle)
             }
             hotContainer.setOnClickListener {
                 selectedMenu.option1 = "hot"
+                it.isSelected = true
                 val bundle = bundleOf("menu" to selectedMenu)
                 requireView().findNavController().navigate(R.id.oldSelectSoftDeepFragment, bundle)
             }

@@ -3,51 +3,75 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/selector_default_menu_option">
+    android:layout_height="wrap_content">
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/menu_img"
-        android:layout_width="208dp"
-        android:layout_height="225dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="36dp"
-        android:scaleType="centerCrop"
-        android:src="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/menu_name"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:riv_corner_radius="30dp" />
-
-    <TextView
-        android:id="@+id/menu_name"
+    <ImageView
+        android:id="@+id/tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:fontFamily="@font/pretendard_bold"
-        android:letterSpacing="0.06"
-        android:text="아메리카노"
-        android:textColor="#111111"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/menu_price"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/menu_img" />
+        android:src="@drawable/ic_best"
+        android:translationZ="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/menu_layout"
+        app:layout_constraintEnd_toStartOf="@id/menu_layout"
+        app:layout_constraintStart_toStartOf="@+id/menu_layout"
+        app:layout_constraintTop_toTopOf="@id/menu_layout"
+        tools:visibility="visible" />
 
-    <TextView
-        android:id="@+id/menu_price"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menu_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="59dp"
-        android:letterSpacing="0.009"
-        android:textSize="60sp"
+        android:background="@drawable/selector_default_menu_option"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/menu_name"
-        tools:text="5,000원" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/menu_img"
+            android:layout_width="209dp"
+            android:layout_height="225dp"
+            android:layout_marginTop="36dp"
+            android:scaleType="centerCrop"
+            android:src="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/menu_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="30dp" />
+
+        <TextView
+            android:id="@+id/menu_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:letterSpacing="0.06"
+            android:text="아메리카노"
+            android:textColor="#111111"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@id/menu_price"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menu_img" />
+
+        <TextView
+            android:id="@+id/menu_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="59dp"
+            android:layout_marginHorizontal="30dp"
+            android:letterSpacing="0.009"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menu_name"
+            tools:text="5,000원" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
