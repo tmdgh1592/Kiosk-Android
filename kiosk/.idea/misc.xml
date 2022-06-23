@@ -61,6 +61,14 @@
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/Kiosk-Android/kiosk/app/src/main/res/layout/toolbar_white.xml" value="0.15" />
         <entry key="..\:/android_project/OpenCV-android-sdk/kiosk/app/src/main/res/layout/face_detect_surface_view.xml" value="0.16" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/activity_start.xml" value="0.1" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/dialog_best_menu_recommend.xml" value="0.11203703703703703" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/dialog_old_select_pay.xml" value="0.11203703703703703" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/face_detect_surface_view.xml" value="0.12170138888888889" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_pay_card_in.xml" value="0.11203703703703703" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/fragment_old_select_menu.xml" value="0.1" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/toolbar_default_white.xml" value="0.1" />
+        <entry key="..\:/temp_project/Kiosk-Android/kiosk/app/src/main/res/layout/toolbar_old_white.xml" value="0.11203703703703703" />
       </map>
     </option>
   </component>

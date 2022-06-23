@@ -43,7 +43,7 @@ class OldSelectMenuFragment : Fragment() {
         initRecycler()
 
         binding.topContainer.changeUiBtn.setOnClickListener {
-            context!!.showToast("클릭")
+            //context!!.showToast("클릭")
             requireView().findNavController().navigate(R.id.action_oldSelectMenuFragment_to_defaultMenuFragment)
         }
 
@@ -92,6 +92,7 @@ class OldSelectMenuFragment : Fragment() {
         for (i in 0 until 20) {
             data.add(Menu("아메리카노$i", 5000 + i, R.drawable.coffeetest))
         }
+
         menuAdapter.menuList = data
 
         menuAdapter.apply {

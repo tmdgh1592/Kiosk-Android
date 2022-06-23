@@ -5,12 +5,17 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import com.swuniv.agefree.BuildConfig;
 import com.swuniv.agefree.R;
@@ -154,6 +159,13 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
         mOpenCvCameraView.setVisibility(CameraBridgeViewBase.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
         mOpenCvCameraView.setCameraIndex(1);
+
+        String title = ((TextView) findViewById(R.id.title)).getText().toString();
+        SpannableStringBuilder ssb = new SpannableStringBuilder(title);
+        ssb.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.deepPurple)), 0, 10, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ((TextView) findViewById(R.id.title)).setText(ssb);
+
+
     }
 
     @Override

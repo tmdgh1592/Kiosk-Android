@@ -11,10 +11,11 @@
         android:layout_marginHorizontal="62dp"
         android:layout_marginTop="296dp"
         android:fontFamily="@font/pretendard_bold"
+        android:lineHeight="144dp"
         android:letterSpacing="0.12"
         android:text="고객님,\n여기서 주문해주세요!"
         android:textColor="#111111"
-        android:textSize="80sp"
+        android:textSize="120sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,40 +23,77 @@
     <TextView
         android:id="@+id/takeout_btn"
         android:layout_width="0dp"
-        android:layout_height="533dp"
+        android:layout_height="700dp"
         android:layout_marginLeft="62dp"
         android:layout_marginTop="236dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/round_36_box"
+        android:backgroundTint="@color/deepPurple"
         android:fontFamily="@font/pretendard_bold"
         android:gravity="center"
-        android:letterSpacing="0.099"
-        android:text="포장할게요"
-        android:textColor="#111111"
-        android:textSize="44sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/takein_btn"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
+    <ImageView
+        android:id="@+id/take_out_image_view"
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:src="@drawable/ic_take_out"
+        app:layout_constraintBottom_toBottomOf="@id/takeout_btn"
+        app:layout_constraintLeft_toLeftOf="@id/takeout_btn"
+        app:layout_constraintRight_toRightOf="@id/takeout_btn"
+        app:layout_constraintTop_toTopOf="@+id/takeout_btn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.4dp"
+        android:text="포장할게요"
+        android:textColor="@color/white"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toLeftOf="@+id/take_out_image_view"
+        app:layout_constraintRight_toRightOf="@+id/take_out_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/take_out_image_view" />
+
     <TextView
         android:id="@+id/takein_btn"
         android:layout_width="0dp"
-        android:layout_height="533dp"
+        android:layout_height="700dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="236dp"
         android:layout_marginRight="62dp"
         android:background="@drawable/round_36_box"
+        android:backgroundTint="@color/deepPurple"
         android:fontFamily="@font/pretendard_bold"
         android:gravity="center"
-        android:letterSpacing="0.099"
-        android:text="매장에서\n먹고 갈게요"
         android:textColor="#111111"
         android:textSize="44sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/takeout_btn"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+    <ImageView
+        android:id="@+id/take_in_image_view"
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:src="@drawable/ic_take_in"
+        app:layout_constraintBottom_toBottomOf="@id/takein_btn"
+        app:layout_constraintLeft_toLeftOf="@id/takein_btn"
+        app:layout_constraintRight_toRightOf="@id/takein_btn"
+        app:layout_constraintTop_toTopOf="@+id/takein_btn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.4dp"
+        android:text="먹고 갈게요"
+        android:textColor="@color/white"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toLeftOf="@+id/take_in_image_view"
+        app:layout_constraintRight_toRightOf="@+id/take_in_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/take_in_image_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
